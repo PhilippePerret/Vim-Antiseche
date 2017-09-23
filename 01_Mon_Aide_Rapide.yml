@@ -712,7 +712,14 @@
 
     -
       :main_action: Ouvrir
-      :action: "le fichier en lecture seule (depuis Vim)"
+      :action:      le fichier sous le curseur
+      :mode: normal
+      :code: KeyG KeyF
+      :important: true
+
+    -
+      :main_action: Ouvrir
+      :action:      le fichier en lecture seule (depuis Vim)
       :mode: normal
       :code: ":view path/to/file"
 

@@ -70,7 +70,7 @@ def formate t
   .gsub(/\bARROW_UP\b/, keyboard('FlecheH'))
   .gsub(/\bARROW_DOWN\b/, keyboard('FlecheB'))
   .gsub(/Key(Arobase|Diese|Dollar|FlecheG|FlecheD|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Virgule)/){keyboard($1)}
-  .gsub(/Key([A-Z])/){keyboard($1.upcase)}
+  .gsub(/Key([A-Z]) ?/){keyboard($1.upcase)}
   .gsub(/\`(.*?)\`/,'<code>\1</code>')
   .gsub(/\n/,'<br>')
 end
