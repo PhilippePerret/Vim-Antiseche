@@ -1,0 +1,3586 @@
+#
+# Utiliser Mon_Aide_Rapide.rb avec CMD+i pour reconstruire la cheat sheet
+# Mon_Aide_Rapide.html
+#
+#
+# Marquer une commande avec `:important: true` si elle doit être mise en
+# exergue.
+#
+---
+# ---------------------------------------------------------------------
+#
+#   @@@ VIMINFO
+#
+# ---------------------------------------------------------------------
+
+  VIMINFO:
+
+    -
+      :main_action: Définir
+      :action: "les éléments à sauver dans le fichier viminfo"
+      :mode: normal
+      :code: ":set vi[minfo]=<paramètres>"
+      :note: "Voir les paramètres ci-après"
+
+    -
+      :main_action: Définir
+      :action: "le nombre de fichiers pour lesquels il faut sauver les marques locales."
+      :mode: normal
+      :code: "'<nombre> (apostrophe et nombre)"
+      :exemples:
+        - "`:set viminfo='1000` => on gardera les marques locales de 1000 fichiers"
+
+    -
+      :main_action: Définir
+      :action: "si les marques globales doivent être sauvées ou non"
+      :mode: normal
+      :code:
+        - 'f1 (oui)'
+        - 'f0 (non)'
+      :exemples:
+        - "`:set viminfo=f1` => les marques globales seront conservées"
+
+    -
+      :main_action: Définir
+      :action: "le nombre de lignes de l'historique (:history) à conserver"
+      :mode: normal
+      :code: ":<nombre lignes>"
+      :exemples:
+        - "`:set viminfo=:100` => 100 lignes d'historique seront conservées"
+
+    -
+      :main_action: Définir
+      :action: "le nombre de ligne d'historique de recherche"
+      :mode: normal
+      :code: "/<nombre lignes>"
+      :exemples:
+        - "`:set viminfo=/100`"
+      :note: "l'« historique de recherche » concerne les recherches qui ont été entreprises par `/`"
+
+    -
+      :main_action: Définir
+      :action: "le fait de conserver la liste des buffers"
+      :code: "%"
+      :exemples:
+        - "`:set viminfo=%`"
+
+    -
+      :main_action: Définir
+      :action: "de conserver les variables globales"
+      :code: "!"
+      :exemples:
+        - "`:set viminfo=!`"
+
+    -
+      :main_action: Définir
+      :action: "un viminfo type"
+      :code: ":set viminfo='1000,f1,:100,/100,%,!"
+      :note: "signifie qu'on conserve les marques locales de 1000 fichiers (`'1000`), qu'on conserve les marques globales (`f1`), qu'on conserve 100 lignes d'history (`:100`) et 100 ligne d'historique de recherche (`/100`), qu'on sauve et restaure la liste des buffers (`%`) et qu'on sauve les variables globales (`!`)."
+
+    -
+      :main_action: "Forcer l'écriture"
+      :action: "de viminfo"
+      :mode: normal
+      :code: ":wviminfo[!] [path/to/fichier]"
+      :note: "Sans précision de fichier, c'est le fichier `~/.viminfo` qui sera utilisé."
+
+    -
+      :main_action: "Forcer la lecture"
+      :action: "du viminfo"
+      :mode: normal
+      :code: ":rviminfo[!] [path/to/fichier]"
+      :note: "Sans précision de fichier, c'est le fichier `~/.viminfo` qui sera utilisé."
+
+# ---------------------------------------------------------------------
+#
+#   @@@ AIDE
+#
+# ---------------------------------------------------------------------
+
+  HELP:
+
+    -
+      :main_action: Aide
+      :action: "Ouvrir"
+      :mode: normal
+      :code: ":h[elp]"
+      :memo: "((h))elp"
+      :tags: aide
+
+    -
+      :main_action: Se rendre
+      :action: "à une tag (pas de `CTRL ]` sur mac)"
+      :mode: normal
+      :code: "CTRL KeyDollar"
+      :tags: tag
+
+    -
+      :main_action: Revenir
+      :action: "à la tag précédente"
+      :mode: normal
+      :code: "CTRL KeyT"
+      :memo: "((T))ag"
+      :tags: tag
+
+    -
+      :main_action: Passer en revue
+      :action: "les tags parcourues"
+      :mode: normal
+      :code: "CTRL KeyO"
+      :tags: tag
+
+    -
+      :main_action: Obtenir l’aide
+      :action: "d'une commande dans un mode particulier"
+      :mode: normal
+      :code: "<préfixe>_<commande>"
+      :exemples:
+        - "`i_CTRL-h` — Préfixes : i (insert), v (visual), c (command)"
+      :tags: aide commande
+
+    -
+      :main_action: Obtenir l’aide
+      :action: ":sur une option"
+      :code: ":help '<option>'"
+      :note: "Il faut donc l'entourer d'apostrophes simple"
+      :exemples:
+        - ":help 'nowrap'"
+      :tags: aide option
+
+    -
+      :main_action: "Obtenir de l’aide"
+      :action: sur le mot sous le curseur
+      :mode: normal
+      :code: "MAJ KeyK"
+      :memo: "((K))eyword lookup"
+
+    -
+      :main_action: Lancer Vim
+      :action: "en mode Verbose"
+      :code: "$> vim -V <nombre>"
+      :memo: "((V))erbeux"
+      :note: "Utile pour débugger les scripts Vim."
+
+# ---------------------------------------------------------------------
+#
+#   @@@ PREMIÈRES COMMANDES UTILES
+#
+# ---------------------------------------------------------------------
+
+  PREMIÈRES COMMANDES UTILES:
+
+    -
+      :main_action: "Activer le mode"
+      :action: "INSERT en se plaçant au bout de la ligne"
+      :mode: normal
+      :code: "MAJ KeyA"
+      :important: true
+
+    -
+      :main_action: "Activer le mode"
+      :action: "INSERT en se plaçant après le caractère courant"
+      :mode: normal
+      :code: "KeyA"
+
+    -
+      :main_action: "Activer le mode"
+      :action: "INSERT avant le caractère courant"
+      :mode: normal
+      :code: KeyI
+      :note: "La première touche frappée ajoutera un caracètre avant le curseur."
+
+    -
+      :main_action: "Activer le mode"
+      :action: "VISUAL normal"
+      :mode: normal
+      :code: "KeyV"
+
+    -
+      :main_action: "Activer le mode"
+      :action: "VISUAL ligne"
+      :mode: normal
+      :code: MAJ KeyV
+
+    -
+      :main_action: "Activer le mode"
+      :action: "VISUAL block"
+      :mode: normal
+      :code: CTRL KeyV
+
+    -
+      :main_action: "Quitter un mode"
+      :action: "quelconque, annuler, renoncer"
+      :code:
+        - ESC
+        - CTRL KeyC
+      :tags: annuler quitter
+
+    -
+      :main_action: Répéter
+      :action:  "la dernière action"
+      :mode: normal
+      :code: ". (MAJ ;)"
+      :tags: action
+
+    -
+      :main_action: Enregistrer
+      :action: "une macro"
+      :mode: normal
+      :code: "KeyQ<KeyA-KeyZ> <jouer> KeyQ"
+      :memo: ((q)) = bout à gauche du clavier
+      :tags: macro
+
+    -
+      :main_action: Jouer
+      :action: "une macro"
+      :mode: normal
+      :code: "@<a-z>"
+      :tags: macro
+
+# ---------------------------------------------------------------------
+#
+#   @@@ SESSIONS
+#
+# ---------------------------------------------------------------------
+
+  SESSIONS:
+
+    -
+      :main_action: Enregistrer
+      :action: la session courante
+      :mode: command
+      :code: ':mks[ession] <fichier>'
+      :memo: '((m))a((k))e ((s))ession'
+      :exemples:
+        - '`:mksessions session.vim` => enregistre l’état courante dans "session.vim"'
+
+
+    -
+      :main_action: Restaurer
+      :action: une session précédente
+      :code:
+        - '[COMMAND] :so[urce] <fichier session>'
+        - '$> vim -c ":source <fichier session>"'
+      :exemples:
+        - '`:source session.vim` => restaure la session enregistrée dans "session.vim"'
+        - '`$> vim -c ":source session.vim"`'
+
+    -
+      :main_action: Définir
+      :action: ce qui doit être mémorisé dans une session
+      :mode: command
+      :code: ':set sessionoptions=<element1>,<element2>,<element3>...<elementN>'
+      :values:
+        '<element>':
+          - '`buffers` sauve les buffers'
+          - '`globals` sauve les variables globales qui commencent par une majuscule et contiennent au moins une minuscule'
+          - '`help` sauve la fenêtre d’aide'
+          - '`blank` sauve les fenêtres vides ouvertes'
+          - '`options` sauve toutes les options et la carte clavier (keyboard mapping)'
+          - '`winpos` sauve les positions de fenêtre (GUI)'
+          - '`resize` sauve la taille de l’écran'
+          - '`winsize` sauve les tailles des fenêtres si possible'
+          - '`slash` sauve les paths escapés (pour utilisation de unix/mac à windaubes)'
+          - '`unix` sauve avec des retours chariots unix'
+
+# ---------------------------------------------------------------------
+#
+#   @@@ ABRÉVIATION/SNIPPETS
+#
+# ---------------------------------------------------------------------
+
+  SNIPPETS:
+
+    -
+      :main_action: Définir
+      :action: "une abbréviation/un snippet"
+      :code: ":abbreviate <snippet> <remplacement>"
+      :exemples:
+        - "`:abbreviate @phil Philippe Perret <philippe.perret@yahoo.fr>` => en tapant `@phil`, on insert le texte 'Philippe Perret etc.'"
+        - "`ab multiline Une définition<CR>Sur plusieurs<CR>lignes` => à mettre dans un fichier à charger ou `.vimrc`."
+
+    -
+      :main_action: Définir
+      :action: "une abbréviation pour le mode INSERT"
+      :code: ":iabbrev[iate] <snippet> <remplacement>\n[dans fichier config] iabbrev <snippet> <remplacement>"
+      :note: "Il faut utiliser CTRL KeyDollar pour l'étendre dans mode INSERT"
+
+    -
+      :main_action: Expendre
+      :action: "une abbréviation en mode INSERT"
+      :mode: insert
+      :code: "<snippet>CTRL KeyDollar"
+
+    -
+      :main_action: Supprimer
+      :action: "une abbréviation précédemment définie"
+      :code: ":una[bbreviate] <snippet>"
+
+    -
+      :main_action: Afficher
+      :action: "toutes les abbréviations"
+      :code: ":ab[breviate]"
+
+    -
+      :main_action: Enregistrer
+      :action: "les abbréviations (et mapping et set) dans un fichier"
+      :code: ":mkvimrc <path/to/fichier>"
+      :memo: "((m))a((k))e ((vimrc))"
+
+    -
+      :main_action: Recharger
+      :action: "les abbréviations (+ map et set) depuis un fichier (créé avec `mkvimrc`)"
+      :code: ":so[urce] <path/to/fichier>"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ FENETRES
+#
+# ---------------------------------------------------------------------
+
+  FENÊTRES & LAYOUT:
+
+    -
+      :main_action: Ouvrir
+      :action: "plusieurs fichiers dans des layouts"
+      :code: "$> vim -o file1 path/file2 file3"
+      :exemples:
+        - "Indiquer un nombre pour limiter le nombre de layouts : `vim -o3`"
+
+    -
+      :main_action: Ouvrir
+      :action: "la fenêtre alternative"
+      :mode: normal
+      :code: 'CTRL KeyW ^'
+
+    -
+      :main_action: Split
+      :action: "(signature générale)"
+      :mode: normal
+      :code: ":<count> +<commande> sp[lit] <path/to/file>"
+      :tags: split
+
+    -
+      :main_action: Spliter
+      :action: "la fenêtre active"
+      :code:
+        - ':sp[it]'
+        - CTRL KeyW KeyN
+      :memo: ((sp))iter
+      :tags: split fenêtre
+
+    -
+      :main_action: Spliter
+      :action:      la fenêtre en créant un nouveau fichier dans le nouveau layout
+      :mode: normal
+      :code: ':new'
+      :tags: split fichier
+
+    -
+      :main_action: Spliter
+      :action: "verticalement la fenêtre active"
+      :code:
+        - ':vs'
+        - ':vsp'
+        - ':vsplit'
+      :memo: ((v))ertical ((sp))lit
+      :tags: split fenêtre
+
+    -
+      :main_action: Spliter
+      :action: "en définissant la taille (lignes) du nouveau layout"
+      :code: "<nombre ligne>sp"
+      :tags: layout ligne
+
+    -
+      :main_action: Spliter
+      :action: "verticalement en définissant la taille (colonne) du nouveau layout"
+      :code: "<nombre colonnes>vsp"
+      :tags: layout ligne
+
+    -
+      :main_action: Redimensionner
+      :action: "précisément le layout courant"
+      :mode: normal
+      :code: ":resize [+|-]<nombre>"
+      :exemples:
+        - "`:resize 10` => mets le layout à 10 lignes"
+        - "`:resize +10` => augmente le layout de 10 lignes"
+        - "`:resize -10` => diminue le layout de 10 lignes"
+      :tags: layout size
+
+    -
+      :main_action: Redimensionner
+      :action: "verticalement précisément le layout courant"
+      :mode: normal
+      :code: ":vert :resize [+|-]<nombre>"
+      :exemples:
+        - "`:vert :resize 100` => mets le layout à 100 colonnes"
+        - "`:vert :resize +100` => augmente le layout de 100 colonnes"
+        - "`:vert :resize -100` => diminer le layout de 100 colonnes"
+
+    -
+      :main_action: Redimensionner
+      :action: "le layout en l'aggrandissant"
+      :mode: normal
+      :code: "CTRL KeyW, [x] MAJ +"
+      :tags: layout size
+
+    -
+      :main_action: Redimensionner
+      :action: "en maximisant le layout courant"
+      :mode: normal
+      :code:
+        - 'CTRL KeyW _ (MAJ -)'
+        - ':resize (sans arg)'
+      :tags: layout size
+
+    -
+      :main_action: Redimensionner
+      :action: "le layout en le diminuant"
+      :mode: normal
+      :code: "CTRL KeyW, [x] -"
+      :tags: layout size
+
+    -
+      :main_action: Redimensionner
+      :action: "tous les layouts à la même taille"
+      :mode: normal
+      :code: "CTRL KeyW ="
+      :tags: layout size
+
+    -
+      :main_action: Activer
+      :action: "un layout à l'autre"
+      :code: CTRL KeyWKeyW
+      :memo: CTRL ((w))indow (fenêtre)
+      :tags: layout
+
+    -
+      :main_action: Activer
+      :action: "le layout en dessous"
+      :code: "CTRL KeyWKeyJ"
+      :memo: "KeyJ comme pour descendre dans Vim"
+
+    -
+      :main_action: Activer
+      :action: "le layout à droite"
+      :code: "CTRL KeyWKeyL"
+      :memo: "KeyL comme pour aller à droite dans Vim"
+
+    -
+      :main_action: Activer
+      :action: "le layout au-dessus"
+      :code: "CTRL KeyWKeyK"
+      :memo: "KeyK comme pour monter dans Vim"
+
+    -
+      :main_action: Activer
+      :action: "le layout à gauche"
+      :code: "CTRL KeyWKeyH"
+      :memo: "KeyH comme pour aller à gauche dans Vim"
+
+    -
+      :main_action: Fermer
+      :action: "la fenêtre courante"
+      :mode: normal
+      :code:
+        - 'CTRL KeyWKeyQ'
+        - 'MAJ KeyZKeyZ'
+      :memo: "((w))indow, ((q))uit"
+      :tags: fenêtre
+
+    -
+      :main_action: Fermer
+      :action: toutes les fenêtres sauf la fenêtre courante
+      :mode: normal
+      :code: CTRL KeyW KeyO
+
+    -
+      :main_action: Maximiser
+      :action: ", ne garder que la fenêtre courante"
+      :code: ":only\nCTRL KeyW MAJ KeyT"
+      :memo: "((only)) this window\n((T))all ?"
+      :tags: fenêtre
+
+    -
+      :main_action: Positionner
+      :action: "la ligne courante en haut de l'écran"
+      :mode: normal
+      :code: "KeyZ ENTER"
+
+    -
+      :main_action: Positionner
+      :action: "la xième ligne en haut de l'écran"
+      :mode: normal
+      :code: "[numéro ligne] KeyZ ENTER"
+
+    -
+      :main_action: Positionner
+      :action: "la ligne courante en bas de l'écran"
+      :mode: normal
+      :code: "KeyZKeyB"
+
+    -
+      :main_action: Positionner
+      :action: "la ligne courante au milieu de l'écran"
+      :mode: normal
+      :code:
+        - KeyZKeyZ
+        - KeyZ KeyPoint
+
+    -
+      :main_action: Exécuter
+      :action: une commande dans toutes les fenêtres ouvertes
+      :mode: normal
+      :code: ':windo <commande>'
+      :exemple:
+        - "`:windo :% s/texte/Texte/g` remplace 'texte' par 'Texte' dans toutes les fenêtres ouvertes."
+
+    -
+      :main_action: Mémoriser
+      :action: la position des fenêtres et tabs
+      :mode: command
+      :code: ':mkview <path/to/file.vim>'
+      :note: 'ajouter « ! » à la commande pour forcer la réécriture d’un fichier précédent'
+
+    -
+      :main_action: Recharger
+      :action: la position des fenêtres et tabs
+      :mode: command
+      :code: ':source <path/to/file.vim>'
+      :note: 'Ce fichier doit avoir été sauvé avec `:mkview`.'
+
+    -
+      :main_action: Définir
+      :action: 'les éléments sauvés par `mkview`'
+      :code: ':set viewoptions=<L1>,<L2>,...<Lx>'
+      :values:
+        '<Lx>':
+          - '`cursor` sauve la position du curseur'
+          - '`folds` sauve l’état courant des foldings'
+          - '`options` sauve les options incluant les options locales pour les buffers et fenêtres'
+
+# ---------------------------------------------------------------------
+#
+#   @@@ TABS
+#
+# ---------------------------------------------------------------------
+
+  TABS:
+
+    -
+      :main_action: Lister
+      :action: toutes les tabs ouvertes
+      :mode: command
+      :code: ':tabs'
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier dans une nouvel tab"
+      :mode: NORMAL
+      :code: ":tabedit path/to/file"
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier existant dans une nouvel tab"
+      :mode: normal
+      :code: ":tabfind path/to/file[:<ligne>]"
+
+    -
+      :main_action: Ouvrir
+      :action: "plusieurs fichiers en même temps dans des tabs"
+      :code: "$> vim -p file1 path/file2 path/to/file3"
+      :exemples:
+        - "Ajouter un nombre pour limiter le nombre d'onglets à ouvrir : `vim -p4`"
+
+    -
+      :main_action: Fermer
+      :action: "la tab courante"
+      :mode: normal
+      :code:
+        - MAJ KeyZKeyZ
+        - ':close'
+        - ':q'
+
+    -
+      :main_action: Fermer
+      :action: "une tab quelconque"
+      :mode: normal
+      :code: ":tabclose <index tab>"
+
+    -
+      :main_action: Fermer
+      :action: "toutes les tabs sauf la courante"
+      :mode: normal
+      :code: ":tabo[nly]"
+      :memo: "((only)) = seulement"
+
+    -
+      :main_action: Activer
+      :action: "la tab suivante (première si dernière)"
+      :mode: normal
+      :code: ":tabn[ext]"
+      :memo: "((next)) = prochaine"
+
+    -
+      :main_action: Activer
+      :action: "la tab précédente (dernière si première)"
+      :mode: normal
+      :code:
+        - ':tabp[revious]'
+        - ':tabN[ext]'
+      :memo: "((previous)) = précédente"
+
+    -
+      :main_action: Activer
+      :action: "la première tab"
+      :mode: normal
+      :code:
+        - ':tabfirst'
+        - ':tabrewind'
+        - ':tabr'
+
+    -
+      :main_action: Activer
+      :action: "la dernière tab"
+      :mode: normal
+      :code: ":tabl[ast]"
+
+    -
+      :main_action: Activer
+      :action: "une tab pour son index (1-start)"
+      :mode: normal
+      :code: ":tabn[ext] <index>"
+
+    -
+      :main_action: Exécuter une commande
+      :action: dans toutes les tabs ouvertes
+      :mode: command
+      :code: ':tabdo <commande>'
+      :exemples:
+        - '`:tabdo :%s/old/new/g` => remplace le texte "old" par "new" dans toutes les tabs.'
+
+    -
+      :main_action: Placer
+      :action: une tab après une autre
+      :mode: command
+      :code: ':tabm[ove]'
+
+    -
+      :main_action: Définir
+      :action: 'quand afficher la ligne d’onglets'
+      :mode: command
+      :code: ':set showtabline=<nombre>'
+      :values:
+        '<nombre>':
+          - '0 : ne jamais afficher'
+          - '1 : afficher quand onglets'
+          - '2 : toujours afficher'
+
+# ---------------------------------------------------------------------
+#
+#   @@@ FICHIERS
+#
+# ---------------------------------------------------------------------
+
+  FICHIERS:
+
+    -
+      :main_action: "[Ne plus] Produire"
+      :action: un backup
+      :mode: normal
+      :code: ":set [no]backup"
+
+    -
+      :main_action: Définir
+      :action: une extension propre pour le backup
+      :code: ":set backupext=<extension>"
+      :exemples:
+        - "`:set backuptext=.bak` => le backup de `fichier.txt` sera `fichier.txt.bak`."
+
+    -
+      :main_action: Définir
+      :action: le dossier du backup
+      :code: ":set backupdir=/path/to/bckup/folder/"
+      :note: "Par défaut, c'est le dossier du fichier. Si un dossier est choisi de cette manière, attention aux collisions de noms."
+
+    -
+      :main_action: Définir
+      :action: "les fichiers à ne pas backuper"
+      :code: ":set backupskip=..."
+
+    -
+      :main_action: Ouvrir
+      :action: "le fichier en lecture seule (depuis Vim)"
+      :mode: normal
+      :code: ":view path/to/file"
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier en lecture seule (depuis Terminal)"
+      :code:
+        - '$> vim -R fichier.ext'
+        - '$> view fichier.ext'
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier en encryption"
+      :code: "$> vim -x secret.txt"
+
+    -
+      :main_action: Ouvrir un fichier
+      :action: "sans swap file"
+      :code: "$> vim -n secret.txt"
+      :note: "Utilisé justement pour les fichier encryptés, afin que les swap-files ne puissent être consultés pendant l'édition du fichier apr un utilisateur qui auraient des superprivilèges."
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier quelconque en édition"
+      :mode: normal
+      :code: ":e CTRL KeyD\n=> La liste du dossier courant s'affiche\n<debut>TAB\n=> Le nom se développe."
+      :memo: "((e))dit"
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier sans enregistrer les changements du fichier précédent"
+      :mode: normal
+      :code: ":e! path/to/file ENTER"
+      :memo: "((e))dit ((!)) attention : sans sauver les changements précédents"
+
+    -
+      :main_action: Ouvrir
+      :action: "un fichier en splitant la fenêtre"
+      :mode: normal
+      :code: ":sp <path/to/file>"
+      :memo: "((sp))lit"
+      :exemples:
+        - "`:sp ~/.vimrc` (ouvre vimrc en splitant la fenêtre)"
+      :tags: split
+
+    -
+      :main_action: Ouvrir un fichier
+      :action: "en se plaçant sur une certaine ligne"
+      :mode: xterm
+      :code: "$> vim +<numéro ligne> <path/to/fichier.ext>"
+
+    -
+      :main_action: Ouvrir un fichier
+      :action: "en se plaçant sur un mot particulier"
+      :mode: xterm
+      :code: "$> vim +/<search> <path/to/fichier.ext>"
+
+    -
+      :main_action: Ouvrir
+      :action: "plusieurs fichiers en même temps"
+      :code: ":next <file1> <file2> etc.\n:args"
+
+    -
+      :main_action: Nouveau
+      :action: "layout en splitant la fenêtre courante"
+      :mode: normal
+      :code: "CTRL KeyWKeyN"
+
+    -
+      :main_action: Enregistrer
+      :action: "le fichier courant"
+      :mode: normal
+      :code: ":w"
+      :memo: "((w))rite"
+
+    -
+      :main_action: Enregistrer
+      :action: "tous les fichiers courants (même les buffers cachés)"
+      :mode: normal
+      :code: ":wa[ll]"
+      :memo: "((w))rite ((a))ll"
+
+    -
+      :main_action: Enregistrer
+      :action: " et quitter le fichier courant"
+      :mode: normal
+      :code: ":wq"
+      :memo: "((w))rite ((q))uit"
+
+    -
+      :main_action: Enregistrer
+      :action: "sous un autre nom"
+      :mode: normal
+      :code: ":saveas"
+      :note: "Toutes les sauvegardes suivantes se feront dans ce fichier, contrairement à `:write` qui n'enregistre que ponctuellement dans un autre fichier."
+
+    -
+      :main_action: Enregistrer
+      :action: "en forçant un fichier ouvert en lecture seule"
+      :mode: normal
+      :code: ':w[rite]!'
+
+    -
+      :main_action: Enregistrer
+      :action: "seulement un rang de lignes dans un fichier"
+      :mode: normal
+      :code: ":<de ligne>,<à ligne>KeyW[ <path/to/file.ext]"
+      :exemples:
+        - "`:20,41 KeyW monfichier.txt` enregistre les lignes 20 à 41 du buffer courant dans le fichier `monfichier.txt`"
+
+    -
+      :main_action: Fermer
+      :action: "le fichier courant sans l’enregistrer"
+      :mode: normal
+      :code: ":q!"
+      :memo: "((q))uit ((!)) attention : sans sauver"
+
+    -
+      :main_action: "Fermer/quitter"
+      :action: "tous les fichiers"
+      :mode: normal
+      :code: ":qa[ll]"
+      :memo: "((q))uit ((a))ll"
+      :note: "Ajouter `!` à la fin pour forcer la fermeture sans enregistrer les modifications non enregistrées."
+
+    -
+      :main_action: "Fermer/quitter"
+      :action: "tous les fichiers en les enregistrant"
+      :mode: normal
+      :code:
+        - ':wqa[ll]'
+        - ':xa[ll]'
+      :memo: "((w))rite ((q))uit all"
+
+    -
+      :main_action: Définir
+      :action: "le dossier courant en path et tous ses sous-dossiers"
+      :code: ":set path=$PWD/le/dossier/**"
+      :memo: "(ne pas oublier les `**` à la fin)"
+      :tags: dossier
+
+    -
+      :main_action: Rechercher
+      :action: "un fichier et l'ouvrir"
+      :code: ":find <nom exact du fichier.extension>"
+      :memo: "(il faut avoir setté le path avant : `:set path=...`)"
+
+    -
+      :main_action: Rechercher
+      :action: "un fichier et l'ouvrir en splittant la fenêtre"
+      :code: ":sfind <nom exact du fichier.extension>"
+
+    -
+      :main_action: Lister
+      :action: "dans le buffer courant les fichiers/dossiers courants"
+      :mode: normal
+      :code: "!!ls"
+
+    -
+      :main_action: "Comparer"
+      :action: "deux fichiers"
+      :code: "$> vimdiff <path/to/file1> <path/to/file2>"
+      :tags: comparer
+
+    -
+      :main_action: Modifier
+      :action: "l'autre fichier avec le texte du fichier courant"
+      :mode: normal
+      :code: "KeyDKeyP"
+      :memo: "((d))iff ((p))ut"
+      :tags: diff
+
+    -
+      :main_action: Modifier
+      :action: "l'autre fichier avec le texte du fichier courant"
+      :mode: normal
+      :code: "KeyDKeyO"
+      :memo: "((d))iff ((o))btain"
+      :tags: diff
+
+    -
+      :main_action: Modifier un fichier
+      :action: "à l'aide d'un script bash (shell script)"
+      :code: "1. Écrire le shell\n2. L'enregistrer (dans change.vim par exemple)\n3. $> vim -es monfichier.ext < change.vim"
+      :note: "les options signifient : e = en mode `ex`, qui permet de shell script, s = en mode silencieux, pour ne pas avoir les retours de commande."
+      :exemples:
+        - "Pour remplacer le mot PHIL par MARION dans plusieurs fichiers :\n1. Enregistrer le code suivant dans le fichier `change.vim` :`:%s/PHIL/MARION/g\n`:write\n:quit`\n2. Écrire un fichier `fichier.txt` avec des PHIL.\n3. Quitter Vim\n4. Taper :\n`$> vim -es fichier.txt < change.vim`\n=> Tous les PHIL sont remplacés par des MARION dans le fichier."
+
+    -
+      :main_action: Revenir à la version
+      :action: "du fichier un certain temps avant"
+      :mode: normal
+      :code: ":earlier <temps>"
+      :note: "Avec <temps> qui peut être en secondes ([x]s) en minutes ([x]m) ou en heures ([x]h)."
+      :exemples:
+        - "`:earlier 1h` fait revenir à l'état du fichier une heure plus tôt."
+
+    -
+      :main_action: Revenir à la version
+      :action: "du fichier un certain temps après (quand :earlier a été utilisé)"
+      :mode: normal
+      :code: ":later <temps>"
+      :note: "Avec <temps> qui peut être en secondes ([x]s) en minutes ([x]m) ou en heures ([x]h)."
+      :exemples:
+        - "Quand on a joué avant `:earlier 1h` (retour à l'état du fichier 1 heure avant), la commande `:later 1h` fait revenir au dernier état du fichier."
+
+
+# ---------------------------------------------------------------------
+#
+#  @@@ MULTI-FICHIERS / MULTI-FILES
+#
+# ---------------------------------------------------------------------
+
+  MULTI-FICHIERS:
+
+    -
+      :main_action: Ouvrir
+      :action: "plusieurs fichiers (dans des buffers)"
+      :code: "$> gvim path/to/file1 path/to/file2"
+      :memo: "Ne semble pas fonctionner sur mac par défaut."
+
+    -
+      :main_action: Passer
+      :action: "au(x) fichier(s) suivants"
+      :mode: normal
+      :code: ':[x]n[ext]'
+
+    -
+      :main_action: Passer
+      :action: "au(x) fichiers(s) précédants"
+      :mode: normal
+      :code:
+        - ':[x]p[previous]'
+        - ':[x]MAJ KeyN'
+
+    -
+      :main_action: Passer
+      :action: "au dernier fichier édité"
+      :mode: normal
+      :code: "CTRL ^"
+
+    -
+      :main_action: Passer
+      :action: "au premier fichier"
+      :mode: normal
+      :code: ':first'
+
+    -
+      :main_action: Passer
+      :action: "au dernier fichier"
+      :mode: normal
+      :code: ':last'
+
+    -
+      :main_action: Passer
+      :action: "au fichier suivant en enregistrant le courant"
+      :mode: normal
+      :code:
+        - ':wn[ext]'
+        - ':writen'
+
+    -
+      :main_action: Passer
+      :action: "au fichier suivant sans enregistrer le courant"
+      :mode: normal
+      :code: ':n[ext]!'
+
+    -
+      :main_action: Passer
+      :action: "en enregistrement automatique au changement de fichier"
+      :mode: normal
+      :code: ":set autowrite"
+
+    -
+      :main_action: Sortir
+      :action: "de l’enregistrement automatique au changement de fichier"
+      :mode: normal
+      :code: ":set noautowrite"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ BUFFERS
+#
+# ---------------------------------------------------------------------
+
+  BUFFERS:
+
+    -
+      :main_action: "Nouveau"
+      :action: "buffer sans nom (sans fichier)"
+      :mode: normal
+      :code: ':ene[w]'
+      :memo: "((e))dit ((ne))w"
+
+    -
+      :main_action: Afficher
+      :action: "la liste des buffers"
+      :mode: normal
+      :code:
+        - ':ls'
+        - ':buffers'
+        - ':files'
+      :memo: "((l))i((s))t"
+
+    -
+      :main_action: Activer
+      :action: "un buffer quelconque"
+      :mode: normal
+      :code: ":b CTRL KeyD\n=> La liste des buffers s'affiche"
+      :memo: ((d))étail
+
+    -
+      :main_action: Activer
+      :action: "le [xième] buffer suivant"
+      :mode: normal
+      :code:
+        - ':[x ]bn'
+        - ':b[x ]next'
+      :memo: ((b))uffer ((n))ext
+
+    -
+      :main_action: Activer
+      :action: "le [xième] buffer précédent"
+      :mode: normal
+      :code: ':[x ]bp[rev]'
+      :memo: ((b))uffer
+
+    -
+      :main_action: Activer
+      :action: "le [xième] buffer modifié [en splitant]"
+      :mode: normal
+      :code: ":[s]bmodified [x]"
+      :memo: ((b))uffer
+
+    -
+      :main_action: Activer
+      :action: "le premier buffer"
+      :mode: normal
+      :code:
+        - ':bf[irst]'
+        - ':br[ewind]'
+      :memo: ((b))uffer
+
+    -
+      :main_action: Activer
+      :action: "le dernier buffer"
+      :mode: normal
+      :code: ':bl[ast]'
+      :memo: ((b))uffer
+
+    -
+      :main_action: Activer
+      :action: "un buffer par son numéro (dans la fenêtre active)"
+      :mode: normal
+      :code: ":b[uffer] <numéro>"
+      :memo: "((b))uffer"
+
+    -
+      :main_action: Activer
+      :action: "un buffer en splitant horizontalement la fenêtre"
+      :mode: normal
+      :code: ":sb[uffer] <désignation buffer>"
+      :tags: split
+
+    -
+      :main_action: Activer
+      :action: "un buffer en splitant verticalement la fenêtre"
+      :mode: normal
+      :code: ":vert[ical] :sb[uffer] <désignation buffer>"
+      :tags: split
+
+    -
+      :main_action: Activer
+      :action: "un buffer par le nom du fichier/path dans la fenêtre active"
+      :mode: normal
+      :code: ":b <bout du nom>"
+      :memo: "((b))uffer"
+
+    -
+      :main_action: Ouvrir
+      :action: tous les buffers dans des fenêtres
+      :mode: normal
+      :code:
+        - 'ba[ll]'
+        - 'sba[ll]'
+    -
+      :main_action: "Ajouter"
+      :action: "un buffer (un fichier) à la liste, sans l'ouvrir"
+      :mode: normal
+      :code: ":bad[d] +&gt;num ligne> <path/to/file>"
+      :memo: "((b))uffer ((ad))d (ajouter)"
+
+    -
+      :main_action: Masquer
+      :action: "le buffer courant"
+      :mode: normal
+      :code: ":hid[e]"
+
+    -
+      :main_action: Supprimer
+      :action: "le buffer courant"
+      :mode: normal
+      :code: ':bd[elete]'
+      :memo: ((b))uffer ((d))elete
+
+    -
+      :main_action: Supprimer
+      :action: "le buffer courant sans enregistrer"
+      :mode: normal
+      :code: ":bd!"
+      :memo: ((b))uffser ((d))elete
+
+
+# ---------------------------------------------------------------------
+#
+#  @@@ DÉPLACEMENTS (mark "d")
+#
+# ---------------------------------------------------------------------
+
+  DÉPLACEMENTS:
+
+    -
+      :main_action: Retourner
+      :action:      à une position précédente
+      :mode: normal
+      :code: ":ju[mps] => Choisir la destination"
+
+    -
+      :main_action: Retourner
+      :action:      'à la position précédente (jump)'
+      :mode: normal
+      :code: "CTRL KeyO"
+
+    -
+      :main_action: Retourner
+      :action:      à la position suivante
+      :mode: normal
+      :code: TAB
+
+    -
+      :main_action: Retourner
+      :action:      au dernier changement
+      :mode: normal
+      :code: "g;"
+      :note: "On peut avoir la liste des changements avec `:changes`."
+
+    -
+      :main_action: Retourner
+      :action:      au xième changement
+      :mode: normal
+      :code: "[x]g, (KeyG KeyVirgule)"
+      :note: "On peut avoir la liste des changements avec `:changes`."
+
+    -
+      :main_action: Déplacer le curseur
+      :action:      d’un bout à l’autre de la sélection
+      :mode: visual
+      :code: KeyO
+
+    -
+      :main_action: Aller
+      :action:      au mot suivant
+      :mode: normal
+      :code: "[x]KeyW"
+      :memo: ((w))ord
+      :tags: mot
+
+    -
+      :main_action: Aller
+      :action:      à la fin du mot suivant
+      :mode: normal
+      :code: "[x]KeyE"
+      :memo: "((e))nd"
+      :tags: mot
+      :important: true
+
+    -
+      :main_action: Aller
+      :action:      à la fin du [xième] mot précédent
+      :mode: normal
+      :code: "[x]KeyGKeyE"
+      :memo: "((e))nd"
+      :tags: mot
+
+    -
+      :main_action: Aller
+      :action: "au début de la ligne « écran » suivante"
+      :mode: normal
+      :code: "KeyG KeyJ"
+      :note: "La ligne « écran » correspond à la nouvelle ligne qu'on voit à l'écran, mais qui appartient peut-être à la même « ligne texte » que la ligne écran précédente."
+
+    -
+      :main_action: Aller
+      :action: "au début de la « ligne texte » suivante"
+      :mode: normal
+      :code: "KeyJ"
+      :note: "Cf. la note concernant la commande précédente"
+
+    -
+      :main_action: Aller
+      :action: "au début de la « ligne texte » précédente"
+      :mode: normal
+      :code: "KeyK"
+
+    -
+      :main_action: Aller
+      :action: "au début de la « ligne écran » précédente"
+      :mode: normal
+      :code: "KeyG KeyK"
+
+    -
+      :main_action: Aller
+      :action: "au début de la [xième] phrase suivante"
+      :mode: normal
+      :code: "[x])"
+      :note: "Les phrases sont reconnues grâce aux ponctuations : . (point), ! (point d'exclamation) ? (point d'interrogation). Le point-virgule n'est pas concerné."
+
+    -
+      :main_action: Aller
+      :action: "au début du [xième] paragraphe suivant"
+      :mode: normal
+      :code: "[x]} ou [x]+"
+
+    -
+      :main_action: Aller
+      :action: "au début de la [xième] phrase précédente"
+      :mode: normal
+      :code: "[x]( ou [x]-"
+
+    -
+      :main_action: Aller
+      :action: "au début du [xième] paragraphe précédent"
+      :mode: normal
+      :code: "[x]{"
+
+    -
+      :main_action: Aller
+      :action: "au mot précédent"
+      :mode: normal
+      :code: "[x]KeyB "
+      :memo: ((b))ackard
+      :tags: mot
+
+    -
+      :main_action: Aller
+      :action: "au premier caractère non blanc de la ligne"
+      :mode: normal
+      :code: "^"
+      :memo: Comme expressions régulières
+      :tags: lettre
+
+    -
+      :main_action: Aller
+      :action: "à la ligne <i>num</i>"
+      :mode: normal
+      :code:
+        - '<numéro ligne> MAJ KeyG'
+        - '<numéro ligne> KeyGKeyG'
+      :memo: ((g))o
+      :tags: ligne
+
+    -
+      :main_action: Aller
+      :action: "à la première ligne de l'écran affiché"
+      :mode: normal
+      :code: "MAJ KeyH"
+      :memo: "((H))igh"
+
+    -
+      :main_action: Aller
+      :action: "à la [x]ième ligne de l'écran actuel"
+      :mode: normal
+      :code: "[x]MAJ KeyH"
+
+    -
+      :main_action: Aller
+      :action: "à la dernière ligne de l'écran actuel"
+      :mode: normal
+      :code: "MAJ KeyL"
+      :memo: "((L))ast ou ((L))ow"
+
+    -
+      :main_action: Aller
+      :action: "à la [x]ième dernière ligne de l'écran actuel (en partant du bas)"
+      :mode: normal
+      :code: "[x] MAJ KeyL"
+      :memo: "((L))ast ou ((L))ow"
+
+    -
+      :main_action: Aller
+      :action: "à la fin de la ligne"
+      :mode: normal
+      :code: "$"
+      :memo: Comme dans les expressions régulières
+      :tags: ligne
+
+    -
+      :main_action: Aller
+      :action: "au début de la ligne"
+      :mode: normal
+      :code: "0"
+      :tags: ligne
+
+    -
+      :main_action: Aller
+      :action: "à la fin de la xième ligne après la courante"
+      :mode: normal
+      :code: "<x>KeyDollar"
+      :tags: ligne
+
+    -
+      :main_action: Aller
+      :action: "au début du paragraphe précédent"
+      :mode: normal
+      :code: "-"
+      :memo: "-/+ pour les paragraphes"
+      :tags: paragraphe
+
+    -
+      :main_action: Aller
+      :action: "au début du paragraphe suivant"
+      :mode: normal
+      :code: "+"
+      :memo: "-/+ pour les paragraphes"
+      :tags: paragraphe
+
+    -
+      :main_action: Aller
+      :action: 'au début du paragraphe suivant'
+      :mode: normal
+      :code: 'CTRL KeyJ'
+
+    -
+      :main_action: Aller
+      :action: "à la première occurrence du mot sous le curseur"
+      :mode: normal
+      :code: "[CTRL KeyI\nDonc: MAJ ALT 5, KeyI"
+
+    -
+      :main_action: Aller
+      :action: "à l'occurrence suivante du mot sous le curseur"
+      :mode: normal
+      :code: "]CTRL KeyI\nDonc: MAJ ALT °, KeyI"
+
+    -
+      :main_action: Aller
+      :action: "au premier (ou xième) caractère suivant voulu"
+      :mode: normal
+      :code: "[x]f<caractère>"
+      :memo: ((f))ind
+      :tags: lettre
+
+    -
+      :main_action: Aller
+      :action: "juste avant le premier [ou xième] caractère suivant cherché"
+      :mode: normal
+      :code: "[x]t<car>"
+      :memo: "'((t))il (until)"
+      :tags: lettre
+
+    -
+      :main_action: Aller
+      :action: "au premier [ou xième] caractère précédent voulu"
+      :mode: normal
+      :code: "[x]MAJ KeyF<car>"
+      :memo: f/F pour find avant/arrière
+      :tags: lettre
+
+    -
+      :main_action: Aller
+      :action: "juste avant le premier [ou xième] caractère précédent voulu"
+      :mode: normal
+      :code: "[x]MAJ t<car>"
+      :memo: "t/T pour until avant/arrière"
+      :tags: lettre
+
+    -
+      :main_action: Aller
+      :action: "un demi-écran plus le bas"
+      :mode: normal
+      :code: "CTRL KeyD"
+      :memo: "((d))own"
+      :tags: écran
+
+    -
+      :main_action: Aller
+      :action: "à l'écran suivant"
+      :mode: normal
+      :code: 'CTRL KeyF'
+      :tags: écran
+      :important: true
+
+    -
+      :main_action: Aller
+      :action: "un demi-écran vers le haut"
+      :mode: normal
+      :code: "CTRL KeyU"
+      :memo: "((u))p"
+      :tags: écran
+
+    -
+      :main_action: Aller
+      :action: "à la fin du document"
+      :mode: normal
+      :code: "MAJ KeyG"
+      :memo: ((G))o
+      :tags: document
+
+    -
+      :main_action: Aller
+      :action: "à un certain pourcentage du document"
+      :mode: normal
+      :code: '<x>%'
+      :exemples: "`50%` se rend à la moitié du document."
+      :tags: document
+
+    -
+      :main_action: Aller
+      :action: "à l'élément pair (précédent/suivant)"
+      :mode: normal
+      :code: "% (MAJ ù)"
+
+    -
+      :main_action: Aller
+      :action: "à la dernière position du curseur"
+      :mode: normal
+      :code: "''"
+      :tags: curseur
+
+    -
+      :main_action: Aller
+      :action: "au début du dernier insert"
+      :mode: normal
+      :code: "'["
+      :memo: "Note : ne semble pas fonctionner (sur mac)"
+      :tags: curseur
+
+    -
+      :main_action: Aller
+      :action: "au début du document"
+      :mode: normal
+      :code: "KeyGKeyG"
+      :memo: ((g))o
+      :tags: document
+
+    -
+      :main_action: Définir
+      :action: "le comportement du curseur en début et fin de ligne"
+      :code: ":set whichwrap=<lettre>"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ MARQUES / MARKS
+#
+# ---------------------------------------------------------------------
+
+  MARQUES:
+
+    -
+      :main_action: Supprimer
+      :action: 'toutes les marques'
+      :mode: normal
+      :code: ':delmarks'
+
+    -
+      :main_action: Bloquer
+      :action: 'les marques avant modification du fichier'
+      :mode: normal
+      :code: ':lockmarks'
+
+    -
+      :main_action: Conserver
+      :action: 'les marques avant modification du fichier'
+      :mode: normal
+      :code: ':keepmarks'
+      :note: 'Contrairement à `lockmarks`, qui ne raccourcit pas le fichier, ici, le fichier peut être raccourci et les marques des lignes supprimées sont supprimées elles-aussi.'
+
+    -
+      :main_action: Afficher
+      :action: "toutes les marques définies"
+      :mode: normal
+      :code: ":marks"
+      :tags: mark
+
+    -
+      :main_action: Afficher
+      :action: "les informations sur une marque en particulier"
+      :mode: normal
+      :code: ":marks <lettre>"
+      :tags: mark
+
+    -
+      :main_action: Définir
+      :action: "la marque précédente"
+      :mode: normal
+      :code: "m'"
+      :memo: ((m))ark
+      :tags: mark
+
+    -
+      :main_action: Placer
+      :action: "une marque locale au curseur"
+      :mode: normal
+      :code: "KeyM <a-z>"
+      :memo: "((m))arque"
+      :note: "La marque est « locale », c'est-à-dire qu'elle est propre au fichier/buffer et qu'elle ne peut pas être rejointe depuis un autre endroit que le fichier."
+      :tags: mark curseur
+
+    -
+      :main_action: Placer
+      :action: "une marque globale au curseur"
+      :mode: normal
+      :code: "KeyM <A-Z>"
+      :memo: "((m))arque"
+      :note: "La marque est « globale », c'est-à-dire qu'on peut l'atteindre même depuis un autre fichier/une autre fenêtre."
+      :tags: mark fichier
+
+    -
+      :main_action: Aller
+      :action: "à une marque définie"
+      :mode: normal
+      :code:
+        - "'<a-zA-Z>"
+        - "`<a-zA-Z>"
+      :memo: "\"'\" se rend au début de la ligne\n\"`\" se rend à la ligne/colonne de la marque."
+      :tags: mark
+
+# ---------------------------------------------------------------------
+#
+#   @@@ SÉLECTION/SELECT
+#
+# ---------------------------------------------------------------------
+
+  SÉLECTION:
+
+
+    -
+      :main_action: Sélectionner
+      :action:      plusieurs lignes entières
+      :mode: normal
+      :code: "MAJ KeyV KeyJ/KeyK"
+      :memo: V majuscule bascule en mode visuel par ligne.
+
+    -
+      :main_action: Sélectionner
+      :action:      '(pour copier) une grande portion de texte'
+      :mode: normal
+      :code: "1. Placer une marque au début (mz)\n2. se rendre à la fin de la portion\n3. taper `d'z`"
+
+    -
+      :main_action: Sélectionner
+      :action:      en mode block-visual
+      :code: CTRL KeyV
+
+    -
+      :main_action: Sélectionner
+      :action:      le mot sous le curseur et l’espace suivante
+      :mode: visual
+      :code: KeyA KeyW
+
+    -
+      :main_action: Sélectionner
+      :action:      le mot sous le curseur et seulement le mot
+      :mode: visual
+      :code: KeyI KeyW
+      :memo: '((i))nner word'
+
+    -
+      :main_action: Sélectionner
+      :action:      la phrase sous le curseur et l’espace suivante
+      :mode: visual
+      :code: KeyA KeyS
+      :memo: '((s))entence, phrase'
+
+    -
+      :main_action: Sélectionner
+      :action:      la phrase sous le curseur sans l’espace suivante
+      :mode: visual
+      :code: KeyI KeyS
+      :memo: '((i))nner ((s))entence'
+
+    -
+      :main_action: Sélectionner
+      :action:      le paragraphe sous le curseur et l’espace suivante
+      :mode: visual
+      :code: KeyA KeyP
+      :memo: '((p))aragraphe'
+
+    -
+      :main_action: Sélectionner
+      :action:      le paragraphe sous le curseur sans l’espace suivante
+      :mode: visual
+      :code: KeyI KeyP
+      :memo: '((i))nner ((p))aragraph'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte entre parenthèses et les parenthèses
+      :mode: visual
+      :code:
+        - 'KeyA ('
+        - 'KeyA )'
+        - 'KeyA KeyB'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte entre parenthèses sans les parenthèses
+      :mode: visual
+      :code:
+        - 'KeyI ('
+        - 'KeyI )'
+        - 'KeyI KeyB'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte sous le curseur entre `<` et `>`
+      :mode: visual
+      :code:
+        - 'KeyA <'
+        - 'KeyA >'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte sous le curseur entre les `<...>` sans les `<` et `>`
+      :mode: visual
+      :code:
+        - 'KeyI <'
+        - 'KeyI >'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte sous le curseur entre `{`/`}`, `[`/`]`, `'`/`'`, etc. avec les signes et l’espace suivante.
+      :mode: visual
+      :code: 'KeyA [signe]'
+      :exemples:
+        - '`KeyA {` sélectionne tout ce qui est entre les crochets avec les crochets'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte sous le curseur entre `{`/`}`, `[`/`]`, `'`/`'`, etc. sans les signes.
+      :mode: visual
+      :code: 'KeyI [signe]'
+      :exemples:
+        - '`KeyI "` sélectionne tout ce qui est entre guillemets sans les guillemets.'
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte entre deux tags XML avec les tags.
+      :mode: visual
+      :code: 'KeyA KeyT'
+      :memo: '((t))ag'
+      :exemples:
+        - "Avec &lt;div>Mon texte.&lt;/div>, sélectionne `&lt;div>Mon texte.&lt;/div>`"
+
+    -
+      :main_action: Sélectionner
+      :action:      le texte entre deux tags XML sans les tags.
+      :mode: visual
+      :code: 'KeyI KeyT'
+      :memo: '((i))nner ((t))ag'
+      :exemples:
+        - "Avec &lt;div>Mon texte.&lt;/div>, sélectionne `Mon texte.`"
+
+    -
+      :main_action: Déplacer le curseur
+      :action:      d’un bout à l’autre de la sélection
+      :mode: visual
+      :code: KeyO
+
+    -
+      :main_action: Resélectionner
+      :action: la sélection visuelle précédente
+      :mode: visual
+      :code: 'KeyG KeyV'
+      :note: Bascule entre la sélection courante et la précédente
+
+    -
+      :main_action: Passer en mode
+      :action:      sélection de caractère
+      :mode: normal
+      :code: KeyG KeyH
+      :note: Attention, le déplacement ne peut plus se faire avec lettres.
+
+    -
+      :main_action: Passer en mode
+      :action:      sélection de lignes
+      :mode: normal
+      :code: KeyG MAJ KeyH
+
+    -
+      :main_action: Passer en mode
+      :action:      sélection par block
+      :mode: normal
+      :code: KeyG CTRL KeyH
+
+# ---------------------------------------------------------------------
+#
+#   @@@ TEXTE
+#
+# ---------------------------------------------------------------------
+
+  TEXTE:
+
+    -
+      :main_action: Insérer
+      :action: 'le texte du presse-papier système'
+      :mode: normal
+      :code: ":set paste, CMD KeyV, :set nopaste"
+      :note: "En fait, ça a l'air de fonctionner aussi avec CMD KeyV normalement."
+
+    -
+      :main_action: Insérer
+      :action: 'le contenu d’un fichier'
+      :mode: normal
+      :code: ':read <path/to/the/file.ext>'
+
+    -
+      :main_action: Insérer
+      :action: 'le contenu d’un registre (en mode insertion)'
+      :mode: insert
+      :code: "CTRL KeyR <a-z du registre>"
+      :note: "En répétant `CTRL KeyR`, on insert le contenu sans interprétation des caractères spéciaux tels que `<BS>`."
+
+    -
+      :main_action: Insérer
+      :action: 'une nouvelle ligne sous la ligne courante et passer en édition'
+      :mode: normal
+      :code: "KeyO"
+      :memo: ((o))pen up new line
+
+    -
+      :main_action: Insérer
+      :action: 'une nouvelle ligne au-dessus de la ligne courante et passer en édition'
+      :mode: normal
+      :code: MAJ KeyO
+      :memo: ((O))pen up new line
+
+    -
+      :main_action: Insérer
+      :action: 'du texte APRÈS le caractère courant'
+      :mode: normal
+      :code: KeyA
+      :memo: ((a))ppend ((a))fter
+
+    -
+      :main_action: Insérer
+      :action: du texte AVANT le caractère courant
+      :mode: normal
+      :code: KeyI
+      :memo: ((i))nsert
+
+    -
+      :main_action: Insérer
+      :action: 'du texte à la fin de la ligne'
+      :mode: normal
+      :code: MAJ KeyA
+      :memo: ((A))ppend
+      :tags: ligne
+
+    -
+      :main_action: Insérer
+      :action: 'du texte au début de la ligne'
+      :mode: normal
+      :code: "MAJ KeyI<texte>"
+      :note: "Passe en mode INSERT après la touche KeyI"
+
+    -
+      :main_action: Insérer
+      :action: "un caractère spécial (digraphs)"
+      :mode: insert
+      :code: "CTRL KeyK <2 lettres du digraph>"
+      :memo: Spécial ((k))aractère
+      :note: "Voir aussi CTRL KeyV plus bas."
+      :exemples:
+        - "Taper `:digraphs` pour voir la liste."
+      :tags: digraph
+
+    -
+      :main_action: Insérer
+      :action: plusieurs fois le même caractère
+      :mode: normal
+      :code: "<fois>KeyI<signe> ESC"
+      :exemples:
+        - "`80i- ESC` insert 80 tiret au curseur"
+      :note: "Il faut bien utiliser la touche ESC et non pas CTRL KeyC pour quitter le mode."
+
+    -
+      :main_action: Insérer
+      :action: 'le texte du presse-papier après le caractère courant'
+      :mode: normal
+      :code: '[x]KeyP'
+      :memo: ((p))aste
+
+    -
+      :main_action: Insérer
+      :action: le texte du presse-papier AVANT le caractère suivant
+      :mode: normal
+      :code: "[x] MAJ KeyP"
+      :memo: ((p))aste
+
+    -
+      :main_action: Insérer
+      :action: la date au curseur
+      :mode: normal
+      :code: "!!date"
+      :tags: date
+
+    -
+      :main_action: Insérer
+      :action: 'une expression arithmétique (registre expression "=) ou une fonction/opérateur Vim'
+      :mode: normal
+      :code: '"=<expression> ENTER KeyP'
+      :exemples:
+        - '`"=12*12 ENTER KeyP` insert « 144 » au curseur'
+        - '`"=$HOME ENTER KeyP` colle au curseur le chemin vers home'
+        - '`"=$PWD ENTER KeyP` colle au curseur le chemin vers le dossier racine courant.'
+
+    -
+      :main_action: Insérer
+      :action: le même texte sur plusieurs lignes
+      :mode: "visual-block"
+      :code: "(CTRL KeyV) sélectionner les lignes, MAJ KeyI, taper le texte, ESC"
+      :exemples:
+        - "Si on utilise CTRL KeyC au lieu d'ESC pour terminer, ça ne fonctionne pas."
+
+    -
+      :main_action: Insérer
+      :action: "des espaces sur plusieurs lignes"
+      :mode: "visual-block"
+      :code: "(CTRL KeyV) sélectionner les lignes, >, MAJ ; pour augmenter"
+      :exemples:
+        - "Pour supprimer ces espaces, utiliser `<`"
+
+    -
+      :main_action: Insérer
+      :action: "n'importe quel caractère par son numéro ASCII ou hexa"
+      :mode: insert
+      :code: "CTRL KeyV <nombre>"
+      :exemples:
+        - "`i` pour passer en mode INSERT, `CTRL KeyV 123` => insert le caractère « { »"
+        - "`i` pour mode INSERT, `CTRL KeyV x7b` insert le caractère « { »."
+
+    -
+      :main_action: Afficher
+      :action: "tous les caractères spéciaux"
+      :mode: normal
+      :code: ":digraphs"
+
+    -
+      :main_action: Afficher
+      :action: "les informations sur le caractère sous le curseur"
+      :mode: normal
+      :code: ":ascii"
+
+    -
+      :main_action: Afficher
+      :action: des informationssur la position courante
+      :mode: normal
+      :code: "KeyG CTRL KeyG"
+      :note: "Affiche la colonne/nombre de colonnes, la ligne/nombre de lignes, le mot/nombre de mots, la caractère/nombre de caractères, le byte, nombre de bytes."
+
+    -
+      :main_action: Modifier
+      :action:      le texte en le remplaçant
+      :mode: normal
+      :code: "KeyC[w|cKeyDollar]"
+      :memo: "((c))hange"
+      :exemples:
+        - "[NORMAL] KeyCKeyW => [INSERT] <nouveau texte>"
+        - "[NORMAL] KeyV [VISUAL] KeyE KeyC [INSERT] => change le mot"
+
+    -
+      :main_action: Modifier
+      :action:      toute la ligne (même si on n’est pas placé au début)
+      :mode: normal
+      :code: "KeyCKeyC"
+
+    -
+      :main_action: Modifier
+      :action:      depuis le curseur jusqu’à la fin de la ligne
+      :mode: normal
+      :code:
+        - KeyCKeyDollar
+        - MAJ KeyC
+      :memo: "Comme `KeyDKeyDollar` mais passe en édition."
+
+    -
+      :main_action: Modifier
+      :action:      le caractère courant (et les x suivants)
+      :mode: normal
+      :code: "[x]KeyR<car>"
+      :memo: "((r))eplace"
+
+    -
+      :main_action: Modifier
+      :action:      la casse du caractère courant (et les x suivants)
+      :mode: normal
+      :code: "[x]~ (ALT KeyN SPACE)"
+
+    -
+      :main_action: Modifier
+      :action:      la casse de toute la ligne courante
+      :mode: normal
+      :code: "KeyG ~ ~\nDonc : KeyG ALT KeyN SPACE ALT KeyN SPACE"
+
+    -
+      :main_action: Passer le texte en capitales
+      :action:      jusqu’à la motion définie
+      :mode: normal
+      :code: "KeyG MAJ KeyU <motion>"
+      :exemples:
+        - "Pour modifier depuis le curseur jusqu'à la fin de la ligne : `KeyG MAJ KeyU KeyDollar`"
+
+    -
+      :main_action: Passer le texte en minuscules
+      :action:      jusqu’à la motion définie
+      :mode: normal
+      :code: "KeyG KeyU <motion>"
+      :exemples:
+        - "Mettre en minuscules depuis le curseur jusqu'à la fin de la ligne : `KeyG KeyU KeyDollar`"
+
+    -
+      :main_action: Encrypter/décrypter
+      :action:      le texte sélectionner
+      :mode: visual
+      :code: 'KeyG MAJ KeyInterro'
+      :note: Utilise l’encodange <em>Rot13</em>
+
+    -
+      :main_action: Incrémenter
+      :action: "[de x] le nombre sous le curseur"
+      :mode: normal
+      :code: "[x]CTRL KeyA"
+      :note: "Tient compte de la base : un nombre commençant par 0 est considéré comme octal, un nombre commençant par `0x` est considéré comme hexadécimal"
+
+    -
+      :main_action: "[Dés]activer"
+      :action: "la correction autographique"
+      :mode: normal
+      :code: ":set [no]spell"
+      :important: true
+
+    -
+      :main_action: Définir
+      :action: "la langue du texte"
+      :mode: normal
+      :code: ":set spelllang=fr (ou 'de', etc.)"
+
+    -
+      :main_action: Définir
+      :action: "sa propre liste de mots corrects"
+      :mode: normal
+      :code: ":set spellfile=<path/to/file.add[,<path/other/file.add]"
+      :note: "L'extension doit obligatoirement être `.add`."
+
+    -
+      :main_action: Compiler
+      :action: son propre dictionnaire
+      :mode: normal
+      :code: ":mkspell [-ascii ]<out-file> <in-file>"
+      :memo: "((m))a((k))e spell"
+      :note: "On ajoute l'option `-ascii` pour dire à vim de passer tous les caractères non-ASCII.\nLe nom des fichiers d'entrée doit respecter la convention `<langue>_<region>` (`fr_FR` pour la France métropolitaine)."
+
+    -
+      :main_action: Ajouter
+      :action: un dictionnaire
+      :note: "Le télécharger à l'adresse `https://extensions.libreoffice.org/extensions/dictionnaires-francais` par exemple."
+
+    -
+      :main_action: Ajouter un mot
+      :action:      au dictionnaire personnel
+      :mode: normal
+      :code: "Placer le curseur sur le mot puis taper KeyZKeyG\nOu[COMMAND]:spellg[ood] <mot>"
+      :exemples:
+        - "`2KeyZKeyG` => Ajoute le mot sous le curseur au deuxième dictionnaire spécifié."
+      :note: "Ajouter un index devant la commande si plusieurs dictionnaires sont spécifiés par `:set spellfile`"
+
+    -
+      :main_action: Ajouter un mot
+      :action:      "correct au dictionnaire volatile (session)"
+      :mode: normal
+      :code:
+        - "Placer le curseur sur le mot puis taper `zG` (KeyZ MAJ KeyG)"
+        - "[COMMAND]:spellg[ood]! <mot>"
+
+    -
+      :main_action: Ajouter un mot
+      :action:      erroné au dictionnaire
+      :mode: normal
+      :code:
+        - "Placer le curseur sur le mot puis `zw` (KeyZKeyW)"
+        - "COMMAND]:spellw[rong] <mot>"
+
+    -
+      :main_action: Ajouter un mot
+      :action: "erroné au dictionnaire volatile (session)"
+      :mode: normal
+      :code:
+        - "Placer le curseur sur le mot puis `zw!` (KeyZKeyW!)"
+        - "[COMMAND]:spellw[rong]! <mot>"
+
+    -
+      :main_action: Annuler
+      :action: "l'ajout au dictionnaire"
+      :mode: normal
+      :code:
+        - "Placer le curseur sur le mot puis KeyZKeyUKeyG"
+        - "[COMMAND]:spellu[ndo] <mot>"
+
+    -
+      :main_action: Annuler
+      :action: "l'ajout au dictionnaire volatile (session)"
+      :mode: normal
+      :code:
+        - "Placer le curseur sur le mot puis KeyZKeyUKeyG!"
+        - "[COMMAND]:spellu[ndo]! <mot>"
+
+    -
+      :main_action: Obtenir
+      :action: "des suggestions concernant le mot erroné"
+      :mode: normal
+      :code: "se placer sur le mot erroné et taper KeyZ="
+      :important: true
+
+    -
+      :main_action: Définir
+      :action: "ce qu'est un mot"
+      :mode: normal
+      :code: ":set iskeyword=<définition>"
+      :note: "La valeur peut être une lettre ou son code ASCII"
+      :exemples:
+        - "`:set iskeyword=a,e,i,o,u` => les mots seront exclusivement des voyelles.\n`:set iskeyword=a-z` => les mots seront exclusivement les mots minuscules, etc."
+      :tags: mot
+
+    -
+      :main_action: Affficher
+      :action: la liste des mots actuels
+      :mode: normal
+      :code: ":spelld[ump]"
+
+    -
+      :main_action: Afficher
+      :action: "la définition de ce qu'est un mot"
+      :mode: normal
+      :code: ":set iskeyword?"
+
+    -
+      :main_action: Aller
+      :action:      à l’erreur orthographique suivante
+      :mode: normal
+      :code: "]s (ALT MAJ °, KeyS)"
+
+    -
+      :main_action: Joindre
+      :action:      'les lignes sélectionnées en mode visuel (espace séparatrice)'
+      :mode: visual
+      :code: "MAJ KeyJ"
+      :memo: ((j))oin
+
+    -
+      :main_action: Joindre
+      :action:      les lignes sélectionnées sans ajout d’espace
+      :mode: visual
+      :code: KeyG MAJ KeyJ
+
+    -
+      :main_action: Joindre
+      :action:      la ou les lignes suivantes à la ligne courante
+      :mode: normal
+      :code: "[x]MAJ KeyJ"
+      :memo: ((j))oin
+
+    -
+      :main_action: Supprimer
+      :action:      le dernier mot entré avant le curseur
+      :mode: insert
+      :code: "CTRL KeyW"
+      :memo: "((w))ord = mot"
+      :important: true
+      :note: "Noter qu'il s'agit bien du mot INSERT et pas du mode NORMAL. En mode NORMAL, le raccourci CTRL KeyW permet notamment de switcher entre les fenêtres."
+
+    -
+      :main_action: Supprimer
+      :action:      la dernière ligne entrée avant le curseur
+      :mode: insert
+      :code: "CTRL KeyU"
+      :note: "Noter qu'il s'agit du mode INSERT."
+
+    -
+      :main_action: Supprimer
+      :action:      la ligne courante
+      :mode: normal
+      :code: KeyDKeyD
+      :memo: ((d))elete
+      :note: 'Elle est mémorisée dans le registre par défaut et peut être pastée à l’aide de KeyP.'
+
+    -
+      :main_action: Supprimer
+      :action:      la ligne courante en la mémorisant dans un buffer
+      :mode: normal
+      :code: "\"[a-Z] KeyDKeyD"
+      :memo: "`\"` pour indiquer le buffer, de a à z et A à Z"
+
+    -
+      :main_action: Supprimer
+      action:       jusqu’à la fin du mot courant ou du xième mot
+      :mode: normal
+      :code:
+        - KeyDKeyW
+        - 'd[x]KeyW'
+      :memo: "((d))elete ((w))ord"
+      :exemples:
+        - "\"c'est un ant<sel>i</sel>dote pour les\" -> dw -> \"c'est un ant pour les\""
+        - "\"c'est un <sel>a</sel>ntidote pour les\" -> dw -> \"c'est un pour les\""
+        - "\"c'est <sel>u</sel>n antidote pour les\" -> d3w -> \"c'est les\""
+
+    -
+      :main_action: Supprimer
+      :action:      jusqu’à la fin de la ligne
+      :mode: normal
+      :code:
+        - KeyDKeyDollar
+        - MAJ KeyD
+      :memo: "KeyDollar = fin de ligne"
+
+    -
+      :main_action: Supprimer
+      :action:      jusqu'à la fin de la ligne et passer en insertion
+      :mode: normal
+      :code: MAJ KeyC
+      :memo: "((C))hange"
+
+    -
+      :main_action: Supprimer
+      :action:      en mode visuel
+      :mode: normal
+      :code: KeyV [VISUAL] <move> KeyD"
+
+    -
+      :main_action: Supprimer
+      :action:      jusqu’à un certain caractère
+      :mode: normal
+      :code: "df> (utiliser . pour répéter)"
+
+    -
+      :main_action: Copier
+      :action: "(Yanker) une portion de texte"
+      :mode: normal
+      :code: "KeyY, KeyYKeyM, KeyYKeyY etc."
+      :memo: "((y))ank"
+
+    -
+      :main_action: Copier
+      :action: "la ligne dans le registre par défaut"
+      :mode: normal
+      :code: KeyYKeyY
+      :memo: "((y))ank"
+
+    -
+      :main_action: Copier
+      :action: "du curseur à la fin de la ligne dans le registre par défaut"
+      :mode: normal
+      :code: KeyYKeyDollar
+
+    -
+      :main_action: Copier
+      :action: "depuis le curseur jusqu’au début de la ligne"
+      :mode: normal
+      :code:
+        - KeyY0
+        - 'KeyY^'
+
+    -
+      :main_action: Copier
+      :action: "depuis le curseur jusqu’à une marque"
+      :mode: normal
+      :code: "1. Placer la marque (m<a-Z>)\n2. Se déplacer à l'endroit voulu.\n3. `y'<a-Z>`"
+
+    -
+      :main_action: Copier
+      :action: "le mot courant dans le registre par défaut"
+      :mode: normal
+      :code: "KeyYKeyW"
+
+    -
+      :main_action: Copier
+      :action: "plusieurs lignes"
+      :mode: normal
+      :code: "[x]KeyY"
+      :memo: "p.e. `3y`"
+
+    -
+      :main_action: Enregistrer
+      :action: "un bout du texte dans un fichier"
+      :mode: visual
+      :code: "sélectionner le texte puis `:write <path/to/file.ext>`"
+      :note: "La commande prévient si un fichier existe déjà. Pour l'écraser, ajouter `!` à la fin de la commande."
+    -
+      :main_action: Aide
+      :action:      sur la suppression en mode visuel
+      :mode: normal
+      :code: ':help v_d'
+      :memo: '((v))isual ((d))elete'
+
+    -
+      :main_action: Réindenter
+      :action:      '[x] ligne[s]'
+      :code: '[x]KeyEgal KeyEgal'
+      :note: '`x` est le nombre de lignes à réindenter'
+      :memo: ((==)) Mêmes espaces
+      :tags: ligne indentation
+
+    -
+      :main_action: Indenter
+      :action:      la [ou les] ligne[s] courante[s]
+      :mode: normal
+      :code: '[x] MAJ KeySupInf KeySupInf'
+      :tags: ligne indentation
+
+    -
+      :main_action: Désindenter
+      :action:      la [ou les] ligne[s] courante[s]
+      :mode: normal
+      :code: '[x] KeySupInf KeySupInf'
+      :tags: ligne indentation
+
+    -
+      :main_action: Définir
+      :action: "la largeur max des lignes à entrer"
+      :mode: normal
+      :code: ":set textwidth=<nombre colonnes>"
+
+    -
+      :main_action: Définir
+      :action: "la marge droite pour enroulement du texte"
+      :mode: normal
+      :code: ":set wrapmargin=<nombre colonnes>"
+
+    -
+      :main_action: Reformater
+      :action: "paragraphe après modification (ajout/suppression)"
+      :mode: normal
+      :code: "Sélectionner le texte puis `KeyGKeyQ`"
+      :important: true
+      :note: "Dépend de la définition de `textwidth` et/ou `wrapmargin` ci-dessus."
+
+    -
+      :main_action: Reformater
+      :action:      des lignes en changeant la largeur de texte
+      :mode: normal
+      :code: ":set textwidth=<nombre colonnes>\nSélectionner le texte\nKeyGKeyQ"
+      :important: true
+
+    -
+      :main_action: Reformater
+      :action:      des lignes en indiquant leur nombre
+      :mode: normal
+      :code: "KeyGKeyQ<nombre>j"
+
+    -
+      :main_action: Reformater
+      :action:      le paragraphe courant
+      :mode: normal
+      :code: "KeyGKeyQKeyIKeyP"
+      :memo: "((i))nner ((p))aragraph"
+      :important: true
+
+    -
+      :main_action: Reformater
+      :action:      la ligne courante
+      :mode: normal
+      :code:
+        - KeyGKeyQKeyGKeyQ
+        - 'KeyGKeyQKeyG.'
+
+    -
+      :main_action: Reformater
+      :action:      les lignes jusqu’au prochain paragraphe
+      :mode: normal
+      :code: "KeyGKeyQ}"
+
+    -
+      :main_action: Reformater
+      :action:      en utilisant un programme « externe »
+      :mode: normal
+      :code: ":set formatprg=<programme>"
+      :exemples:
+        - ":set formatprg=fmt"
+
+    -
+      :main_action: Aligner
+      :action: des lignes au centre (aka centrer)
+      :mode: normal
+      :code: "Sélectionner les lignes\n:<from>,<to> center <width>"
+
+    -
+      :main_action: Aligner
+      :action: des lignes à droite
+      :mode: normal
+      :code: "Sélectionner les lignes\n:<from>,<to> right <width>"
+
+    -
+      :main_action: Aligner
+      :action: des lignes à gauche
+      :mode: normal
+      :code: "Sélectionner les lignes\n:<from>,<to> left <width>"
+
+    -
+      :main_action: "Jouer commande"
+      :action: "en mode INSERT"
+      :mode: insert
+      :code: "CTRL KeyO <command>"
+      :memo: "((o))ut"
+
+    -
+      :main_action: Afficher
+      :action: "tous les caractères spéciaux"
+      :mode: normal
+      :code: ":digraphs"
+      :tags: caractères_spéciaux
+
+    -
+      :main_action: Imprimer
+      :action: "les lignes choisies"
+      :mode: command
+      :code: ":[from],[to]print"
+      :exemples:
+        - "`:5print` => imprimer la ligne 5"
+        - "`:1,5print` => imprimer de la ligne 1 à la ligne 5"
+        - "`:5,$print => imprimer de la ligne 5 à la fin du texte`"
+
+    -
+      :main_action: Imprimer
+      :action: tout le fichier
+      :mode: command
+      :code: ':%print'
+
+    -
+      :main_action: Imprimer
+      :action: la ligne courante
+      :mode: command
+      :code: ":.print"
+
+    -
+      :main_action: Imprimer
+      :action: une ligne suivante par son contenu
+      :mode: command
+      :code: ":/<pattern>/print"
+      :exemples:
+        - "`:/arbre/print` => imprime la première ligne suivante contenant 'arbre'"
+
+    -
+      :main_action: Imprimer
+      :action: la première ligne précédente contenant un texte
+      :mode: command
+      :code: ":?<pattern>?print"
+      :exemples:
+        - "`:?aigre?print` => imprime la première ligne précédente contenant 'aigre'"
+        - "`:?bienKeyPointKeyDollar? print` => imprime la première ligne précédente se terminant par 'bien.'"
+
+    -
+      :main_action: Imprimer
+      :action: "depuis et/ou jusqu'à une marque"
+      :mode: command
+      :code: ":'<a-z>, `<a-z> print"
+
+    -
+      :main_action: Imprimer
+      :action: "le texte en visual mode"
+      :mode: visual
+      :code: "Passer en mode visuel, sélectionner puis taper `:print` pour imprimer la sélection."
+
+# ---------------------------------------------------------------------
+#
+#   @@@ AUTOCOMPLÉTION
+#
+# ---------------------------------------------------------------------
+
+  AUTOCOMPLÉTION:
+
+    -
+      :main_action: Activer
+      :action: "l'autocomplétion"
+      :code: "Démarrer Vim avec `$> vim -N`"
+      :important: true
+
+    -
+      :main_action: Spécifier
+      :action: "un ou plusieurs dictionnaires d'autocomplétion"
+      :code: ":set dictionary=file1,file2..."
+
+    -
+      :main_action: Spécifier
+      :action: "un ou plusieurs fichiers thésaurus"
+      :code: ":set thesaurus=file1,file2,..."
+
+    -
+      :main_action: Restreindre
+      :action: "à une liste d'éléments (dictionnaire, tags, etc.)"
+      :mode: insert
+      :code: "CTRL KeyX, choisir l'option avec CTRL <touche>"
+      :note: "l'option peut être CTRL KeyD : définition de macro, CTRL KeyF : nom de fichier, CTRL KeyK : dictionnaire, CTRL KeyT : thésaurus, CTRL KeyI : fichiers courants et #includes (en C), CTRL KeyL : lignes complètes, CTRL KeyO : “omni” complétion (omnifun)"
+    -
+      :main_action: Afficher
+      :action: "les mots suggérés"
+      :mode: normal
+      :code: CTRL KeyP
+
+    -
+      :main_action: Suggérer
+      :action: "un mot du thésaurus"
+      :mode: insert
+      :code: CTRL KeyP, CTRL KeyT
+      :memo: "((T))hesaurus"
+
+    -
+      :main_action: Suggérer
+      :action: "un mot d'un dictionnaire"
+      :mode: insert
+      :code: CTRL KeyP, CTRL KeyK
+      :memo: "Di((K))tionnaire"
+
+    -
+      :main_action: Suggérer
+      :action: "un mot se trouvant dans les fichiers dans le dossier courant"
+      :mode: insert
+      :code: CTRL KeyP, CTRL KeyF
+      :memo: "((F))ile"
+      :note: "Utiliser `CTRL KeyN` pour passer au fichier suivant"
+
+    -
+      :main_action: Choisir
+      :action: "le mot précédent dans la liste proposée"
+      :mode: insert
+      :code: "CTRL KeyP (x fois)"
+      :memo: "((P))revious, ((p))récédent"
+      :note: "Chaque pression de la combinaison passe au mot suivant"
+
+    -
+      :main_action: Choisir
+      :action: "le mot suivant dans la liste proposée"
+      :mode: insert
+      :code: "CTRL KeyN (x fois)"
+      :memo: "((N))ext, suivant"
+      :note: "On doit avoir afficher la liste des mots avec `CTRL KeyP`"
+
+
+# ---------------------------------------------------------------------
+#
+#  @@@ TEXTE EXTRAS
+#
+# ---------------------------------------------------------------------
+
+  TEXTE EXTRAS:
+
+    -
+      :main_action: Classer
+      :action:      les lignes sélectionnées
+      :mode: visual
+      :code: "1. Sélectionner les lignes\n2. `!sort`"
+
+    -
+      :main_action: Piper (pailleper) les lignes courante
+      :action:      en les passant par une commande
+      :mode: visual
+      :code: ':!<commande>'
+      :exemples:
+        - '`:!sort` => classe les lignes sélectionnées'
+
+    -
+      :main_action: "Surligner"
+      :action: "du texte"
+      :mode: normal
+      :code: ":match <type> /<texte>/"
+      :memo: "p.e. <code>:match Error /TOOD/"
+
+    -
+      :main_action: "Surligner"
+      :action: "jusqu’à trois types/trois recherches en même temps"
+      :mode: normal
+      :code: ":match ..., :2match ..., :3match ..."
+
+    -
+      :main_action: Afficher
+      :action: "tous les types de surlignages"
+      :mode: normal
+      :code: ':highlight'
+
+    -
+      :main_action: Supprimer
+      :action: "tous les surlignages"
+      :mode: normal
+      :code: ":match none"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ RECHERCHER ET REMPLACER (mark "s")
+#
+# ---------------------------------------------------------------------
+
+  RECHERCHE ET REMPLACEMENT:
+
+    -
+      :main_action: Régler
+      :action: "recherche incrémentale"
+      :mode: normal
+      :code: ":set [no]incsearch"
+      :memo: "((inc))remental search"
+
+    -
+      :main_action: Régler
+      :action: "la recherche en mode [non] sensitif"
+      :mode: normal
+      :code: ":set [no]ignorecase"
+
+    -
+      :main_action: Régler
+      :action: "la recherche pour rechercher sans sensitivité si le mot est tapé en minuscule."
+      :mode: normal
+      :code: ":set ignorecase \" ne tient pas compte de la case\n:set smartcase \"la case du mot entré comme rechercher influence la recherche"
+      :exemples:
+        - "'mot' recherchera 'mot', 'MOT', 'Mot', 'mOt'"
+        - "'Mot' recherchera 'Mot'"
+        - "'MOT' recherchera MOT"
+
+    -
+      :main_action: Régler
+      :action: "la fin de la recherche à la fin du fichier [ou non]"
+      :mode: normal
+      :code: ":set [no]wrapscan \" sans 'no', recherche au début après la fin"
+
+    -
+      :main_action: Interrompre
+      :action: 'une recherche'
+      :mode: normal
+      :code: CTRL KeyC
+
+    -
+      :main_action: Atteindre
+      :action: 'la première occurrence du mot sous le curseur en avant'
+      :mode: normal
+      :code: "KeyEtoile (MAJ KeyDollar)"
+
+    -
+      :main_action: Atteindre
+      :action: 'la première occurrence du mot sous le curseur en arrière'
+      :mode: normal
+      :code:
+        - 'KeyLivre (MAJ `)'
+        - 'KeyDiese (MAJ KeyArobase)'
+
+    -
+      :main_action: Atteindre
+      :action: "la <xième> ligne [après ou avant] un mot"
+      :mode: normal
+      :code: "/<search>/[+|-]<x>"
+      :note: "Recherche en arrière : `?<search>?[+|-]<x>`"
+      :exemples:
+        - "`/arobase/3` => Se place 3 lignes après le mot 'arobase'"
+        - "`/arobase/-2` => Se place 2 lignes avant le mot 'arobase'"
+
+    -
+      :main_action: Répéter
+      :action: "la recherche précédente"
+      :mode: normal
+      :code: '/'
+      :note: "`?` en arrière"
+
+    -
+      :main_action: Répéter
+      :action: "la recherche précédente en supprimant l'offset"
+      :mode: normal
+      :code: '//'
+      :note: "`??` en arrière"
+
+    -
+      :main_action: Répéter
+      :action: "la recherche précédente avec un autre offset"
+      :mode: normal
+      :code: '//[+|-]<x>'
+      :note: "`??[+|-]<x>` en arrière"
+
+    -
+      :main_action: Placer le curseur
+      :action: "<x> caractères [avant ou après] la recherche"
+      :mode: normal
+      :code:
+        - "/<search>/b[+|-]<x>"
+        - "/<search>/s[+|-]<x>"
+      :note: "Recherche en arrière : `?<search>?b[+|-]<x>`"
+      :exemples:
+        - "`/marion/b5` => Se place 5 caractères après le mot 'Marion'"
+        - "`/marion/b-6` => Se place 6 caractères avant le mot 'Marion'"
+        - "`?marion?b-6` => Se place 6 caractères avant le mot 'Marion' trouvé en recherche arrière"
+
+
+    -
+      :main_action: Placer le curseur
+      :action: "au bout de l'expression recherchée"
+      :mode: normal
+      :code: "/<search>/e"
+
+    -
+      :main_action: Placer le curseur
+      :action: "<x> caractères [avant ou après] le bout de l'expression recherchée"
+      :mode: normal
+      :code: "/<search>/e[+|-]<x>"
+      :exemples:
+        - "`/Marion/e4` => Place le curseur 4 caractères après le 'n' de Marion"
+        - "`/Marion/e-2` => Place le curseur sur le 'i' de 'Marion'"
+      :note: "Utiliser le code `//<x>` pour recommencer la recherche avec un autre offset."
+
+    -
+      :main_action: Rechercher
+      :action: "une expression régulière dans des fichiers quelconques"
+      :mode: normal
+      :code: ":vimgrep /<reg exp>/ <where>"
+      :exemples:
+        - "`:vimgrep /phil(ippe)?/ ~/Programmation` => recherche toutes les occurrences de 'phil' ou 'philippe' dans le dossier Programmation"
+        - "`:vimgrep /phil(ippe)?/ ./**/*.txt` => toutes les occurrences de 'phil' ou 'philippe' dans les fichiers .txt du dossier courant et ses sous-dossiers."
+      :important: true
+
+    -
+      :main_action: Afficher
+      :action: "dans une nouvelle fenêtre tous les résultats de `:vimgrep`"
+      :code: ":cope[n]"
+      :exemples:
+        - "`:vimgrep /phil/ ./*.data`, :copen, KeyJ/KeyK, ENTER pour afficher le fichier."
+
+    -
+      :main_action: Afficher
+      :action: "le résultat suivant de `:vimgrep`"
+      :code: ":cn[ext]"
+      :memo: "((next)) = suivant"
+
+    -
+      :main_action: Afficher
+      :action: "le résultat précédent de `:vimgrep`"
+      :code:
+        - ':cp[revious]'
+        - ':cN[ext] (MAJ KeyN)'
+      :memo: "((previous)) = précédent"
+
+    -
+      :main_action: Afficher
+      :action: "le premier résultat de `:vimgrep` dans le fichier suivant"
+      :code: ":cnfile"
+      :memo: "((n))ext"
+
+    -
+      :main_action: "Surligner/retirer"
+      :action: "l'exergue les textes trouvés"
+      :mode: normal
+      :code: ':set [no]hlsearch'
+      :memo: "((h))igh((l))ight search"
+
+    -
+      :main_action: Supprimer
+      :action: "la mise en relief courante"
+      :mode: normal
+      :code: ":nohlsearch"
+
+    -
+      :main_action: Chercher
+      :action: "en avant quelque chose"
+      :mode: normal
+      :code: "/<quelque chose> ENTER"
+      :memo: Il faut escaper les signes `.*[]^%/\?~KeyDollar`
+
+    -
+      :main_action: Chercher
+      :action: "en avant la première occurrence de la lettre, puis les suivantes"
+      :mode: normal
+      :code: "KeyF<lettre>, puis ; (KeyPoint_virgule) pour les suivantes, ou « , » (virgule) pour les précédentes."
+
+    -
+      :main_action: Chercher
+      :action: "quelque chose en arrière"
+      :mode: normal
+      :code: "?<quelque chose> ENTER"
+
+    -
+      :main_action: Aller
+      :action: "au(x) prochain(s) quelque chose (avant ou arrière)"
+      :mode: normal
+      :code:
+        - '[x]KeyN'
+        - '[x]/ ENTER'
+        - '[x]? ENTER'
+
+    -
+      :main_action: Aller
+      :action: "au(x) prochain(s) quelque chose en sens inverse"
+      :mode: normal
+      :code: MAJ KeyN
+
+    -
+      :main_action: "Inverser"
+      :action: "la recherche"
+      :mode: normal
+      :code: "? si on est en avant, sinon /"
+
+    -
+      :main_action: Afficher
+      :action: "l’historique des recherches en avant"
+      :mode: normal
+      :code: "KeyQ/\n/ARROW_UP /ARROW_DOWN"
+      :memo: "Pour en sortir sans rien faire : CTRL KeyC ou \":KeyQ ENTER\""
+
+    -
+      :main_action: Afficher
+      :action: "l’historique des recherches en arrière"
+      :mode: normal
+      :code: "KeyQ?\n?ARROW_UP ?ARROW_DOWN"
+      :memo: "Pour en sortir sans rien faire : CTRL KeyC ou \":KeyQ ENTER\""
+
+    -
+      :main_action: "Rechercher & remplacer"
+      :action: "une seule fois dans la ligne courante"
+      :code: \:s/<get>/&gt;set>
+      :memo: ((s))each
+
+    -
+      :main_action: "Rechercher & remplacer"
+      :action: "toutes les occurrences de la ligne courante"
+      :code: \:s/<get>/&gt;set>/g
+      :memo: ((s))each, ((g))lobal
+
+    -
+      :main_action: "Rechercher & remplacer"
+      :action: "dans tout le fichier"
+      :mode: command
+      :code: ":% s/<get>/&gt;set>/g"
+      :memo: "((s))each, ((g))lobal, ((%)) signife «tout le texte»"
+
+    -
+      :main_action: "Rechercher & remplacer"
+      :action: "toutes les occurrences dans plusieurs lignes consécutives"
+      :code: "Passer en mode visuel avec MAJ KeyV [VISUAL-LINE] Sélectionner les lignes [COMMAND] :s/.../.../g ENTER"
+
+    -
+      :main_action: "Rechercher & remplacer"
+      :action: "toutes les occurrences dans plusieurs lignes non consécutives"
+      :mode: command
+      :code: ":<de ligne>,<à ligne> s/.../.../g"
+      :note: "Pour la dernière ligne, on peut utiliser `KeyDollar`."
+
+    -
+      :main_action: "Rechercher & remplacer"
+      :action: "en demandant confirmation"
+      :mode: command
+      :code: ":s/<pattern>/<replace>/gc"
+      :exemples:
+        - "C'est le drapeau « c » ci-dessus qui entraine la confirmation."
+
+    -
+      :main_action: Remplacer
+      :action:      le caractère au curseur par le caractère fourni
+      :mode: normal
+      :code: "KeyR <lettre>"
+
+    -
+      :main_action: Remplacer
+      :action:      les caractères au curseur jusqu'à la sortie du mode
+      :mode: normal
+      :code:
+        - "MAJ KeyR <texte> ESC (ou CTRL KeyC)"
+        - "KeyG MAJ KeyR <texte> ESC"
+
+    -
+      :main_action: Remplacer
+      :action: "les [x] caractères par le texte fourni"
+      :mode: normal
+      :code: "[x]s<texte>"
+      :note: "Vim passe en mode INSERT après que la touche KeyS a été pressée."
+
+    -
+      :main_action: Remplacer
+      :action:      le caractère courant par le texte fourni
+      :mode: normal
+      :code: "s<texte>"
+      :note: "Mais contrairement à KeyR qui reste en mode [NORMAL], Vim reste en mode [INSERT] après que la touche KeyS a été pressée."
+
+    -
+      :main_action: Remplacer
+      :action:      la ligne courante par le texte fourni
+      :mode: normal
+      :code: "MAJ KeyS<texte>"
+      :note: "Vim passe en mode INSERT après que la touche KeyS a été pressée."
+
+    -
+      :main_action: Remplacer
+      :action:      'le texte en mode [SELECT]'
+      :mode: normal
+      :code: 'KeyGKeyH, KeyFlecheG/KeyFlecheD pour sélectionner, <texte>'
+# ---------------------------------------------------------------------
+#
+#   @@@ EXPRESSIONS RÉGULIÈRES
+#
+# ---------------------------------------------------------------------
+
+  EXPRESSION RÉGULIÈRES:
+
+    -
+      :main_action: Spécifier
+      :action: "le début d'un mot"
+      :code: '\<'
+      :exemples:
+        - "`\\<pour\\>` recherche le mot 'pour' exactement, et exclus par exemple 'pourparler'"
+
+    -
+      :main_action: Spécifier
+      :action: "la fin d'un mot"
+      :code: '\>'
+
+    -
+      :main_action: Spécifier
+      :action: 'de rechercher zéro ou plusieurs occurrences'
+      :code: '\*'
+
+    -
+      :main_action: Spécifier
+      :action: 'de rechercher une ou plusieurs occurrences'
+      :code: '\+'
+
+    -
+      :main_action: Spécifier
+      :action: 'de rechercher une ou zéro occurrences'
+      :code: '\='
+
+    -
+      :main_action: Rechercher
+      :action: 'un caractère alphabétique'
+      :code: '\a'
+
+    -
+      :main_action: Rechercher
+      :action: 'un caractère non alphabétique'
+      :code: '\A'
+
+    -
+      :main_action: Spécifier
+      :action: 'de rechercher n’importe quel chiffre'
+      :code: '\d'
+
+    -
+      :main_action: Rechercher
+      :action: 'n’importe quelle lettre majuscule'
+      :code:
+        - '\u'
+        - '[[:upper:]]'
+      :memo: '((u))pper'
+      :note: 'Plus rapide que de faire `[A-Z]`.'
+
+    -
+      :main_action: Rechercher
+      :action: 'tout sauf des majuscules'
+      :code: '\U'
+
+    -
+      :main_action: Rechercher
+      :action: 'n’importe quelle lettre minuscule'
+      :code:
+        - '\l'
+        - '[[:lower:]]'
+      :memo: '((l))ower'
+      :note: 'Plus rapide que `[a-z]`'
+
+    -
+      :main_action: Rechercher
+      :action: 'tout sauf des minuscules'
+      :code: '\L'
+
+    -
+      :main_action: Rechercher
+      :action: 'n’importe quel caractère hexadécimal (0-F)'
+      :code: '\x'
+
+    -
+      :main_action: Rechercher
+      :action: 'n’importe quel caractère non hexadécimal (0-F)'
+      :code: '\X'
+
+    -
+      :main_action: Spécifier
+      :action: 'de rechercher un nombre précis de caractères'
+      :code: '\{<nombre>}'
+      :exemples:
+        - '`a\{5}` => recherche exactement 5 "a"'
+
+    -
+      :main_action: Recherche
+      :action: 'le mininum de caractères'
+      :code: '\{-<de>, <à>}'
+      :exemples:
+        - '`a\{-3,5}` => recherche entre 3 et 5 "a" sur la ligne, mais renverra l’atom le plus court.'
+
+    -
+      :main_action: Grouper
+      :action: 'des caractères'
+      :code: '\(<caractères>\)'
+
+    -
+      :main_action: Faire références
+      :action: 'à un groupe de caractères défini entre parenthèses'
+      :code: '\<index parenthèses 1-start>'
+      :exemples:
+        - 'dans `a\([b-d]\)1\([0-5]\)`, "\1" faire référence à "[b-d]" et "\2" fait référence à "[0-5]".'
+
+# ---------------------------------------------------------------------
+#
+#   @@@ PRESSE PAPIER
+#
+# ---------------------------------------------------------------------
+
+  PRESSE-PAPIER (REGISTRE):
+
+    -
+      :main_action: "Enregistrer"
+      :action: "dans un registre de a à z"
+      :code: "\"<lettre><quoi>"
+      :memo: "p.e. : `\"KeyCKeyYKeyY`\n=> copier la ligne dans 'c'"
+
+    -
+      :main_action: Insérer
+      :action: "le contenu d'un presse-papier"
+      :code: "\"<lettre>p"
+      :memo: ((p))aste
+
+    -
+      :main_action: Insérer
+      :action: 'le contenu de la dernière suppession'
+      :mode: normal
+      :code: '"1 KeyP'
+      :note: 'Les autres suppressions se trouvent dans les registres de 2 à 9'
+
+    -
+      :main_action: Insérer
+      :action: 'le contenu de l’avant-dernière suppression'
+      :mode: normal
+      :code: '"2 KeyP'
+      :note: 'Les autres suppressions se trouvent dans les registres de 3 à 9'
+
+    -
+      :main_action: Ajouter
+      :action: "du texte dans un registre"
+      :code: MAJ KeyA<lettre><quoi>
+      :memo: ((A))ppend
+
+    -
+      :main_action: Afficher
+      :action: 'le contenu de tous les registres'
+      :mode: normal
+      :code: ':registers'
+
+    -
+      :main_action: Afficher
+      :action: 'le contenu de registres en particulier'
+      :mode: normal
+      :code: ':reg[isters] <lettre><lettre> etc.'
+      :exemples:
+        - '`:registers az` => affiche le contenu des registres "a et "z'
+        - '`:reg qsb` affiche le contenu des registres "q, "s et "b'
+
+    -
+      :main_action: Référence
+      :action: "au registre global"
+      :code: "\"+"
+
+    -
+      :main_action: Référence
+      :action: "au registre \"poubelle\""
+      :code: "\"_"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ COMMANDES (mark c)
+#
+# ---------------------------------------------------------------------
+
+  COMMANDES:
+
+    -
+      :main_action: "Quitter"
+      :action: "tout"
+      :mode: normal
+      :code: ":qall"
+      :memo: "quit ((all))"
+
+    -
+      :main_action: "Quitter"
+      :action: "après avoir enregistré"
+      :mode: normal
+      :code: MAJ KeyZKeyZ
+      :memo: ((zzz)) dodo
+
+    -
+      :main_action: "Exécuter"
+      :action: "une commande externe"
+      :code: \:! <commande>
+
+    -
+      :main_action: "Annuler"
+      :action: "la dernière commande"
+      :mode: normal
+      :code: KeyU
+      :memo: ((u))ndo
+
+    -
+      :main_action: "Annuler"
+      :action: "toutes les modifications faites sur la ligne courante"
+      :mode: normal
+      :code: MAJ KeyU
+      :memo: ((U))ndo
+
+    -
+      :main_action: "Annuler"
+      :action: "les modifications annulées par U sur la ligne courante"
+      :mode: normal
+      :code: MAJ KeyU
+
+    -
+      :main_action: "Annuler"
+      :action: "une annulation"
+      :mode: normal
+      :code: CTRL KeyR
+      :memo: ((r))edo
+
+
+    -
+      :main_action: Désactiver
+      :action: "tous les plugins en démarrant Vim"
+      :code: "$> vim -u NONE"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ INTERFACE
+#
+# ---------------------------------------------------------------------
+
+  INTERFACE:
+
+    -
+      :main_action: "Afficher/masquer"
+      :action: "les numéros de ligne"
+      :code: ":set [no]number"
+
+    -
+      :main_action: "Appliquer"
+      :action: "un thème particulier pour cette session"
+      :mode: normal
+      :code: ":colo[rscheme] <nom du thème sans .vim>"
+      :exemples:
+        - "Le thème doit se trouver dans `./.vim/colors/`"
+        - ":colorscheme Tomorrow"
+
+    -
+      :main_action: "Définir"
+      :action: "un thème particulier dans `.vimrc`"
+      :code: "colo[rscheme] <nom du thème>\nsyntax on"
+
+    -
+      :main_action: "Définir manuellement le folding"
+      :action: "du code courant"
+      :mode: normal
+      :code: KeyZKeyF
+      :memo: "((f))old"
+      :tags: folding
+
+    -
+      :main_action: "Replier (collapse)"
+      :action: "le code courant"
+      :mode: normal
+      :code: KeyZKeyC
+      :memo: "((c))lose"
+      :tags: folding
+
+    -
+      :main_action: "Déplier (open)"
+      :action: "le code courant"
+      :mode: normal
+      :code: KeyZKeyO
+      :memo: "((o))pen"
+      :tags: folding
+
+# ---------------------------------------------------------------------
+#
+#   @@@ OPTIONS
+#
+# ---------------------------------------------------------------------
+
+  OPTIONS:
+
+    -
+      :main_action: "[Dés]activer"
+      :action: "l'enroulement des lignes à l'affichage"
+      :mode: normal
+      :code: ":set [no]wrap"
+      :note: "Avec `nowrap`, les lignes ne seront pas enroulées et s'étendront sur une seule ligne d'affichage."
+
+    -
+      :main_action: "[Dés]activer"
+      :action: "la correction autographique"
+      :mode: normal
+      :code: ":set [no]spell"
+
+    -
+      :main_action: "Activer/désactiver"
+      :action: "l'option de la relecture automatique (après modification du fichier ailleurs)"
+      :code: ":set [no]autoread"
+
+    -
+      :main_action: Afficher
+      :action: "l'état d'une option"
+      :code: ":set <option>?"
+      :memo: "((?)) interroger"
+
+    -
+      :main_action: Activer
+      :action: "une option off/on"
+      :code: ":set <option>"
+
+    -
+      :main_action: "Désactiver"
+      :action: "une option"
+      :code: ":set no<option>"
+
+    -
+      :main_action: "Régler"
+      :action: "la valeur d'une option non on/off"
+      :code: ":set <opt>=<valeur>"
+
+    -
+      :main_action: Définir
+      :action: "l'ampleur du scroll avec CTRL KeyU"
+      :code: ":set scroll=<nombre de lignes>"
+
+
+    -
+      :main_action: Définir
+      :action: "la hauteur minimum d'une fenêtre au split"
+      :mode: command
+      :code: ':set winheight=<nombre lignes>'
+
+    -
+      :main_action: Définir
+      :action: 'la largeur minimum d’une fenêtre au split vertical'
+      :mode: command
+      :code: ':set winwidth=<nombre colonnes>'
+
+    -
+      :main_action: Définir
+      :action: 'que le split [ne] doit [pas] faire deux parties égales'
+      :mode: command
+      :code: ':set [no]equalalways'
+
+# ---------------------------------------------------------------------
+#
+#   @@@ NERDTree
+#
+# ---------------------------------------------------------------------
+
+  NERDTree:
+
+    -
+      :main_action: "Ouvrir"
+      :action: "le NERDTree"
+      :code: CTRL KeyN
+      :memo: "((n))erd"
+
+    -
+      :main_action: "Régler"
+      :action: "le dossier courant en dossier racine"
+      :mode: normal
+      :code: MAJ KeyC
+      :memo: "((c))urrent"
+
+# ---------------------------------------------------------------------
+#
+#     @@@ MODE COMMAND-LINE (EX)
+#
+# ---------------------------------------------------------------------
+
+  MODE LIGNE DE COMMANDE (EX):
+
+    -
+      :main_action: Basculer
+      :action: "en mode ligne de commande (ex, grand-père de vim, père de vi)"
+      :code: "gQ (KeyG, MAJ KeyQ)"
+
+    -
+      :main_action: Basculer
+      :action: "en mode normal depuis le mode ligne de commande"
+      :mode: command
+      :code: ":visual"
+
+    -
+      :main_action: Basculer
+      :action: "en mode « shell » (ligne de commande du Terminal)"
+      :code: ":shell"
+      :note: "Taper «exit» pour revenir dans Vim."
+
+# ---------------------------------------------------------------------
+#
+#     @@@ FENÊTRES (NON ESSENTIELS)
+#
+# ---------------------------------------------------------------------
+
+  FENÊTRES (non essentiels):
+
+    -
+      :main_action: Activer
+      :action: "la fenêtre inférieure"
+      :mode: normal
+      :code: CTRL KeyW KeyJ
+      :memo: ((w))indow, ((j)) = descendre
+
+    -
+      :main_action: Activer
+      :action: la fenêtre du bas
+      :mode: normal
+      :code: CTRL KeyW KeyB
+      :memo: "((w))indow, ((b))ottom / ((b))as"
+
+    -
+      :main_action: Activer
+      :action: "la fenêtre supérieure"
+      :mode: normal
+      :code: CTRL KeyW KeyK
+      :memo: "((w)) = window, ((k)) = monter"
+
+    -
+      :main_action: Activer
+      :action: la fenêtre du haut
+      :mode: normal
+      :code: CTRL KeyW KeyT
+      :memo: "((w))indow, ((t))op"
+
+    -
+      :main_action: Activer
+      :action: la fenêtre précédente
+      :mode: normal
+      :code: "CTRL KeyW, KeyP"
+      :note: "Attention, CTRL KeyW, KeyN ne passe pas à la suivante (next) mais crée un nouveau split."
+
+    -
+      :main_action: Intervertir
+      :action: deux fenêtres
+      :mode: normal
+      code: 'CTRL KeyW KeyR'
+
+    -
+      :main_action: Intervertir
+      :action: "la fenêtre courante avec la suite (celle en dessous)"
+      :mode: normal
+      :code: CTRL KeyW KeyX
+      :note: 'S’il n’y a pas de fenêtre en dessous, intervertit avec la précédente.'
+
+    -
+      :main_action: "Égaliser"
+      :action: "les dimensions des fenêtres"
+      :code: "CTRL KeyW ="
+      :memo: "((w))indow, ((=)) égal"
+
+    -
+      :main_action: Modifier
+      :action: "la taille des fenêtres"
+      :code: "CTRL KeyW +/-"
+      :memo: "((w))indow"
+
+    -
+      :main_action: "Interchanger"
+      :action: "la disposition des fenêtres"
+      :code: CTRL KeyW KeyR/MAJ KeyR
+      :memo: "((w))indow, ((r))epositionne"
+
+# ---------------------------------------------------------------------
+#
+#   @@@ CTRLP
+#
+# ---------------------------------------------------------------------
+
+  CTRLP:
+
+    -
+      :main_action: "Ouvrir CtrlP"
+      :action: "en mode de recherche \"files\""
+      :mode: normal
+      :code:
+        - ":CtrlP"
+        - "CTRL KeyP"
+
+    -
+      :main_action: "Ouvrir CtrlP"
+      :action: "MRU"
+      :mode: normal
+      :code: ":CtrlPMRU"
+
+    -
+      :main_aciton: null
+      :action: MRU signifie
+      :code: "((M))ost ((R))ecently ((U))sed"
+      :memo: "= les fichiers récemment utilisés"
+
+    -
+      :main_action: "Définir"
+      :action: "chercher par path/chercher par filename (basculer)"
+      :code: CTRL KeyP CTRL KeyD
+
+    -
+      :main_action: "Définir"
+      :action: "le mode de recherche par défaut à REGEXP"
+      :code: "[.vimrc] let g:ctrlp_regexp = 1"
+
+    -
+      :main_action: "Définir"
+      :action: "mode de recherche par regexp / mode de recherche normal (bascule)"
+      :code: CTRL KeyP CTRL KeyR
+      :memo: "((r))eg expression"
+
+    -
+      :main_action: "Définir"
+      :action: "le mode suivant (((f))oward) ou précédent (((b))ackward) (?)"
+      :code:
+        - CTRL KeyP CTRL Keyf
+        - CTRL KeyP CTRL Keyb
+
+    -
+      :main_action: "Définir"
+      :action: "le dossier courant à la sélection et passer en mode find file"
+      :code: "CTRL KeyO puis KeyD"
+
+    -
+      :main_action: "Définir"
+      :action: le dossier courant
+      :code: "@cd path/to/folder/"
+      :exemples:
+        - "On peut aussi ouvrir vim dans le dossier (à vérifier)"
+
+    -
+      :main_action: "Définir"
+      :action: "dossier du fichier courant comme dossier courant"
+      :code: "@cd %:h"
+
+    -
+      :main_action: "Vider"
+      :action: "le cache"
+      :code: F5
+
+    -
+      :main_action: "Définir"
+      :action: "les fichiers/dossiers exclus des résultats"
+      :code: "Utiliser le `wildignore` de vim\nOu let g:ctrlp_custom_ignore = ''"
+      :memo: "`set wildignore+=...,...,...`"
+
+    -
+      :main_action: Chercher
+      :action: "des résultats dans l'historique"
+      :code: CTRL KeyN et CTRL KeyP
+
+    -
+      :main_action: "Marquer/démarquer"
+      :action: "des fichiers à ouvrir"
+      :code: CTRL KeyZ
+      :memo: Peut le marquer aussi pour le créer (et ses parents)
+
+    -
+      :main_action: "Ouvrir"
+      :action: "plusieurs fichiers marqués par CTRL-z"
+      :code: CTRL KeyO
+      :memo: "Voir les valeurs l'option g:ctrlp_open_multiple_files"
+
+    -
+      :main_action: "Ouvrir"
+      :action: "le fichier dans une nouvelle tab"
+      :code: CTRL KeyT
+      :memo: "((t))ab"
+
+    -
+      :main_action: "Ouvrir"
+      :action: "le fichier dans un split horizontal"
+      :code:
+        - CTRL KeyX
+        - CTRL KeyS
+        - CTRL ENTER
+      :memo: "((s))plit"
+
+    -
+      :main_action: "Déplacer la sélection"
+      :action: "vers le bas"
+      :code: CTRL KeyJ
+      :memo: "((j)) comme le déplacement dans Vim"
+
+    -
+      :main_action: "Déplacer la sélection"
+      :action: "vers le haut"
+      :code: CTRL KeyK
+      :memo: "((k)) comme le déplacment dans Vim"
+
+    -
+      :main_action: "Déplacer le curseur"
+      :action: "au début du prompt"
+      :code: CTRL KeyA
+      :memo: ((a)) = première lettre alphabet.
+
+    -
+      :main_action: "Déplacer le curseur"
+      :action: "vers la gauche"
+      :code: CTRL KeyH
+      :memo: ((h)) comme le déplacement dans Vim
+
+    -
+      :main_action: "Déplacer le curseur"
+      :action: "vers la droite"
+      :code: CTRL KeyL
+      :memo: "((l)) comme le déplacement dans Vim"
+
+    -
+      :main_action: "Déplacer le curseur"
+      :action: "à la fin du prompt"
+      :code: CTRL KeyE
+      :memo: "((e))nd"
+
+    -
+      :main_action: Supprimer
+      :action: 'le mot précédent (dans le prompt)'
+      :mode: normal
+      :code: CTRL KeyW
+      :memo: "((w))ord"
+
+    -
+      :main_action: Supprimer
+      :action: "tout le texte de la console"
+      :code: CTRL KeyU
+
+    -
+      :main_action: Supprimer
+      :action: 'la sélection sans la mettre dans un registre quelconque'
+      :mode: normal
+      :code: '"_KeyD<motion>'
+      :exemples:
+        - '`"_KeyDKeyD` => Supprime la ligne, sans la conserver dans le registre "1'
+      :note: 'Ce registre spécial s’appelle le « black hole », le trou noir. Il permet de ne pas mémoriser la suppression dans les registres de 1 à 9.'
+
+    -
+      :main_action: "Sélectionner"
+      :action: "le prochain string dans l'historique (?)"
+      :code: CTRL KeyN
+      :memo: "((n))ext"
+
+    -
+      :main_action: "Sélectionner"
+      :action: "le précédent string dans l'historique (?)"
+      :code: CTRL KeyP
+      :memo: "((p))revious"
+
+    -
+      :main_action: "Créer"
+      :action: "un fichier et tous ses dossiers parents"
+      :code: CTRL KeyY
+
+    -
+      :main_action: "Quitter CtrlP"
+      :code:
+        - CTRL KeyC
+        - ESC
+
+# ---------------------------------------------------------------------
+#
+#   @@@ SIGNES
+#
+# ---------------------------------------------------------------------
+
+  SIGNES:
+
+    -
+      :main_action: Définir
+      :action: un sign
+      :mode: normal
+      :code: ":sign define <nom> text=<texte> texthl=<groupe>"
+      :note: "Il y a d'autres paramètres possibles, voir l'aide"
+
+    -
+      :main_action: Placer
+      :action: un signe
+      :mode: normal
+      :code: ":sign place <ID signe> line=<ligne> name=<nom du signe> file=<fichier>|buffer=<ID>"
+      :exemples:
+        - "`:sign place 2 line=3 name=MonSigne file=courant.txt`"
+
+    -
+      :main_action: Supprimer
+      :action: un signe
+      :mode: normal
+      :code: ":sign unplace <ID sign>[ file=<fichier>|buffer=<id buffer>]"
+
+    -
+      :main_action: Supprimer
+      :action: tous les signes
+      :mode: normal
+      :code: ":sign unplace *"
+
+    -
+      :main_action: Se rendre
+      :action: à un signe particulier
+      :mode: normal
+      :code: ":sign jump <ID signe>[ file=<fichier>|buffer=<id buffer>]"
+
+    -
+      :main_action: Afficher
+      :action: la liste des signes
+      :mode: normal
+      :code: ":sign list[ file=<fichier>|buffer=<id buf>]"
+
+    -
+      :main_action: Afficher
+      :action: les marques d'un signe en particulier
+      :mode: normal
+      :code: ":sign line <nom du fichier>"
+# ---------------------------------------------------------------------
+#
+#   @@@ CTAGS
+#
+# ---------------------------------------------------------------------
+
+  CTAGS:
+
+    -
+      :main_action: Générer
+      :action: "le repérage des tags/méthodes"
+      :mode: "$>"
+      :code: "ctags -R"
+
+    -
+      :main_action: Aller
+      :action: "à la définition d'une méthode"
+      :code: "CTRL ] (CTRL KeyDollar sur mac ?)"
+
+    -
+      :main_action: Aller
+      :action: "à la définition d'une méthode par son nom"
+      :code: ":tag <nom de la méthode>"
+
+    -
+      :main_action: Revenir
+      :action: "à la position de départ"
+      :code: CTRL KeyO
+
+
+# ---------------------------------------------------------------------
+#
+#  @@@ DIVERS
+#
+# ---------------------------------------------------------------------
+
+  DIVERS:
+
+    -
+      :main_action: Afficher
+      :action: "la liste des annulations possibles"
+      :mode: normal
+      :code: ":undolist"
+
+    -
+      :main_action: Revenir
+      :action: "à une annulation précise"
+      :mode: normal
+      :code: ":undo <numéro annulation>"
+      :note: "On obtient le numéro d'annulation à l'aide de `:undolist`"
+
+---
