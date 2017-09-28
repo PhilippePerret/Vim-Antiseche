@@ -46,7 +46,7 @@
   <body>
     <header>
       <h1>Vim - Antisèche</h1>
-      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Snippets</a></li><li><a href='#titre6'>Fenêtres & layout</a></li><li><a href='#titre7'>Tabs</a></li><li><a href='#titre8'>Fichiers</a></li><li><a href='#titre9'>Multi-fichiers</a></li><li><a href='#titre10'>Buffers</a></li><li><a href='#titre11'>Déplacements</a></li><li><a href='#titre12'>Marques</a></li><li><a href='#titre13'>Sélection</a></li><li><a href='#titre14'>Texte</a></li><li><a href='#titre15'>Autocomplétion</a></li><li><a href='#titre16'>Texte extras</a></li><li><a href='#titre17'>Recherche et remplacement</a></li><li><a href='#titre18'>Expression régulières</a></li><li><a href='#titre19'>Presse-papier (registre)</a></li><li><a href='#titre20'>Commandes</a></li><li><a href='#titre21'>Interface</a></li><li><a href='#titre22'>Options</a></li><li><a href='#titre23'>Nerdtree</a></li><li><a href='#titre24'>Mode ligne de commande (ex)</a></li><li><a href='#titre25'>Fenêtres (non essentiels)</a></li><li><a href='#titre26'>Ctrlp</a></li><li><a href='#titre27'>Signes</a></li><li><a href='#titre28'>Ctags</a></li><li><a href='#titre29'>Divers</a></li></ul>
+      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Interface</a></li><li><a href='#titre23'>Options</a></li><li><a href='#titre24'>Nerdtree</a></li><li><a href='#titre25'>Mode ligne de commande (ex)</a></li><li><a href='#titre26'>Fenêtres (non essentiels)</a></li><li><a href='#titre27'>Ctrlp</a></li><li><a href='#titre28'>Signes</a></li><li><a href='#titre29'>Ctags</a></li><li><a href='#titre30'>Divers</a></li></ul>
 
     </header>
     <section id="table_shortcuts">
@@ -391,7 +391,7 @@
         <td colspan="2" class='values'>  avec <code>&lt;element></code> :<br>    <code>buffers</code> sauve les buffers<br>    <code>globals</code> sauve les variables globales qui commencent par une majuscule et contiennent au moins une minuscule<br>    <code>help</code> sauve la fenêtre d’aide<br>    <code>blank</code> sauve les fenêtres vides ouvertes<br>    <code>options</code> sauve toutes les options et la carte clavier (keyboard mapping)<br>    <code>winpos</code> sauve les positions de fenêtre (GUI)<br>    <code>resize</code> sauve la taille de l’écran<br>    <code>winsize</code> sauve les tailles des fenêtres si possible<br>    <code>slash</code> sauve les paths escapés (pour utilisation de unix/mac à windaubes)<br>    <code>unix</code> sauve avec des retours chariots unix</td>
         
       </tr>
-</table><h3 id='titre5'>SNIPPETS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre5'>MAPPING</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -400,51 +400,183 @@
   </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Définir</td>
-        <td class="action">une abbréviation/un snippet</td>
-        <td colspan="2" class="shortcut">:abbreviate &lt;snippet> &lt;remplacement></td>
-        
-      </tr>
-      <tr class="exemples">
-        <td colspan="2"></td>
-        <td class="titre"><em>Exemples</em></td>
-        <td colspan="2"><div class="exemple"><code>:abbreviate @phil Philippe Perret &lt;philippe.perret@yahoo.fr></code> => en tapant <code>@phil</code>, on insert le texte 'Philippe Perret etc.'</div><div class="exemple"><code>ab multiline Une définition&lt;CR>Sur plusieurs&lt;CR>lignes</code> => à mettre dans un fichier à charger ou <code>.vimrc</code>.</div></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="mainaction">Définir</td>
-        <td class="action">une abbréviation pour le mode INSERT</td>
-        <td colspan="2" class="shortcut">:iabbrev[iate] &lt;snippet> &lt;remplacement><br>[dans fichier config] iabbrev &lt;snippet> &lt;remplacement></td>
+        <td class="mainaction">Définition</td>
+        <td class="action">du mapping</td>
+        <td colspan="2" class="shortcut"></td>
         
       </tr>
       <tr class="notes">
         <td colspan="2"></td>
         <td class="titre">Note</td>
-        <td colspan="2">Il faut utiliser <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/> pour l'étendre dans mode INSERT</td>
+        <td colspan="2">Le mapping est le fait d’associer une touche (ou une combinaison de touches) à une action. C’est une sorte de macro.</td>
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Expendre</td>
-        <td class="action">une abbréviation en mode INSERT</td>
-        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> &lt;snippet><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une map</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :map &lt;touche> &lt;action></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:map &lt;F1> "ay</code> => en pressant la touche F1, on copie le texte sélectionner (y) dans le registre "a" (<code>"a</code>)</div><div class="exemple"><code>:map &lt;F2> "ap</code> => en pressant la touche F2, on colle le texte du registre "a" au curseur.</div><div class="exemple"><code>:map ^A dd</code> => en pressant <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_A.png" class="kb" title="A"/>, on delete la ligne courante</div><div class="exemple"><code>:map ^B ^A</code> => en pressant <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_B.png" class="kb" title="B"/>, on produit la même action que <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_A.png" class="kb" title="A"/></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une map pour un mode particulier</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :&lt;lettre mode>map &lt;touche> &lt;action></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>lettre mode</code> :<br>    <code>i</code> (<code>im[ap]</code>) pour le mode <mode>[INSERT]</mode><br>    <code>c</code> (<code>cm[ap]</code>) pour le mode [COMMAND]<br>    Note : <code>:map!</code> pour les deux modes <mode>[INSERT]</mode> et [COMMAND]<br>    <code>v</code> (<code>vm[ap]</code>) pour le mode <mode>[VISUAL]</mode><br>    <code>n</code> (<code>nm[ap]</code>) pour le mode <mode>[NORMAL]</mode><br>    <code>s</code> (<code>sm[ap]</code>) pour le mode [SELECT]<br>    <code>o</code> (<code>om[ap]</code>) pour l’operator pending (mode dans lequel on entre lorsqu’une touche attend une « motion », par exemple « d » pour <code>delete</code>)</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Apparemment, pour que des lettres (par exemple « CAM ») se transforme en autre chose dans le mode <mode>[INSERT]</mode>, il faut vraiment utiliser <code>imap</code> (voir l’exemple).</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:imap CAM Camille</code> => Taper <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_C.png" class="kb" title="C"/><img src="./img/clavier/K_A.png" class="kb" title="A"/><img src="./img/clavier/K_M.png" class="kb" title="M"/>produit l’écriture de « Camille ».</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Lister</td>
+        <td class="action">toutes les maps</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :map</td>
         
       </tr>
       <tr>
         <td></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">une map</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :[&lt;mode>]unmap &lt;touche></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction"></td>
+        <td class="action">toutes les mappings</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :mapc[lear]</td>
+        
+      </tr>
+</table><h3 id='titre6'>SNIPPETS</h3><table cellspacing="0" cellpadding="0">  <tr>
+    <th width="100">Tags</th>
+    <th width="160">Action</th>
+    <th width="480">Sous-action</th>
+    <th width="490">Shortcut</th>
+    <th width="280">Mnémo</th>
+  </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une abbréviation/un snippet</td>
+        <td colspan="2" class="shortcut">:ab[breviate] &lt;snippet> &lt;remplacement></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Cette abbréviation sera valable pour le mode <mode>[INSERT]</mode> comme pour le mode [COMMAND]. Utiliser <code>ia[bbrev]</code> pour un snippet qui ne fonctionne qu’en mode insertion.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:abbreviate @phil Philippe Perret &lt;philippe.perret@yahoo.fr></code> => en tapant <code>@phil</code>, on insert le texte 'Philippe Perret etc.'</div><div class="exemple"><code>:ab multiline Une définition&lt;CR>Sur plusieurs&lt;CR>lignes</code> => à mettre dans un fichier à charger ou <code>.vimrc</code>.</div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une abbréviation pour le mode INSERT seulement</td>
+        <td colspan="2" class="shortcut">:ia[bbrev] &lt;snippet> &lt;remplacement><br>[dans fichier config] iabbrev &lt;snippet> &lt;remplacement></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On peut utiliser <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></code> ou <code><img src="./img/clavier/K_Espace.png" class="kb" title="Espace"/></code> pour l’étendre dans mode <mode>[INSERT]</mode>.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:iabbrev C Camille</code></div><div class="exemple"><code>:ia J Joaquim</code></div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une abbréviation pour le mode COMMAND seulement</td>
+        <td colspan="2" class="shortcut">:ca[bbreviate] &lt;snippet> &lt;remplacement></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:cabbreviate l list</code></div><div class="exemple"><code>:ca J Joaquim</code></div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Expendre</td>
+        <td class="action">une abbréviation en mode INSERT</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> &lt;snippet><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/><br><mode>[INSERT]</mode> &lt;snippet> <img src="./img/clavier/K_Espace.png" class="kb" title="Espace"/></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
         <td class="mainaction">Supprimer</td>
         <td class="action">une abbréviation précédemment définie</td>
         <td colspan="2" class="shortcut">:una[bbreviate] &lt;snippet></td>
         
       </tr>
       <tr>
-        <td></td>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">une abbréviation du mode INSERT</td>
+        <td colspan="2" class="shortcut">:iuna[bbreviate] &lt;snippet></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">une abbréviation du mode COMMAND</td>
+        <td colspan="2" class="shortcut">:cuna[bbreviate] &lt;snippet></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">toutes les abbréviations</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :abc[lear]</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">toutes les abbréviations du mode INSERT</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :iabc[lear]</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">toutes les abbréviations du mode COMMAND</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :cabc[lear]</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>snippet</span></td>
         <td class="mainaction">Afficher</td>
         <td class="action">toutes les abbréviations</td>
         <td colspan="2" class="shortcut">:ab[breviate]</td>
         
       </tr>
       <tr>
-        <td></td>
+        <td><span class='tag'>snippet</span></td>
         <td class="mainaction">Enregistrer</td>
         <td class="action">les abbréviations (et mapping et set) dans un fichier</td>
         <td colspan="1" class="shortcut">:mkvimrc &lt;path/to/fichier></td>
@@ -457,7 +589,7 @@
         <td colspan="2" class="shortcut">:so[urce] &lt;path/to/fichier></td>
         
       </tr>
-</table><h3 id='titre6'>FENÊTRES & LAYOUT</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre7'>FENÊTRES & LAYOUT</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -482,6 +614,25 @@
         <td class="action">la fenêtre alternative</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>^</td>
         
+      </tr>
+      <tr>
+        <td><span class='tag'>preview</span></td>
+        <td class="mainaction">Ouvrir</td>
+        <td class="action">dans la fenêtre de prévisualisation</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :pt[ag] &lt;fonction></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Ouvre la définition de la <code>&lt;fonction></code> dans la fenêtre de prévisualisation.</td>
+      </tr>
+      <tr>
+        <td><span class='tag'>preview</span></td>
+        <td class="mainaction">Fermer</td>
+        <td class="action">la fenêtre de prévisualisation</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :pc[lose]<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/></td>
+        <td><memo>p</memo>review close</td>
       </tr>
       <tr>
         <td><span class='tag'>split</span></td>
@@ -524,6 +675,18 @@
         <td class="action">verticalement en définissant la taille (colonne) du nouveau layout</td>
         <td colspan="2" class="shortcut">&lt;nombre colonnes>vsp</td>
         
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Faire défiler</td>
+        <td class="action">deux fenêtres en même temps</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set scrollbind</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (<code>:vert split</code>) puis taper <code>:set scrollbind</code> pour chacune des layouts.</td>
       </tr>
       <tr>
         <td><span class='tag'>layout</span><span class='tag'>size</span></td>
@@ -705,7 +868,7 @@
         <td colspan="2" class='values'>  avec <code>&lt;Lx></code> :<br>    <code>cursor</code> sauve la position du curseur<br>    <code>folds</code> sauve l’état courant des foldings<br>    <code>options</code> sauve les options incluant les options locales pour les buffers et fenêtres</td>
         
       </tr>
-</table><h3 id='titre7'>TABS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre8'>TABS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -833,7 +996,7 @@
         <td colspan="2" class='values'>  avec <code>&lt;nombre></code> :<br>    0 : ne jamais afficher<br>    1 : afficher quand onglets<br>    2 : toujours afficher</td>
         
       </tr>
-</table><h3 id='titre8'>FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre9'>FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -1079,24 +1242,43 @@
         
       </tr>
       <tr>
-        <td><span class='tag'>comparer</span></td>
+        <td><span class='tag'>comparer</span><span class='tag'>diff</span></td>
         <td class="mainaction">Comparer</td>
         <td class="action">deux fichiers</td>
-        <td colspan="2" class="shortcut">$> vimdiff &lt;path/to/file1> &lt;path/to/file2></td>
+        <td colspan="2" class="shortcut">$> vimdiff &lt;path/to/file1> &lt;path/to/file2><br>[COMMAND] :vert splitdiff &lt;path/to/file2></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Avec la seconde solution, le premier fichier doit être ouvert.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Aller</td>
+        <td class="action">à la [xième] différence suivante</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x] <img src="./img/clavier/K_Alt.png" class="kb" title="Alt"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_CrochetF.png" class="kb" title="CrochetF"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Revenir</td>
+        <td class="action">à la [xième] différence précédente</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x] <img src="./img/clavier/K_Alt.png" class="kb" title="Alt"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_CrochetO.png" class="kb" title="CrochetO"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         
       </tr>
       <tr>
         <td><span class='tag'>diff</span></td>
         <td class="mainaction">Modifier</td>
         <td class="action">l'autre fichier avec le texte du fichier courant</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_P.png" class="kb" title="P"/><br><mode>[NORMAL]</mode> :[&lt;range>] diffpu[t] [version à corriger]</td>
         <td><memo>d</memo>iff <memo>p</memo>ut</td>
       </tr>
       <tr>
         <td><span class='tag'>diff</span></td>
         <td class="mainaction">Modifier</td>
         <td class="action">l'autre fichier avec le texte du fichier courant</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_O.png" class="kb" title="O"/><br><mode>[NORMAL]</mode> :[&lt;range>] diffg[et] [version à corriger]</td>
         <td><memo>d</memo>iff <memo>o</memo>btain</td>
       </tr>
       <tr>
@@ -1114,7 +1296,7 @@
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple">Pour remplacer le mot PHIL par MARION dans plusieurs fichiers :<br>1. Enregistrer le code suivant dans le fichier <code>change.vim</code> :`:%s/PHIL/MARION/g<br>`:write<br>:quit`<br>2. Écrire un fichier <code>fichier.txt</code> avec des PHIL.<br>3. Quitter Vim<br>4. Taper :<br><code>$> vim -es fichier.txt &lt; change.vim</code><br>=> Tous les PHIL sont remplacés par des MARION dans le fichier.</div></td>
+        <td colspan="2"><div class="exemple">Pour remplacer le mot PHIL par MARION dans plusieurs fichiers :<br>1. Enregistrer le code suivant dans le fichier <code>change.vim</code> :<code>:%s/PHIL/MARION/g<br></code>:write<br>:quit<code><br>2. Écrire un fichier </code>fichier.txt<code> avec des PHIL.<br>3. Quitter Vim<br>4. Taper :<br></code>$> vim -es fichier.txt &lt; change.vim`<br>=> Tous les PHIL sont remplacés par des MARION dans le fichier.</div></td>
       </tr>
       <tr>
         <td></td>
@@ -1150,17 +1332,42 @@
         <td class="titre"><em>Exemple</em></td>
         <td colspan="2"><div class="exemple">Quand on a joué avant <code>:earlier 1h</code> (retour à l'état du fichier 1 heure avant), la commande <code>:later 1h</code> fait revenir au dernier état du fichier.</div></td>
       </tr>
-</table><h3 id='titre9'>MULTI-FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre10'>MULTI-FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
     <th width="490">Shortcut</th>
     <th width="280">Mnémo</th>
   </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">les paths par défaut</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set path=&lt;path/1>,&lt;path/2>…,&lt;path/N></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>path/N</code> :<br>    <code>&lt;dossier>/*</code> => tous les dossiers du dossier<br>    <code>&lt;dossier/**</code> => toute la hiérarchie du dossier<br>    <code></code> => le dossier courant (donc on doit avoir deux virgules dans la définition)<br>    <code>.</code> => le dossier du fichier courant (fichier activé au moment de l’opération)</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">un dossier au top de la recherche</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set path ^= &lt;path/to/folder><br><mode>[NORMAL]</mode> :set path+=&lt;path/to> (?)</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set path ^= ../lib</code> place le dossier <code>lib</code> situé dans le dossier parent du dossier parent dans les paths de recherche.</div></td>
+      </tr>
       <tr>
         <td></td>
         <td class="mainaction">Ouvrir</td>
-        <td class="action">plusieurs fichiers (dans des buffers)</td>
+        <td class="action">plusieurs fichiers dans des buffers</td>
         <td colspan="1" class="shortcut">$> gvim path/to/file1 path/to/file2</td>
         <td>Ne semble pas fonctionner sur mac par défaut.</td>
       </tr>
@@ -1174,7 +1381,7 @@
       <tr>
         <td></td>
         <td class="mainaction">Passer</td>
-        <td class="action">au(x) fichiers(s) précédants</td>
+        <td class="action">au(x) fichiers(s) précédents</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :[x]p[previous]<br><mode>[NORMAL]</mode> :[x]<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_N.png" class="kb" title="N"/></td>
         
       </tr>
@@ -1227,7 +1434,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set noautowrite</td>
         
       </tr>
-</table><h3 id='titre10'>BUFFERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre11'>BUFFERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -1353,13 +1560,25 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :bd!</td>
         <td><memo>b</memo>uffser <memo>d</memo>elete</td>
       </tr>
-</table><h3 id='titre11'>DÉPLACEMENTS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre12'>DÉPLACEMENTS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
     <th width="490">Shortcut</th>
     <th width="280">Mnémo</th>
   </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Déplacer</td>
+        <td class="action">plusieurs lignes à une ligne précise</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;range> move &lt;ligne before></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:2,4 move 9</code> => déplace les lignes de 2 à 4 (comprise) APRÈS la 9&lt;sup>e&lt;/sup> ligne.</div></td>
+      </tr>
       <tr>
         <td></td>
         <td class="mainaction">Retourner</td>
@@ -1518,11 +1737,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> ^</td>
         <td>Comme expressions régulières</td>
       </tr>
-      <tr>
+      <tr class="main">
         <td><span class='tag'>ligne</span></td>
         <td class="mainaction">Aller</td>
         <td class="action">à la ligne &lt;i>num&lt;/i></td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> &lt;numéro ligne> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_G.png" class="kb" title="G"/><br><mode>[NORMAL]</mode> &lt;numéro ligne> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_G.png" class="kb" title="G"/></td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :&lt;numéro ligne><br><mode>[NORMAL]</mode> &lt;numéro ligne> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_G.png" class="kb" title="G"/><br><mode>[NORMAL]</mode> &lt;numéro ligne> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_G.png" class="kb" title="G"/></td>
         <td><memo>g</memo>o</td>
       </tr>
       <tr>
@@ -1678,11 +1897,35 @@
         <td colspan="2"><div class="exemple"><code>50%</code> se rend à la moitié du document.</div></td>
       </tr>
       <tr>
-        <td></td>
+        <td><span class='tag'>pairs</span></td>
         <td class="mainaction">Aller</td>
-        <td class="action">à l'élément pair (précédent/suivant)</td>
+        <td class="action">à l'élément paire (précédent/suivant)</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> % (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>ù)</td>
         
+      </tr>
+      <tr>
+        <td><span class='tag'>pairs</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">les caractères formant des paires</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set matchpairs=&lt;in>:&lt;out>,&lt;in>:&lt;out>,etc.</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set matchpairs=(:),[:],{:},&lt;:></code></div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>pairs</span></td>
+        <td class="mainaction">Ajouter</td>
+        <td class="action">une paire de caractères</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set matchpairs+=&lt;in>:&lt;out></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set matchpairs+=&lt;:></code> ajoute la paire "&lt;" et ">".</div></td>
       </tr>
       <tr>
         <td><span class='tag'>curseur</span></td>
@@ -1712,7 +1955,7 @@
         <td colspan="2" class="shortcut">:set whichwrap=&lt;lettre></td>
         
       </tr>
-</table><h3 id='titre12'>MARQUES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre13'>MARQUES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -1797,7 +2040,7 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> '&lt;a-zA-Z><br><mode>[NORMAL]</mode> `&lt;a-zA-Z></td>
         <td>"'" se rend au début de la ligne<br>"`" se rend à la ligne/colonne de la marque.</td>
       </tr>
-</table><h3 id='titre13'>SÉLECTION</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre14'>SÉLECTION</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -1988,7 +2231,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_H.png" class="kb" title="H"/></td>
         
       </tr>
-</table><h3 id='titre14'>TEXTE</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre15'>TEXTE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -2106,6 +2349,18 @@
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
         <td colspan="2"><div class="exemple"><code>80i- <img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/></code> insert 80 tiret au curseur</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Insérer</td>
+        <td class="action">n’importe quel caractère tel quel.</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>&lt;signe></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Ça concerne aussi bien les retours chariot que les tabulations.</td>
       </tr>
       <tr>
         <td></td>
@@ -2525,12 +2780,12 @@
         <td class="mainaction">Supprimer</td>
         <td class="action">jusqu’à la fin de la ligne</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
-        <td><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/> = fin de ligne</td>
+        <td><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/>= fin de ligne</td>
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Supprimer</td>
-        <td class="action">jusqu'à la fin de la ligne et passer en insertion</td>
+        <td class="action">jusqu’à la fin de la ligne et passer en insertion</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         <td><memo>C</memo>hange</td>
       </tr>
@@ -2550,52 +2805,178 @@
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Copier</td>
-        <td class="action">(Yanker) une portion de texte</td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">une ligne par son numéro [et la placer dans un registre]</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;numéro ligne>delete [registre]</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Si le registre est Majuscule, la commande ajoute le texte au texte présent dans le registre minuscule.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:5delete</code> => supprime la ligne 5.</div><div class="exemple"><code>:6delete z</code> => supprime la ligne 6 en plaçant son contenu dans le registre "z".</div><div class="exemple"><code>:7delete Z</code> => supprime la ligne 7 en AJOUTANT son contenu au registre "z".</div></td>
+      </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">des lignes à partir d’un numéro et pour un certain compte [en les plaçant dans un registre]</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :&lt;ligne from> delete [registre] &lt;nombre ligne></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Si le registre est majuscule, on AJOUTE le contenu des lignes au registre.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:4 delete 10</code> => efface 10 lignes à partir de la 4e comprise</div><div class="exemple"><code>:2 delete s 4</code> => efface 4 lignes à partir de la 2 et place leur contenu dans le registre "s"</div><div class="exemple"><code>:10 delete S 2</code> => efface 2 lignes à partir de la 10e et AJOUTE leur contenu au registre "s"</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">un rang de lignes [en l’insérant dans un registre]</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;range> delete [registre]</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Si le registre est une capitale, c’est un ajout au texte existant qu’il faut faire.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:1,3 delete a</code> => supprime les lignes 1 à 3 en en mettant le contenu dans le registre "a"</div><div class="exemple"><code>:4,5 delete A</code> => supprime les lignes 4 à 5 en AJOUTANT leur contenu au registre "a"</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">des lignes en spécifiant un mot qu’elles contiennent [et placer le contenu dans un registre].</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :/&lt;mot ligne de>/, /&lt;mot ligne à>/ delete [registre]</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Si le <code>&lt;mot ligne à></code> se trouve avant le <code>&lt;mot ligne de></code>, la commande ne produit rien.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>: /depuis/, /jusqu’à/ delete w</code> => efface les lignes depuis la ligne contenant "depuis" jusqu’à la ligne contenant "jusqu’à" et met le contenu dans le registre "w".</div><div class="exemple"><code>:/de/, /à/ delete W</code> => ajoute depuis la ligne contenant "de" jusqu’à la ligne contenant "à" au registre "w" en supprimant les lignes.</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">des lignes en spécifiant un mot contenu dans une ligne précédente ou suivante</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :/mot de/&lt;+|->&lt;nombre lignes>, /mot à/&lt;+|->&lt;nombre lignes> delete [registre]</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">des lignes en spécifiant plusieurs mots recherchés à la suite</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :/mot 1/ /mot puis/ /autre mot puis.../, /mot 2/ /mot puis/ delete [registre]</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer/yanker</td>
+        <td class="action">des lignes en précisant à quelle ligne commencer la recherche par mot</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :[&lt;numéro ligne>]/mot de/, [&lt;numéro ligne>]/mot à/ delete [registre]</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Attention de s’assurer que le second mot se trouve bien après le premier.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:7/Marion/, 8/Phil/ delete R</code> => Efface depuis la première ligne contenant "Marion" à partir de la ligne 7, jusque la ligne contenant "Phil" en ajoutant ces lignes au registre "r".</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Yanker</td>
+        <td class="action">une portion de texte</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/>, <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_M.png" class="kb" title="M"/>, <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Y.png" class="kb" title="Y"/>etc.</td>
         <td><memo>y</memo>ank</td>
       </tr>
-      <tr>
-        <td></td>
-        <td class="mainaction">Copier</td>
-        <td class="action">la ligne dans le registre par défaut</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Y.png" class="kb" title="Y"/></td>
-        <td><memo>y</memo>ank</td>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On fait la distinction entre « yanker », qui mémorise un texte et « copier » qui ajoute un texte au texte.</td>
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Copier</td>
+        <td class="mainaction">Yanker</td>
+        <td class="action">la ligne courante dans le registre par défaut</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Y.png" class="kb" title="Y"/></td>
+        <td><memo>y</memo>ank</td>
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On fait la distinction entre « yanker », qui mémorise un texte et « copier » qui ajoute un texte au texte.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Yanker</td>
         <td class="action">du curseur à la fin de la ligne dans le registre par défaut</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></td>
         
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Copier</td>
+        <td class="mainaction">Yanker</td>
         <td class="action">depuis le curseur jusqu’au début de la ligne</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/>0<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/>^</td>
         
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Copier</td>
+        <td class="mainaction">Yanker</td>
         <td class="action">depuis le curseur jusqu’à une marque</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> 1. Placer la marque (m&lt;a-Z>)<br>2. Se déplacer à l'endroit voulu.<br>3. <code>y'&lt;a-Z></code></td>
         
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Copier</td>
+        <td class="mainaction">Yanker</td>
         <td class="action">le mot courant dans le registre par défaut</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_W.png" class="kb" title="W"/></td>
         
       </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Copier</td>
+        <td class="mainaction">Yanker</td>
         <td class="action">plusieurs lignes</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> [x]<img src="./img/clavier/K_Y.png" class="kb" title="Y"/></td>
         <td>p.e. <code>3y</code></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Copier</td>
+        <td class="action">plusieurs lignes à un endroit du texte.</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;range> copy &lt;ligne before></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On fait bien la différence, ici, entre « yanker » (qui ne fait &lt;em>que&lt;/em> mémoriser le texte) et « copier » (qui &lt;em>ajoute&lt;/em> le texte au texte).</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:2,4 copy 9</code> => yank le contenu des lignes de 2 à 4 (comprise) et le colle APRÈS la 9&lt;sup>e&lt;/sup> ligne.</div></td>
       </tr>
       <tr>
         <td></td>
@@ -2620,7 +3001,7 @@
         <td><span class='tag'>ligne</span><span class='tag'>indentation</span></td>
         <td class="mainaction">Réindenter</td>
         <td class="action">[x] ligne[s]</td>
-        <td colspan="1" class="shortcut">[x]<img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/> <img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/></td>
+        <td colspan="1" class="shortcut">[x]<img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/><img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/></td>
         <td><memo>==</memo> Mêmes espaces</td>
       </tr>
       <tr class="notes">
@@ -2628,19 +3009,67 @@
         <td class="titre">Note</td>
         <td colspan="2"><code>x</code> est le nombre de lignes à réindenter</td>
       </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Indenter</td>
+        <td class="action">la ligne courante</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_T.png" class="kb" title="T"/></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Bien noter que c’est en mode <mode>[INSERT]</mode>.<br>La valeur de l’indentation dépendera de la valeur de l’option <code>shilfwidth</code>.</td>
+      </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Désindenter</td>
+        <td class="action">la ligne courante</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Bien noter que c’est en mode <mode>[INSERT]</mode>.<br>La valeur de l’indentation dépendera de la valeur de l’option <code>shilfwidth</code>.</td>
+      </tr>
       <tr>
         <td><span class='tag'>ligne</span><span class='tag'>indentation</span></td>
         <td class="mainaction">Indenter</td>
         <td class="action">la [ou les] ligne[s] courante[s]</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x] <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/> <img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/></td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x] <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/><img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/></td>
         
       </tr>
       <tr>
         <td><span class='tag'>ligne</span><span class='tag'>indentation</span></td>
         <td class="mainaction">Désindenter</td>
         <td class="action">la [ou les] ligne[s] courante[s]</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x] <img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/> <img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/></td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x] <img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/><img src="./img/clavier/K_SupInf.png" class="kb" title="SupInf"/></td>
         
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Désindenter</td>
+        <td class="action">plusieurs lignes successives</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> 0 <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Noter plusieurs choses : d’abord, on est en mode <mode>[INSERT]</mode> et donc le <code>0</code> sera écrit à l’écran. Noter ensuite que cette désindentation n’est pas définitive. L’utilisation de <img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/><img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/>la supprimera.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Désindenter</td>
+        <td class="action">seulement une ligne et revenir à la même colonne</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> ^ <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Mêmes remarque que pour la commande précédente.</td>
       </tr>
       <tr>
         <td></td>
@@ -2679,7 +3108,7 @@
         <td></td>
         <td class="mainaction">Reformater</td>
         <td class="action">des lignes en indiquant leur nombre</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/>&lt;nombre>j</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/>&lt;nombre> j</td>
         
       </tr>
       <tr class="main">
@@ -2693,7 +3122,7 @@
         <td></td>
         <td class="mainaction">Reformater</td>
         <td class="action">la ligne courante</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/><img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/><img src="./img/clavier/K_G.png" class="kb" title="G"/>.</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/><img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/><img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Point.png" class="kb" title="Point"/></td>
         
       </tr>
       <tr>
@@ -2701,6 +3130,13 @@
         <td class="mainaction">Reformater</td>
         <td class="action">les lignes jusqu’au prochain paragraphe</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/>}</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Reformater</td>
+        <td class="action">les lignes de commentaires</td>
+        <td colspan="2" class="shortcut"><mode>[VISUAL]</mode> Sélectionner les lignes, <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/></td>
         
       </tr>
       <tr>
@@ -2814,7 +3250,7 @@
         <td colspan="2" class="shortcut"><mode>[VISUAL]</mode> Passer en mode visuel, sélectionner puis taper <code>:print</code> pour imprimer la sélection.</td>
         
       </tr>
-</table><h3 id='titre15'>AUTOCOMPLÉTION</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre16'>AUTOCOMPLÉTION</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -2911,7 +3347,7 @@
         <td class="titre">Note</td>
         <td colspan="2">On doit avoir afficher la liste des mots avec <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></code></td>
       </tr>
-</table><h3 id='titre16'>TEXTE EXTRAS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre17'>TEXTE EXTRAS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -2965,7 +3401,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :match none</td>
         
       </tr>
-</table><h3 id='titre17'>RECHERCHE ET REMPLACEMENT</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre18'>RECHERCHE ET REMPLACEMENT</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3016,14 +3452,14 @@
         <td></td>
         <td class="mainaction">Atteindre</td>
         <td class="action">la première occurrence du mot sous le curseur en avant</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Etoile.png" class="kb" title="Etoile"/> (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/>)</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Etoile.png" class="kb" title="Etoile"/>(<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/>)</td>
         
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Atteindre</td>
         <td class="action">la première occurrence du mot sous le curseur en arrière</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Livre.png" class="kb" title="Livre"/> (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>`)<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Diese.png" class="kb" title="Diese"/> (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Arobase.png" class="kb" title="Arobase"/>)</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Livre.png" class="kb" title="Livre"/>(<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>`)<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Diese.png" class="kb" title="Diese"/>(<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Arobase.png" class="kb" title="Arobase"/>)</td>
         
       </tr>
       <tr>
@@ -3341,10 +3777,10 @@
         <td></td>
         <td class="mainaction">Remplacer</td>
         <td class="action">le texte en mode [SELECT]</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_H.png" class="kb" title="H"/>, <img src="./img/clavier/K_FlecheG.png" class="kb" title="FlecheG"/>/<img src="./img/clavier/K_FlecheD.png" class="kb" title="FlecheD"/> pour sélectionner, &lt;texte></td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_H.png" class="kb" title="H"/>, <img src="./img/clavier/K_FlecheG.png" class="kb" title="FlecheG"/>/<img src="./img/clavier/K_FlecheD.png" class="kb" title="FlecheD"/>pour sélectionner, &lt;texte></td>
         
       </tr>
-</table><h3 id='titre18'>EXPRESSION RÉGULIÈRES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre19'>EXPRESSION RÉGULIÈRES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3507,7 +3943,7 @@
         <td class="titre"><em>Exemple</em></td>
         <td colspan="2"><div class="exemple">dans <code>a\([b-d]\)1\([0-5]\)</code>, "\1" faire référence à "[b-d]" et "\2" fait référence à "[0-5]".</div></td>
       </tr>
-</table><h3 id='titre19'>PRESSE-PAPIER (REGISTRE)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre20'>PRESSE-PAPIER (REGISTRE)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3524,9 +3960,52 @@
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
-        <td class="action">le contenu d'un presse-papier</td>
-        <td colspan="1" class="shortcut">"&lt;lettre>p</td>
+        <td class="action">le contenu d’un presse-papier (en mode normal)</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> "&lt;lettre><img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
         <td><memo>p</memo>aste</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Insérer</td>
+        <td class="action">le contenu d’un registre en adaptant l’identation</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> "&lt;lettre> <img src="./img/clavier/K_Alt.png" class="kb" title="Alt"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_CrochetF.png" class="kb" title="CrochetF"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
+        <td><memo>p</memo>aste</td>
+      </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Insérer</td>
+        <td class="action">le contenu d’un registre (en mode insert)</td>
+        <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>&lt;registre></td>
+        <td><memo>R</memo>egistre</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>=</code> insert au curseur le registre "=</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Insérer</td>
+        <td class="action">le contenu d’un registre sans indenter (en mode insert)</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/><img src="./img/clavier/K_O.png" class="kb" title="O"/>&lt;registre></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/><img src="./img/clavier/K_O.png" class="kb" title="O"/>a</code> -> insert le registre "a"</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Insérer</td>
+        <td class="action">le contenu d’un registre en laissant Vim gérer l’identation.</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/><img src="./img/clavier/K_P.png" class="kb" title="P"/>&lt;registre></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/><img src="./img/clavier/K_P.png" class="kb" title="P"/>r</code> -> insert le registre "r" en gérant l’identation correctement.</div></td>
       </tr>
       <tr>
         <td></td>
@@ -3563,7 +4042,7 @@
         <td></td>
         <td class="mainaction">Afficher</td>
         <td class="action">le contenu de tous les registres</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :registers</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :reg[isters]</td>
         
       </tr>
       <tr>
@@ -3582,7 +4061,7 @@
         <td></td>
         <td class="mainaction">Référence</td>
         <td class="action">au registre global</td>
-        <td colspan="2" class="shortcut">"+</td>
+        <td colspan="2" class="shortcut">" <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_P.png" class="kb" title="P"/>lus</td>
         
       </tr>
       <tr>
@@ -3592,7 +4071,7 @@
         <td colspan="2" class="shortcut">"_</td>
         
       </tr>
-</table><h3 id='titre20'>COMMANDES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre21'>COMMANDES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3601,17 +4080,36 @@
   </tr>
       <tr>
         <td></td>
-        <td class="mainaction">Quitter</td>
-        <td class="action">tout</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :qall</td>
-        <td>quit <memo>all</memo></td>
+        <td class="mainaction">Passer en revue</td>
+        <td class="action">toutes les commandes entrées en cours de session</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> : <img src="./img/clavier/K_FlecheH.png" class="kb" title="FlecheH"/><br><mode>[NORMAL]</mode> : <img src="./img/clavier/K_FlecheB.png" class="kb" title="FlecheB"/></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">tout l’historique des commandes entrées au cours de la session</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> q:<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_F.png" class="kb" title="F"/></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Définir l’option <code>cmdwinheight</code> (<code>cwh</code>) pour régler la hauteur de la fenêtre affichant la liste.</td>
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Quitter</td>
-        <td class="action">après avoir enregistré</td>
+        <td class="action">tout [sans sauver]</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :qall[!]</td>
+        <td>quit <memo>all</memo></td>
+      </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Quitter</td>
+        <td class="action">en enregistrant tout</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/></td>
-        <td><memo>zzz</memo> dodo</td>
+        <td><memo>zzz</memo> (dodo)</td>
       </tr>
       <tr>
         <td></td>
@@ -3655,7 +4153,7 @@
         <td colspan="2" class="shortcut">$> vim -u NONE</td>
         
       </tr>
-</table><h3 id='titre21'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre22'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3689,6 +4187,43 @@
         
       </tr>
       <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">l’apparence du texte</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :hi[ghlight] &lt;groupe> cterm=&lt;aspect> ctermfg=&lt;couleur police> ctermbg=&lt;couleur fond><br><mode>[NORMAL]</mode> :hi[ghlight] &lt;groupe> start=&lt;<img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>>X stop=&lt;<img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>>Y</td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>&lt;groupe></code> :<br>    <code>Keyword</code> : les mots-clés du langage<br>    <code>Comment</code> : les commentaires<br>    etc.</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Pour une version plus avancée de l’utilisation, voir l’aide.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:highlight Comment cterm=underline ctermfg=red ctermbg=blue</code> => Tous les commentaires seront soulignés, en rouge sur fond bleu (horribles, quoi…)</div><div class="exemple"><code>:hi Keyword ctermfg=4</code></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la hauteur de la fenêtre affichant la liste des commandes</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :set cmdwinheight=&lt;nombre de lignes><br><mode>[NORMAL]</mode> :set cwh=&lt;nombre lignes></td>
+        <td><memo>cmd</memo>=Command, <memo>win</memo>=Window, <memo>height</memo>=hauteur</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">[Dés]Activer</td>
+        <td class="action">le folding</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set [no]foldenable<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_N.png" class="kb" title="N"/>(off), <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_N.png" class="kb" title="N"/>(on)<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_I.png" class="kb" title="I"/>(toggle)</td>
+        
+      </tr>
+      <tr>
         <td><span class='tag'>folding</span></td>
         <td class="mainaction">Définir manuellement le folding</td>
         <td class="action">du code courant</td>
@@ -3697,19 +4232,166 @@
       </tr>
       <tr>
         <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Définir le folding</td>
+        <td class="action">à l’aide d’un string d’entrée et de sortie</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set foldmethod=marker; :set foldmarker=&lt;entrée>,&lt;sortie><br><mode>[COMMAND]</mode> :set fdm=marker; :set fdr=&lt;in>,&lt;out></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Ensuite, on peut ajouter un level après l’entrée et la sortie. Par exemple :<br><code>&lt;1<br>Mon texte de niveau 1<br>&lt;2<br>Le texte de niveau 2.Autre ligne dans le niveau 2<br>>2<br>>1</code></td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set foldmethod=marker; :set foldmarker=&lt;,></code></div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la marque quand le folding est replié</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set foldtext=v:&lt;valeur></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>valeur</code> :<br>    <code></code> (rien) : <code>+--- &lt;x> lines folded</code><br>    <code>foldstart</code> : le numéro de la première ligne<br>    <code>foldend</code> : le numéro de la dernière ligne<br>    <code>foldlevel</code> : niveau de folding<br>    <code>folddashes</code> : un caractère défini (mais je ne sais pas comment)</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la largeur de la colonne de gauche</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set foldcolumn=&lt;nombre de 0 (défaut) à 12><br><mode>[COMMAND]</mode> :fdc=&lt;0-12></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Folder</td>
+        <td class="action">les x lignes suivantes par un nombre ou un rang</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> &lt;nombre> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_F.png" class="kb" title="F"/><br><mode>[COMMAND]</mode> :&lt;first line>, &lt;last line> fold</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">le folding sous le curseur.</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
+        <td><memo>d</memo>elete</td>
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Il suffit de se trouver dans le folding et d’exécuter cette combinaison.</td>
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">récursivement tous les folding sous le curseur.</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Toggler (ouvrir/fermer)</td>
+        <td class="action">le folding sous le curseur</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_A.png" class="kb" title="A"/></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Toggler (ouvrir/fermer)</td>
+        <td class="action">tous les niveaux de folding sous le curseur</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_A.png" class="kb" title="A"/></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
         <td class="mainaction">Replier (collapse)</td>
         <td class="action">le code courant</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_C.png" class="kb" title="C"/><br><mode>[NORMAL]</mode> :&lt;range> foldc[lose]</td>
         <td><memo>c</memo>lose</td>
       </tr>
       <tr>
         <td><span class='tag'>folding</span></td>
         <td class="mainaction">Déplier (open)</td>
         <td class="action">le code courant</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_O.png" class="kb" title="O"/><br><mode>[NORMAL]</mode> :&lt;range> foldo[pen]</td>
         <td><memo>o</memo>pen</td>
       </tr>
-</table><h3 id='titre22'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Se déplacer</td>
+        <td class="action">au début du folding courant</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Alt.png" class="kb" title="Alt"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_CrochetO.png" class="kb" title="CrochetO"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Se déplacer</td>
+        <td class="action">à la fin du folding courant</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Alt.png" class="kb" title="Alt"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>keyCrochetF <img src="./img/clavier/K_Z.png" class="kb" title="Z"/></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Se déplacer</td>
+        <td class="action">au folding suivant</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> keyZ <img src="./img/clavier/K_J.png" class="kb" title="J"/></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Se déplacer</td>
+        <td class="action">au folding précédente</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_K.png" class="kb" title="K"/></td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Exécuter une action</td>
+        <td class="action">sur tous les foldings ouverts</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :% folddoopen &lt;command></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On peut faire la même chose avec les foldings fermés à l’aide de <code>folddoclosed</code> (mais bon, c’est un peu risqué quand même).</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:% folddoopen s/Marion/Bébé/g</code> -> Change tous les "Marion" par des "Bébé" dans les foldings ouverts</div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>folding</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">ce qui peut ouvrir les foldings</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set foldo[pen]=&lt;liste valeurs><br><mode>[NORMAL]</mode> :set fdo=&lt;valeurs></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Consulter l’aide pour voir toutes les valeurs possibles.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">ce qui crée les foldings</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set foldmethod=&lt;valeur><br><mode>[NORMAL]</mode> :set fdm=&lt;valeur></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>valeur</code> :<br>    <code>diff</code> en fonction de l’opération checkant les différences<br>    <code>expr</code> : folding créés par une l’expression définie par <code>foldexpr</code> (<code>fde</code>)<br>    <code>indent</code> : folding créés par l’indentation<br>    <code>manual</code> : folding créés manuellement<br>    <code>marker</code> : folding créés par des markers<br>    <code>syntax</code> : folding créés par la syntaxe (n’importe quel élément de syntaxe qui possède l’option <code>fold</code>)</td>
+        
+      </tr>
+</table><h3 id='titre23'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3745,7 +4427,7 @@
       <tr>
         <td></td>
         <td class="mainaction">Afficher</td>
-        <td class="action">l'état d'une option</td>
+        <td class="action">l’état d'une option</td>
         <td colspan="1" class="shortcut">:set &lt;option>?</td>
         <td><memo>?</memo> interroger</td>
       </tr>
@@ -3780,7 +4462,7 @@
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
-        <td class="action">la hauteur minimum d'une fenêtre au split</td>
+        <td class="action">la hauteur minimum d’une fenêtre au split</td>
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set winheight=&lt;nombre lignes></td>
         
       </tr>
@@ -3798,7 +4480,7 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]equalalways</td>
         
       </tr>
-</table><h3 id='titre23'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre24'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3819,7 +4501,7 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         <td><memo>c</memo>urrent</td>
       </tr>
-</table><h3 id='titre24'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre25'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3852,7 +4534,7 @@
         <td class="titre">Note</td>
         <td colspan="2">Taper «exit» pour revenir dans Vim.</td>
       </tr>
-</table><h3 id='titre25'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre26'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -3939,7 +4621,7 @@
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>/<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_R.png" class="kb" title="R"/></td>
         <td><memo>w</memo>indow, <memo>r</memo>epositionne</td>
       </tr>
-</table><h3 id='titre26'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre27'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4146,14 +4828,14 @@
       <tr>
         <td></td>
         <td class="mainaction">Sélectionner</td>
-        <td class="action">le prochain string dans l'historique (?)</td>
+        <td class="action">le prochain string dans l’historique</td>
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_N.png" class="kb" title="N"/></td>
         <td><memo>n</memo>ext</td>
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Sélectionner</td>
-        <td class="action">le précédent string dans l'historique (?)</td>
+        <td class="action">le précédent string dans l’historique</td>
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
         <td><memo>p</memo>revious</td>
       </tr>
@@ -4171,7 +4853,7 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/><br><img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/></td>
         
       </tr>
-</table><h3 id='titre27'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre28'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4237,7 +4919,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :sign line &lt;nom du fichier></td>
         
       </tr>
-</table><h3 id='titre28'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre29'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4255,13 +4937,13 @@
         <td></td>
         <td class="mainaction">Aller</td>
         <td class="action">à la définition d'une méthode</td>
-        <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/>] (<img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/> sur mac ?)</td>
+        <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/>] (<img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/>sur mac ?)</td>
         
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Aller</td>
-        <td class="action">à la définition d'une méthode par son nom</td>
+        <td class="action">à la définition d’une méthode par son nom</td>
         <td colspan="2" class="shortcut">:tag &lt;nom de la méthode></td>
         
       </tr>
@@ -4272,7 +4954,7 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
         
       </tr>
-</table><h3 id='titre29'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre30'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>

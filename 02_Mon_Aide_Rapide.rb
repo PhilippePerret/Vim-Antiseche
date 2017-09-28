@@ -69,9 +69,9 @@ def formate t
   .gsub(/ ?\bENTER\b/, keyboard('Entree'))
   .gsub(/\bARROW_UP\b/, keyboard('FlecheH'))
   .gsub(/\bARROW_DOWN\b/, keyboard('FlecheB'))
-  .gsub(/Key(Arobase|Diese|Dollar|FlecheG|FlecheD|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Virgule)/){keyboard($1)}
+  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Virgule) ?/){keyboard($1)}
   .gsub(/Key([A-Z]) ?/){keyboard($1.upcase)}
-  .gsub(/\`(.*?)\`/,'<code>\1</code>')
+  .gsub(/\`(.*?)\`/m,'<code>\1</code>')
   .gsub(/\n/,'<br>')
 end
 def tag mot
