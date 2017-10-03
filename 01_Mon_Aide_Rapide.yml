@@ -42,14 +42,6 @@
 
     -
       :main_action: Définir
-      :action: "le nombre de lignes de l'historique (:history) à conserver"
-      :mode: normal
-      :code: ":<nombre lignes>"
-      :exemples:
-        - "`:set viminfo=:100` => 100 lignes d'historique seront conservées"
-
-    -
-      :main_action: Définir
       :action: "le nombre de ligne d'historique de recherche"
       :mode: normal
       :code: "/<nombre lignes>"
@@ -73,9 +65,9 @@
 
     -
       :main_action: Définir
-      :action: "un viminfo type"
+      :action:      un viminfo type
       :code: ":set viminfo='1000,f1,:100,/100,%,!"
-      :note: "signifie qu'on conserve les marques locales de 1000 fichiers (`'1000`), qu'on conserve les marques globales (`f1`), qu'on conserve 100 lignes d'history (`:100`) et 100 ligne d'historique de recherche (`/100`), qu'on sauve et restaure la liste des buffers (`%`) et qu'on sauve les variables globales (`!`)."
+      :note: "signifie qu'on conserve les marques locales de 1000 fichiers (`'1000`), qu'on conserve les marques globales (`f1`), qu'on conserve 100 lignes d’history (`:100`) et 100 ligne d'historique de recherche (`/100`), qu'on sauve et restaure la liste des buffers (`%`) et qu'on sauve les variables globales (`!`)."
 
     -
       :main_action: "Forcer l'écriture"
@@ -828,7 +820,7 @@
   FICHIERS:
 
     -
-      :main_action: "[Ne plus] Produire"
+      :main_action: '[Ne plus] Produire'
       :action:      un backup
       :mode: normal
       :code: ":set [no]backup"
@@ -866,39 +858,39 @@
 
     -
       :main_action: Ouvrir
-      :action: "un fichier en lecture seule (depuis Terminal)"
+      :action:      un fichier en lecture seule (depuis Terminal)
       :code:
         - '$> vim -R fichier.ext'
         - '$> view fichier.ext'
 
     -
       :main_action: Ouvrir
-      :action: "un fichier en encryption"
+      :action:      un fichier en encryption
       :code: "$> vim -x secret.txt"
 
     -
       :main_action: Ouvrir un fichier
-      :action: "sans swap file"
+      :action:      sans swap file
       :code: "$> vim -n secret.txt"
       :note: "Utilisé justement pour les fichier encryptés, afin que les swap-files ne puissent être consultés pendant l'édition du fichier apr un utilisateur qui auraient des superprivilèges."
 
     -
       :main_action: Ouvrir
-      :action: "un fichier quelconque en édition"
+      :action:      un fichier quelconque en édition
       :mode: normal
       :code: ":e CTRL KeyD\n=> La liste du dossier courant s'affiche\n<debut>TAB\n=> Le nom se développe."
       :memo: "((e))dit"
 
     -
       :main_action: Ouvrir
-      :action: "un fichier sans enregistrer les changements du fichier précédent"
+      :action:      un fichier sans enregistrer les changements du fichier précédent
       :mode: normal
       :code: ":e! path/to/file ENTER"
       :memo: "((e))dit ((!)) attention : sans sauver les changements précédents"
 
     -
       :main_action: Ouvrir
-      :action: "un fichier en splitant la fenêtre"
+      :action:      un fichier en splitant la fenêtre
       :mode: normal
       :code: ":sp <path/to/file>"
       :memo: "((sp))lit"
@@ -908,87 +900,109 @@
 
     -
       :main_action: Ouvrir un fichier
-      :action: "en se plaçant sur une certaine ligne"
+      :action:      en se plaçant sur une certaine ligne
       :mode: xterm
       :code: "$> vim +<numéro ligne> <path/to/fichier.ext>"
 
     -
       :main_action: Ouvrir un fichier
-      :action: "en se plaçant sur un mot particulier"
+      :action:      en se plaçant sur un mot particulier
       :mode: xterm
       :code: "$> vim +/<search> <path/to/fichier.ext>"
 
     -
       :main_action: Ouvrir
-      :action: "plusieurs fichiers en même temps"
+      :action:      plusieurs fichiers en même temps
       :code: ":next <file1> <file2> etc.\n:args"
 
     -
       :main_action: Nouveau
-      :action: "layout en splitant la fenêtre courante"
+      :action:      layout en splitant la fenêtre courante
       :mode: normal
       :code: "CTRL KeyWKeyN"
 
     -
       :main_action: Enregistrer
-      :action: "le fichier courant"
+      :action:      le fichier courant
       :mode: normal
-      :code: ":w"
-      :memo: "((w))rite"
+      :code: ':w[rite]'
 
     -
       :main_action: Enregistrer
-      :action: "tous les fichiers courants (même les buffers cachés)"
+      :action:      tous les fichiers courants (même les buffers cachés)
       :mode: normal
       :code: ":wa[ll]"
       :memo: "((w))rite ((a))ll"
 
     -
       :main_action: Enregistrer
-      :action: " et quitter le fichier courant"
+      :action:      et quitter le fichier courant
       :mode: normal
-      :code: ":wq"
+      :code: :wq
       :memo: "((w))rite ((q))uit"
 
     -
       :main_action: Enregistrer
-      :action: "sous un autre nom"
+      :action:      sous un autre nom
       :mode: normal
-      :code: ":saveas"
+      :code: :saveas
       :note: "Toutes les sauvegardes suivantes se feront dans ce fichier, contrairement à `:write` qui n'enregistre que ponctuellement dans un autre fichier."
 
     -
       :main_action: Enregistrer
-      :action: "en forçant un fichier ouvert en lecture seule"
+      :action:      en forçant un fichier ouvert en lecture seule
       :mode: normal
       :code: ':w[rite]!'
 
     -
       :main_action: Enregistrer
-      :action: "seulement un rang de lignes dans un fichier"
+      :action:      seulement un rang de lignes dans un fichier
       :mode: normal
       :code: ":<de ligne>,<à ligne>KeyW[ <path/to/file.ext]"
       :exemples:
         - "`:20,41 KeyW monfichier.txt` enregistre les lignes 20 à 41 du buffer courant dans le fichier `monfichier.txt`"
 
     -
+      :main_action: Enregistrer
+      :action:      le texte au format PostScript
+      :mode: command
+      :code: :hardcopy > <path/to/file.ps>
+      :note: 'En fait, on utilise la commande pour imprimer, qu’on détourne vers un fichier.'
+      :tags: print postscript
+
+    -
       :main_action: Fermer
-      :action: "le fichier courant sans l’enregistrer"
+      :action:      le fichier courant sans l’enregistrer
       :mode: normal
       :code: ":q!"
       :memo: "((q))uit ((!)) attention : sans sauver"
 
     -
-      :main_action: "Fermer/quitter"
-      :action: "tous les fichiers"
+      :main_action: Fermer
+      :action:      le fichier courant en l’enregistrant [dans un autre fichier]
+      :mode: command
+      :code: :e[xit] [<path/to/file.ext>]
+      :note: '`exit`, contrairement à `write`, ne sauve que si le fichier a été changé.'
+
+    -
+      :main_action: Fermer
+      :action:      le fichier courant en enregistrant un certain rang de lignes dans un autre
+      :mode: command
+      :code: ':<rang> e[xit] <path/to/file.ext>'
+      :exemples:
+        - '`:.,.+10 exit ~/mon.txt` => enregistre les dix lignes à partir de la ligne courante dans le fichier `mon.txt` et ferme le fichier.'
+
+    -
+      :main_action: Fermer/quitter
+      :action:      tous les fichiers
       :mode: normal
       :code: ":qa[ll]"
       :memo: "((q))uit ((a))ll"
       :note: "Ajouter `!` à la fin pour forcer la fermeture sans enregistrer les modifications non enregistrées."
 
     -
-      :main_action: "Fermer/quitter"
-      :action: "tous les fichiers en les enregistrant"
+      :main_action: Fermer/quitter
+      :action:      tous les fichiers en les enregistrant
       :mode: normal
       :code:
         - ':wqa[ll]'
@@ -3645,7 +3659,13 @@
       :code: ':startinsert'
       :note: 'Correspond à la touche KeyI en mode normal.'
 
-
+    -
+      :main_action: Demander
+      :action:      confirmation avant l’exécution d’une commande
+      :mode: command
+      :code: :confirm <commande>
+      :exemples:
+        - '`:confirm :quit` => si le fichier a été modifié, demande confirmation avant de quitter.'
 
 # ---------------------------------------------------------------------
 #
@@ -3656,7 +3676,7 @@
   INTERFACE:
 
     -
-      :main_action: "Afficher/masquer"
+      :main_action: Afficher/masquer
       :action:      les numéros de ligne
       :code: ":set [no]number"
 
@@ -3673,6 +3693,13 @@
       :main_action: Définir
       :action:      un thème particulier dans `.vimrc`
       :code: "colo[rscheme] <nom du thème>\nsyntax on"
+
+    -
+      :main_action: Choisir
+      :action:      le type de fond (clair ou sombre)
+      :mode: command
+      :code: :set background=<light|dark>
+      :note: 'Il faut bien sûr que le thème courant possède ces deux versions. Essayer par exemple avec `elrodeo`'
 
     -
       :main_action: Définir
@@ -4349,15 +4376,96 @@
 
     -
       :main_action: Afficher
-      :action: "la liste des annulations possibles"
-      :mode: normal
-      :code: ":undolist"
+      :action:      l’historique de toutes les actions
+      :mode: command
+      :code:
+        - ':history all'
+        - ':his a'
+      :tags: history
 
     -
+      :main_action: Afficher
+      :action:      l’historique des commandes
+      :mode: command
+      :code: ':his[tory]'
+      :tags: history
+
+    -
+      :main_action: Afficher
+      :action:      l’historique d’un certain type d’élément [d’une ligne à une autre]
+      :mode: command
+      :code: ':his[tory] <type> [<from>, <to>]'
+      :values:
+        '<type>':
+          - '`a` : tous les types'
+          - '`s` : type recherche (avec le préfixe `/`)'
+          - '`c` : type commande (avec le préfixe `:`)'
+          - '`i` : type insert (avec le préfixe `@`, donnée tapées avec un `:insert`)'
+      :exemples:
+        - '`:history c 1, 10` => affiche l’historique des commandes de la première à la dixième'
+        - '`his s 4, 5` => affiche l’historique des recherches de la 4e à la 5e'
+        - '`his a -5,` => affiche les cinq dernières lignes de l’historique complet'
+      :tags: history
+
+    -
+      :main_action: Définir
+      :action:      le nombre de lignes de l’historique (:history) à conserver
+      :mode: normal
+      :code: ":set hi[story]=<nombre lignes>"
+      :exemples:
+        - '`:set hi=100` => 100 lignes d’historique seront conservées'
+      :tags: history
+
+    -
+      :main_action: Afficher
+      :action:      les messages notice et erreurs
+      :mode: command
+      :code: ':mess[ages]'
+
+    -
+      :main_action: Rediriger
+      :action:      les messages vers un fichier plutôt qu’en console
+      :mode: command
+      :code: ':redir > <path/to/file.ext>'
+      :note: 'Noter que ça ne fonctionne qu’une fois. Sinon il faut utiliser l’ajout avec `>>`'
+      :exemples:
+        - '`:redir > ~/mon.log`'
+
+    -
+      :main_action: Rediriger
+      :action:      les messages en les ajoutant au fichier
+      :mode: command
+      :code: ':redir >> <path/to/file.ext>'
+      :exemples:
+        - '`:redir >> ~/mon.log`'
+
+    -
+      :main_action: Stopper
+      :action:      la redirection
+      :mode: command
+      ;code: ':redir END'
+
+    -
+      :main_action: Exécuter
+      :action:      une commande en mode commande
+      :mode: command
+      :code: ':norm[al] <commande complète>'
+      :exemples:
+        - '`:norm cwDone` => efface le mot sous le cuseur (`cw`) et tape `Done` à la place'
+        - '`:normal! cwSA` => efface le mot sous le curseur et tape « SA » sans exécuter de mapping (par exemple, ici, « SA » serait remplacé par « Société Anonyme »).'
+      :note: 'En « programmation », il est important de « finir » les commandes, par exemple avec `<ESC>`'
+
+    -
+      :main_action: Afficher
+      :action:      la liste des annulations possibles
+      :mode: normal
+      :code: ":undolist"
+      :tags: undo
+    -
       :main_action: Revenir
-      :action: "à une annulation précise"
+      :action:      à une annulation précise
       :mode: normal
       :code: ":undo <numéro annulation>"
       :note: "On obtient le numéro d'annulation à l'aide de `:undolist`"
-
+      :tags: undo
 ---

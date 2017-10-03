@@ -96,18 +96,6 @@
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
-        <td class="action">le nombre de lignes de l'historique (:history) à conserver</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :&lt;nombre lignes></td>
-        
-      </tr>
-      <tr class="exemples">
-        <td colspan="2"></td>
-        <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple"><code>:set viminfo=:100</code> => 100 lignes d'historique seront conservées</div></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="mainaction">Définir</td>
         <td class="action">le nombre de ligne d'historique de recherche</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> /&lt;nombre lignes></td>
         
@@ -156,7 +144,7 @@
       <tr class="notes">
         <td colspan="2"></td>
         <td class="titre">Note</td>
-        <td colspan="2">signifie qu'on conserve les marques locales de 1000 fichiers (<code>'1000</code>), qu'on conserve les marques globales (<code>f1</code>), qu'on conserve 100 lignes d'history (<code>:100</code>) et 100 ligne d'historique de recherche (<code>/100</code>), qu'on sauve et restaure la liste des buffers (<code>%</code>) et qu'on sauve les variables globales (<code>!</code>).</td>
+        <td colspan="2">signifie qu'on conserve les marques locales de 1000 fichiers (<code>'1000</code>), qu'on conserve les marques globales (<code>f1</code>), qu'on conserve 100 lignes d’history (<code>:100</code>) et 100 ligne d'historique de recherche (<code>/100</code>), qu'on sauve et restaure la liste des buffers (<code>%</code>) et qu'on sauve les variables globales (<code>!</code>).</td>
       </tr>
       <tr>
         <td></td>
@@ -1139,8 +1127,8 @@
         <td></td>
         <td class="mainaction">Enregistrer</td>
         <td class="action">le fichier courant</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :w</td>
-        <td><memo>w</memo>rite</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :w[rite]</td>
+        
       </tr>
       <tr>
         <td></td>
@@ -1152,15 +1140,15 @@
       <tr>
         <td></td>
         <td class="mainaction">Enregistrer</td>
-        <td class="action"> et quitter le fichier courant</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :wq</td>
+        <td class="action">et quitter le fichier courant</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> wq</td>
         <td><memo>w</memo>rite <memo>q</memo>uit</td>
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Enregistrer</td>
         <td class="action">sous un autre nom</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :saveas</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> saveas</td>
         
       </tr>
       <tr class="notes">
@@ -1188,11 +1176,47 @@
         <td colspan="2"><div class="exemple"><code>:20,41 <img src="./img/clavier/K_W.png" class="kb" title="W"/>monfichier.txt</code> enregistre les lignes 20 à 41 du buffer courant dans le fichier <code>monfichier.txt</code></div></td>
       </tr>
       <tr>
+        <td><span class='tag'>print</span><span class='tag'>postscript</span></td>
+        <td class="mainaction">Enregistrer</td>
+        <td class="action">le texte au format PostScript</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> hardcopy > &lt;path/to/file.ps></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">En fait, on utilise la commande pour imprimer, qu’on détourne vers un fichier.</td>
+      </tr>
+      <tr>
         <td></td>
         <td class="mainaction">Fermer</td>
         <td class="action">le fichier courant sans l’enregistrer</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :q!</td>
         <td><memo>q</memo>uit <memo>!</memo> attention : sans sauver</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Fermer</td>
+        <td class="action">le fichier courant en l’enregistrant [dans un autre fichier]</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> e[xit] [&lt;path/to/file.ext>]</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2"><code>exit</code>, contrairement à <code>write</code>, ne sauve que si le fichier a été changé.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Fermer</td>
+        <td class="action">le fichier courant en enregistrant un certain rang de lignes dans un autre</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;rang> e[xit] &lt;path/to/file.ext></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:.,.+10 exit ~/mon.txt</code> => enregistre les dix lignes à partir de la ligne courante dans le fichier <code>mon.txt</code> et ferme le fichier.</div></td>
       </tr>
       <tr>
         <td></td>
@@ -4420,6 +4444,18 @@
         <td class="titre">Note</td>
         <td colspan="2">Correspond à la touche <img src="./img/clavier/K_I.png" class="kb" title="I"/>en mode normal.</td>
       </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Demander</td>
+        <td class="action">confirmation avant l’exécution d’une commande</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> confirm &lt;commande></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:confirm :quit</code> => si le fichier a été modifié, demande confirmation avant de quitter.</div></td>
+      </tr>
 </table><h3 id='titre22'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
@@ -4452,6 +4488,18 @@
         <td class="action">un thème particulier dans <code>.vimrc</code></td>
         <td colspan="2" class="shortcut">colo[rscheme] &lt;nom du thème><br>syntax on</td>
         
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Choisir</td>
+        <td class="action">le type de fond (clair ou sombre)</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> set background=&lt;light|dark></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Il faut bien sûr que le thème courant possède ces deux versions. Essayer par exemple avec <code>elrodeo</code></td>
       </tr>
       <tr>
         <td></td>
@@ -5229,14 +5277,118 @@
     <th width="280">Mnémo</th>
   </tr>
       <tr>
+        <td><span class='tag'>history</span></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">l’historique de toutes les actions</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :history all<br><mode>[COMMAND]</mode> :his a</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>history</span></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">l’historique des commandes</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :his[tory]</td>
+        
+      </tr>
+      <tr>
+        <td><span class='tag'>history</span></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">l’historique d’un certain type d’élément [d’une ligne à une autre]</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :his[tory] &lt;type> [&lt;from>, &lt;to>]</td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>&lt;type></code> :<br>    <code>a</code> : tous les types<br>    <code>s</code> : type recherche (avec le préfixe <code>/</code>)<br>    <code>c</code> : type commande (avec le préfixe <code>:</code>)<br>    <code>i</code> : type insert (avec le préfixe <code>@</code>, donnée tapées avec un <code>:insert</code>)</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:history c 1, 10</code> => affiche l’historique des commandes de la première à la dixième</div><div class="exemple"><code>his s 4, 5</code> => affiche l’historique des recherches de la 4e à la 5e</div><div class="exemple"><code>his a -5,</code> => affiche les cinq dernières lignes de l’historique complet</div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>history</span></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">le nombre de lignes de l’historique (:history) à conserver</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set hi[story]=&lt;nombre lignes></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set hi=100</code> => 100 lignes d’historique seront conservées</div></td>
+      </tr>
+      <tr>
         <td></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">les messages notice et erreurs</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :mess[ages]</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Rediriger</td>
+        <td class="action">les messages vers un fichier plutôt qu’en console</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :redir > &lt;path/to/file.ext></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Noter que ça ne fonctionne qu’une fois. Sinon il faut utiliser l’ajout avec <code>>></code></td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:redir > ~/mon.log</code></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Rediriger</td>
+        <td class="action">les messages en les ajoutant au fichier</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :redir >> &lt;path/to/file.ext></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:redir >> ~/mon.log</code></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Stopper</td>
+        <td class="action">la redirection</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> </td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Exécuter</td>
+        <td class="action">une commande en mode commande</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :norm[al] &lt;commande complète></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">En « programmation », il est important de « finir » les commandes, par exemple avec <code>&lt;<img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>></code></td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:norm cwDone</code> => efface le mot sous le cuseur (<code>cw</code>) et tape <code>Done</code> à la place</div><div class="exemple"><code>:normal! cwSA</code> => efface le mot sous le curseur et tape « SA » sans exécuter de mapping (par exemple, ici, « SA » serait remplacé par « Société Anonyme »).</div></td>
+      </tr>
+      <tr>
+        <td><span class='tag'>undo</span></td>
         <td class="mainaction">Afficher</td>
         <td class="action">la liste des annulations possibles</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :undolist</td>
         
       </tr>
       <tr>
-        <td></td>
+        <td><span class='tag'>undo</span></td>
         <td class="mainaction">Revenir</td>
         <td class="action">à une annulation précise</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :undo &lt;numéro annulation></td>
