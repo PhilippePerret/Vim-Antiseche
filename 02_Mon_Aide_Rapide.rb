@@ -71,8 +71,13 @@ def formate t
   .gsub(/\bARROW_DOWN\b/, keyboard('FlecheB'))
   .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Virgule) ?/){keyboard($1)}
   .gsub(/Key([A-Z]) ?/){keyboard($1.upcase)}
+  .gsub(/\`\`\`(.*?)\`\`\`/m){
+    c = $1.gsub(/\\n/, "[RC]").strip
+    "<pre><code>#{c}</code></pre>"
+  }
   .gsub(/\`(.*?)\`/m,'<code>\1</code>')
   .gsub(/\n/,'<br>')
+  .gsub(/\[RC\]/,"\n")
 end
 def tag mot
   "<span class='tag'>#{mot.split('_').join(' ')}</span>"
@@ -243,6 +248,7 @@ table = <<-HTML
       ul#tdm li a{font-family:Arial;font-size:12pt;}
       p.explication{font-color:#555;opacity:0.5;font-style:italic;font-size:0.75em;}
       p.explication:hover{opacity:1;}
+      pre{background-color:#333;padding:.5em}
       code{background-color:#333;color:white;padding:0 4px;}
     </style>
   </head>

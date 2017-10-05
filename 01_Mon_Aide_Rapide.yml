@@ -1223,6 +1223,13 @@
 
     -
       :main_action: Activer
+      :action:      le buffer précédent de la fenêtre courante
+      :mode: command
+      :code: :b#
+      :important: true
+
+    -
+      :main_action: Activer
       :action:      un buffer quelconque
       :mode: normal
       :code: ":b CTRL KeyD\n=> La liste des buffers s'affiche"
@@ -1272,6 +1279,7 @@
       :action:      un buffer par son numéro (dans la fenêtre active)
       :mode: normal
       :code: ":b[uffer] <numéro>"
+      :note: 'On peut jouer `:ls` avant pour obtenir la liste des buffers avec leur numéro.'
       :memo: "((b))uffer"
 
     -
@@ -2296,7 +2304,7 @@
 
     -
       :main_action: Ajouter
-      :action: un dictionnaire
+      :action:      un dictionnaire
       :note: "Le télécharger à l'adresse `https://extensions.libreoffice.org/extensions/dictionnaires-francais` par exemple."
 
     -
@@ -2310,7 +2318,7 @@
 
     -
       :main_action: Ajouter un mot
-      :action:      "correct au dictionnaire volatile (session)"
+      :action:      correct au dictionnaire volatile (session)
       :mode: normal
       :code:
         - "Placer le curseur sur le mot puis taper `zG` (KeyZ MAJ KeyG)"
@@ -3531,8 +3539,10 @@
     -
       :main_action: Ajouter
       :action:      du texte dans un registre
-      :code: MAJ KeyA<lettre><quoi>
-      :memo: ((A))ppend
+      :code: '"MAJ <lettre registre><quoi>'
+      :exemples:
+        - '`"A KeyYKeyY` => Ajoute la ligne courante au registre « a »'
+        - '`"Z KeyYKeyW` => Ajoute le mot au registre « z »'
 
     -
       :main_action: Afficher
@@ -3666,6 +3676,139 @@
       :code: :confirm <commande>
       :exemples:
         - '`:confirm :quit` => si le fichier a été modifié, demande confirmation avant de quitter.'
+
+    -
+      :main_action: Définir
+      :action:      une variable
+      :mode: command
+      :code: ':let <nom variable> = <valeur variable>'
+      :exemples:
+        - '`:let mon_nom = "Phil"`'
+        - '`:let mon_age = 53`'
+      :values:
+        '<nom variable>':
+          - 'Tout en capitales, peut être sauvée dans le viminfo si l’option contient « ! »'
+          - 'Si commence par capitale (tout doit être en minuscules ensuite), sera sauvée par la commande `:mksession`.'
+          - 'Tout en minuscule : perdure juste le temps de la session'
+          - '`$<name>` => variable d’environnement'
+          - '`@<register>` => text register'
+          - '`&<option>` => le nom d’une option'
+          - '`b:<variable name>` => variable locale au buffer'
+          - '`w:<variable name>` => variable locale à la fenêtre'
+          - '`g:<variable name>` => variable globale'
+          - '`v:<variable name>` => variable interne à Vim (`v:count`, `v:count1`, `v:errmsg`, `v:warningmsg`, `v:statusmsg`, `v:shell_error`, `v:this_session`)'
+
+    -
+      :main_action: Supprimer
+      :action:      la définition d’une variable
+      :mode: command
+      :code: ':unlet <nom variable>'
+
+    -
+      :main_action: '[Dé]Bloquer'
+      :action:      une variable
+      :mode: command
+      :code:
+        - ':[un]lockvar <nom variable>'
+        - ':lockv <nom variable>'
+        - ':unlo <nom variable>'
+
+    -
+      :main_action: Écrire
+      :action:      un message en console sur une nouvelle ligne
+      :mode: command
+      :code: ':echo <texte>'
+
+    -
+      :main_action: Écrire
+      :action:      un message en console au bout du texte (sans nouvelle ligne)
+      :mode: command
+      :code: ':echon <texte>'
+      :exemples:
+        - '`echo "aa" | echo "ab"` => produit `aaab` sur une même ligne en console'
+      :note: 'Dans l’exemple, la barre verticale permet de jouer plusieurs commandes.'
+
+    -
+      :main_action: Écrire
+      :action:      un message en couleur en console
+      :mode: command
+      :code: ':echohl <type couleur> | echo "mon message coloré" | echohl None'
+      :note: 'Pour voir les types de couleur, taper `:hi[ghlight]` en console. `hl` comme `highlight`. '
+      :exemples:
+        - '`:echohl ErrorMsg | echo "Ceci est une erreur en rouge." | echohl None` => Écrire "Ceci est une erreur en rouge." en rouge dans la console.'
+      :values:
+        '<type couleur>':
+          - 'ErrorMsg'
+
+    -
+      :main_action: Écrire
+      :action:      un message d’erreur
+      :mode: command
+      :code: ':echoe[rr]'
+      :memo: 'Comme ((echo)) ((err))eur'
+      :note: 'Si employé dans un script ou une fonctoin, ce code ajoute la ligne dans l’historique des erreurs et ajoute un numéro de ligne.'
+
+    -
+      :main_action: Écrire
+      :action:      un message notice
+      :mode: command
+      :code: ':echom[sg]'
+      :memo: '((echo)) ((m))e((s))sa((g))e'
+      :note: 'Si employé dans un script ou une fonction, ajoute aux messages de suivi qu’on peut relire avec `:messages`.'
+
+# ---------------------------------------------------------------------
+#
+#   @@@ LIGNE DE COMMANDE ET LANGAGE DE SCRIPT
+#
+# ---------------------------------------------------------------------
+
+  LIGNE DE COMMANDE ET LANGAGE DE SCRIPT:
+
+    -
+      :main_action: Statement IF
+      :mode: command
+      :code: ':if {condition} | <statement> | elseif | <statement> | else | <statement> | endif'
+      :note: 'Bien sûr, les « | » peuvent être remplacés par des retours à la ligne avec ajoute de « : » en début de ligne : ```:if <condition>\n: <statement>\n: <statement>\n:endif```'
+      :exemples:
+        - '`if 4 > 5 | echo "C’est vrai" | else | echo "C’est faux" | endif`'
+
+    -
+      :main_action: Exécuter
+      :action:      une boucle WHILE
+      :mode: command
+      :code:
+        - ':while <condition> | <statement> | endwhile'
+        - '```:while <condition>\n: <statement>\n: <statement>\n:endwhile```'
+      :note: 'On peut passer directement à la valeur suivante avec `continue` ou sortir de la boucle avec `break`.'
+
+    -
+      :main_action: Exécuter
+      :action:      une boucle FOR
+      :mode: command
+      :code:
+        - ':for <condition> | <statement> | endfor'
+        - '```:for <condition>\n:  <statement>\n:  <statement>\n:endfor```'
+      :exemples:
+        - '```:let liste=["a", "b", "c"]\n:for lettre in liste\n: echo lettre\n:endfor```'
+
+    -
+      :main_action: Évaluer
+      :action:      une commande
+      :mode: command
+      :code: ':exe[cute] <commande>'
+      :exemples:
+        - '```:let ma_commande = "echo \"Salue le monde !\""\n:execute ma_commande``` => écrit "Salue le monde !" en console.'
+
+    -
+      :main_action: Placer le code
+      :action:      dans un bloc d’erreur
+      :mode: command
+      :code:
+        - ':try | <statement> | catch <exp régulière> | <statement> | finaly | <statement> | endtry'
+        - '```:try\n:  <une opération>\n:catch /<exp régulière de test d’erreur>/\n:  <statement en cas d’erreur>\n:finally\n: <à faire dans tous les cas>\n:endtry``` '
+      :exemples:
+        - '```:try\n: unemauvaisecommande\n:catch /^E492/\n: echo "Cette commande est inconue."\n:endtry```'
+      :note: 'On lève une erreur à l’aide de `:throw "<erreur>"` dans le statement. On utile `:finish` pour finir le code du bloc try.'
 
 # ---------------------------------------------------------------------
 #
@@ -4002,7 +4145,7 @@
 
     -
       :main_action: Basculer
-      :action: "en mode ligne de commande (ex, grand-père de vim, père de vi)"
+      :action:      en mode ligne de commande (ex, grand-père de vim, père de vi)
       :code: "gQ (KeyG, MAJ KeyQ)"
 
     -

@@ -40,13 +40,14 @@
       ul#tdm li a{font-family:Arial;font-size:12pt;}
       p.explication{font-color:#555;opacity:0.5;font-style:italic;font-size:0.75em;}
       p.explication:hover{opacity:1;}
+      pre{background-color:#333;padding:.5em}
       code{background-color:#333;color:white;padding:0 4px;}
     </style>
   </head>
   <body>
     <header>
       <h1>Vim - Antisèche</h1>
-      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Interface</a></li><li><a href='#titre23'>Options</a></li><li><a href='#titre24'>Nerdtree</a></li><li><a href='#titre25'>Mode ligne de commande (ex)</a></li><li><a href='#titre26'>Fenêtres (non essentiels)</a></li><li><a href='#titre27'>Ctrlp</a></li><li><a href='#titre28'>Signes</a></li><li><a href='#titre29'>Ctags</a></li><li><a href='#titre30'>Divers</a></li></ul>
+      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Ligne de commande et langage de script</a></li><li><a href='#titre23'>Interface</a></li><li><a href='#titre24'>Options</a></li><li><a href='#titre25'>Nerdtree</a></li><li><a href='#titre26'>Mode ligne de commande (ex)</a></li><li><a href='#titre27'>Fenêtres (non essentiels)</a></li><li><a href='#titre28'>Ctrlp</a></li><li><a href='#titre29'>Signes</a></li><li><a href='#titre30'>Ctags</a></li><li><a href='#titre31'>Divers</a></li></ul>
 
     </header>
     <section id="table_shortcuts">
@@ -1479,6 +1480,13 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :ls<br><mode>[NORMAL]</mode> :buffers<br><mode>[NORMAL]</mode> :files</td>
         <td><memo>l</memo>i<memo>s</memo>t</td>
       </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Activer</td>
+        <td class="action">le buffer précédent de la fenêtre courante</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> b#</td>
+        
+      </tr>
       <tr>
         <td></td>
         <td class="mainaction">Activer</td>
@@ -1527,6 +1535,11 @@
         <td class="action">un buffer par son numéro (dans la fenêtre active)</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :b[uffer] &lt;numéro></td>
         <td><memo>b</memo>uffer</td>
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On peut jouer <code>:ls</code> avant pour obtenir la liste des buffers avec leur numéro.</td>
       </tr>
       <tr>
         <td><span class='tag'>split</span></td>
@@ -4293,8 +4306,13 @@
         <td></td>
         <td class="mainaction">Ajouter</td>
         <td class="action">du texte dans un registre</td>
-        <td colspan="1" class="shortcut"><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_A.png" class="kb" title="A"/>&lt;lettre>&lt;quoi></td>
-        <td><memo>A</memo>ppend</td>
+        <td colspan="2" class="shortcut">"<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>&lt;lettre registre>&lt;quoi></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>"A <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Y.png" class="kb" title="Y"/></code> => Ajoute la ligne courante au registre « a »</div><div class="exemple"><code>"Z <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_W.png" class="kb" title="W"/></code> => Ajoute le mot au registre « z »</div></td>
       </tr>
       <tr>
         <td></td>
@@ -4456,7 +4474,203 @@
         <td class="titre"><em>Exemple</em></td>
         <td colspan="2"><div class="exemple"><code>:confirm :quit</code> => si le fichier a été modifié, demande confirmation avant de quitter.</div></td>
       </tr>
-</table><h3 id='titre22'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une variable</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :let &lt;nom variable> = &lt;valeur variable></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>&lt;nom variable></code> :<br>    Tout en capitales, peut être sauvée dans le viminfo si l’option contient « ! »<br>    Si commence par capitale (tout doit être en minuscules ensuite), sera sauvée par la commande <code>:mksession</code>.<br>    Tout en minuscule : perdure juste le temps de la session<br>    <code>$&lt;name></code> => variable d’environnement<br>    <code>@&lt;register></code> => text register<br>    <code>&&lt;option></code> => le nom d’une option<br>    <code>b:&lt;variable name></code> => variable locale au buffer<br>    <code>w:&lt;variable name></code> => variable locale à la fenêtre<br>    <code>g:&lt;variable name></code> => variable globale<br>    <code>v:&lt;variable name></code> => variable interne à Vim (<code>v:count</code>, <code>v:count1</code>, <code>v:errmsg</code>, <code>v:warningmsg</code>, <code>v:statusmsg</code>, <code>v:shell_error</code>, <code>v:this_session</code>)</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:let mon_nom = "Phil"</code></div><div class="exemple"><code>:let mon_age = 53</code></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">la définition d’une variable</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :unlet &lt;nom variable></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">[Dé]Bloquer</td>
+        <td class="action">une variable</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :[un]lockvar &lt;nom variable><br><mode>[COMMAND]</mode> :lockv &lt;nom variable><br><mode>[COMMAND]</mode> :unlo &lt;nom variable></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Écrire</td>
+        <td class="action">un message en console sur une nouvelle ligne</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :echo &lt;texte></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Écrire</td>
+        <td class="action">un message en console au bout du texte (sans nouvelle ligne)</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :echon &lt;texte></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Dans l’exemple, la barre verticale permet de jouer plusieurs commandes.</td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>echo "aa" | echo "ab"</code> => produit <code>aaab</code> sur une même ligne en console</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Écrire</td>
+        <td class="action">un message en couleur en console</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :echohl &lt;type couleur> | echo "mon message coloré" | echohl None</td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>&lt;type couleur></code> :<br>    ErrorMsg</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Pour voir les types de couleur, taper <code>:hi[ghlight]</code> en console. <code>hl</code> comme <code>highlight</code>. </td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:echohl ErrorMsg | echo "Ceci est une erreur en rouge." | echohl None</code> => Écrire "Ceci est une erreur en rouge." en rouge dans la console.</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Écrire</td>
+        <td class="action">un message d’erreur</td>
+        <td colspan="1" class="shortcut"><mode>[COMMAND]</mode> :echoe[rr]</td>
+        <td>Comme <memo>echo</memo> <memo>err</memo>eur</td>
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Si employé dans un script ou une fonctoin, ce code ajoute la ligne dans l’historique des erreurs et ajoute un numéro de ligne.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Écrire</td>
+        <td class="action">un message notice</td>
+        <td colspan="1" class="shortcut"><mode>[COMMAND]</mode> :echom[sg]</td>
+        <td><memo>echo</memo> <memo>m</memo>e<memo>s</memo>sa<memo>g</memo>e</td>
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Si employé dans un script ou une fonction, ajoute aux messages de suivi qu’on peut relire avec <code>:messages</code>.</td>
+      </tr>
+</table><h3 id='titre22'>LIGNE DE COMMANDE ET LANGAGE DE SCRIPT</h3><table cellspacing="0" cellpadding="0">  <tr>
+    <th width="100">Tags</th>
+    <th width="160">Action</th>
+    <th width="480">Sous-action</th>
+    <th width="490">Shortcut</th>
+    <th width="280">Mnémo</th>
+  </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Statement IF</td>
+        <td class="action"></td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :if {condition} | &lt;statement> | elseif | &lt;statement> | else | &lt;statement> | endif</td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Bien sûr, les « | » peuvent être remplacés par des retours à la ligne avec ajoute de « : » en début de ligne : <pre><code>:if &lt;condition>
+: &lt;statement>
+: &lt;statement>
+:endif</code></pre></td>
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>if 4 > 5 | echo "C’est vrai" | else | echo "C’est faux" | endif</code></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Exécuter</td>
+        <td class="action">une boucle WHILE</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :while &lt;condition> | &lt;statement> | endwhile<br><mode>[COMMAND]</mode> <pre><code>:while &lt;condition>
+: &lt;statement>
+: &lt;statement>
+:endwhile</code></pre></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On peut passer directement à la valeur suivante avec <code>continue</code> ou sortir de la boucle avec <code>break</code>.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Exécuter</td>
+        <td class="action">une boucle FOR</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :for &lt;condition> | &lt;statement> | endfor<br><mode>[COMMAND]</mode> <pre><code>:for &lt;condition>
+:  &lt;statement>
+:  &lt;statement>
+:endfor</code></pre></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><pre><code>:let liste=["a", "b", "c"]
+:for lettre in liste
+: echo lettre
+:endfor</code></pre></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Évaluer</td>
+        <td class="action">une commande</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :exe[cute] &lt;commande></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><pre><code>:let ma_commande = "echo \"Salue le monde !\""
+:execute ma_commande</code></pre> => écrit "Salue le monde !" en console.</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Placer le code</td>
+        <td class="action">dans un bloc d’erreur</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :try | &lt;statement> | catch &lt;exp régulière> | &lt;statement> | endtry<br><mode>[COMMAND]</mode> <pre><code>:try
+:  &lt;une opération>
+:catch /&lt;exp régulière de test d’erreur>/
+:  &lt;statement en cas d’erreur>
+:endtry</code></pre> </td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><pre><code>:try
+: unemauvaisecommande
+:catch /^E492/
+: echo "Cette commande est inconue.
+:endtry"</code></pre></div></td>
+      </tr>
+</table><h3 id='titre23'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4706,7 +4920,7 @@
         <td colspan="2" class='values'>  avec <code>valeur</code> :<br>    <code>diff</code> en fonction de l’opération checkant les différences<br>    <code>expr</code> : folding créés par une l’expression définie par <code>foldexpr</code> (<code>fde</code>)<br>    <code>indent</code> : folding créés par l’indentation<br>    <code>manual</code> : folding créés manuellement<br>    <code>marker</code> : folding créés par des markers<br>    <code>syntax</code> : folding créés par la syntaxe (n’importe quel élément de syntaxe qui possède l’option <code>fold</code>)</td>
         
       </tr>
-</table><h3 id='titre23'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre24'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4795,7 +5009,7 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]equalalways</td>
         
       </tr>
-</table><h3 id='titre24'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre25'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4816,7 +5030,7 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         <td><memo>c</memo>urrent</td>
       </tr>
-</table><h3 id='titre25'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre26'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4849,7 +5063,7 @@
         <td class="titre">Note</td>
         <td colspan="2">Taper «exit» pour revenir dans Vim.</td>
       </tr>
-</table><h3 id='titre26'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre27'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4936,7 +5150,7 @@
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>/<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_R.png" class="kb" title="R"/></td>
         <td><memo>w</memo>indow, <memo>r</memo>epositionne</td>
       </tr>
-</table><h3 id='titre27'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre28'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5168,7 +5382,7 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/><br><img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/></td>
         
       </tr>
-</table><h3 id='titre28'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre29'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5234,7 +5448,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :sign line &lt;nom du fichier></td>
         
       </tr>
-</table><h3 id='titre29'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre30'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5269,7 +5483,7 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
         
       </tr>
-</table><h3 id='titre30'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre31'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
