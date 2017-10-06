@@ -47,7 +47,7 @@
   <body>
     <header>
       <h1>Vim - Antisèche</h1>
-      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Ligne de commande et langage de script</a></li><li><a href='#titre23'>Interface</a></li><li><a href='#titre24'>Options</a></li><li><a href='#titre25'>Nerdtree</a></li><li><a href='#titre26'>Mode ligne de commande (ex)</a></li><li><a href='#titre27'>Fenêtres (non essentiels)</a></li><li><a href='#titre28'>Ctrlp</a></li><li><a href='#titre29'>Signes</a></li><li><a href='#titre30'>Ctags</a></li><li><a href='#titre31'>Divers</a></li></ul>
+      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Ligne de commande et langage de script</a></li><li><a href='#titre23'>Interface</a></li><li><a href='#titre24'>Options</a></li><li><a href='#titre25'>Nerdtree</a></li><li><a href='#titre26'>Mode ligne de commande (ex)</a></li><li><a href='#titre27'>Fenêtres (non essentiels)</a></li><li><a href='#titre28'>Ctrlp</a></li><li><a href='#titre29'>Signes</a></li><li><a href='#titre30'>Ctags</a></li><li><a href='#titre31'>Fonctions</a></li><li><a href='#titre32'>Divers</a></li></ul>
 
     </header>
     <section id="table_shortcuts">
@@ -4654,12 +4654,19 @@
         <td></td>
         <td class="mainaction">Placer le code</td>
         <td class="action">dans un bloc d’erreur</td>
-        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :try | &lt;statement> | catch &lt;exp régulière> | &lt;statement> | endtry<br><mode>[COMMAND]</mode> <pre><code>:try
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :try | &lt;statement> | catch &lt;exp régulière> | &lt;statement> | finaly | &lt;statement> | endtry<br><mode>[COMMAND]</mode> <pre><code>:try
 :  &lt;une opération>
 :catch /&lt;exp régulière de test d’erreur>/
 :  &lt;statement en cas d’erreur>
+:finally
+: &lt;à faire dans tous les cas>
 :endtry</code></pre> </td>
         
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">On lève une erreur à l’aide de <code>:throw "&lt;erreur>"</code> dans le statement. On utile <code>:finish</code> pour finir le code du bloc try.</td>
       </tr>
       <tr class="exemples">
         <td colspan="2"></td>
@@ -4667,8 +4674,8 @@
         <td colspan="2"><div class="exemple"><pre><code>:try
 : unemauvaisecommande
 :catch /^E492/
-: echo "Cette commande est inconue.
-:endtry"</code></pre></div></td>
+: echo "Cette commande est inconue."
+:endtry</code></pre></div></td>
       </tr>
 </table><h3 id='titre23'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
@@ -5483,7 +5490,86 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
         
       </tr>
-</table><h3 id='titre31'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre31'>FONCTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+    <th width="100">Tags</th>
+    <th width="160">Action</th>
+    <th width="480">Sous-action</th>
+    <th width="490">Shortcut</th>
+    <th width="280">Mnémo</th>
+  </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">la liste des fonctions</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :function</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">le code d’une fonction en particulier</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :function &lt;FonctionName></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Résumé</td>
+        <td class="action">complet</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> <pre><code>" Déclaration d'une variable globale hors d'une fonction<br>var variableGlobale = 12<br><br>" Définition de la fonction (doit commencer par une capitale)<br>:function MaFonction(var1, var2, var3)<br><br>  " Référence aux arguments dans la fonction<br>  if a:var1 > a:var3<br><br>  else<br><br>  endif<br><br>  " Définition d'une variable locale varFonction et<br>  " Utilisation de la variable globale dans la fonction<br>  let varFonction = g:variableGlobale<br><br>  " Pour retourner une valeur<br>  :return varFonction<br>:endfunction " fin de la fonction<br><br>" Fonction « à rang » (range)<br>" Fonction s'interrompant à la première erreur (abort)<br>" Fonction à nombre d'arguments variables (19 en tout)<br>:function FonctionARangDeLignes(start,...) range abort<br><br>  " Nombre d'arguments<br>  let nombreArguments = a:0<br><br>  " Référence aux trois premiers arguments<br>  let primo  = a:start<br>  let deuxio = a:1<br>  let tercio = a:2<br><br><br>  " <code>a:firstline</code> est une référence au NUMÉRO de la première ligne du rang<br>  " <code>a:lastline</code> est une référence au NUMÉRO de la dernière ligne du rang<br>  let premiereLigne = a:firstline<br>  let derniereLigne = a:lastline<br><br>:endfunction</code></pre><br></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Invoquer</td>
+        <td class="action">une fonction sur chaque ligne du texte courant</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;rang> call &lt;NomFonction>([&lt;arguments>])</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">une fonction</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> <pre><code>:function &lt;Name>(&lt;vars,...>)
+  &lt;code>
+:endfunction</code></pre></td>
+        
+      </tr>
+      <tr class="notes">
+        <td colspan="2"></td>
+        <td class="titre">Note</td>
+        <td colspan="2">Le nom doit commencer par une capitale.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Référence</td>
+        <td class="action">à un argument de la fonction</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> a:&lt;nom de l’argument></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><pre><code>:function Max(nombre1, nombre2)
+: if a:nombre1 > a:nombre2
+    ...
+...
+:endfunction</code></pre></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">un type de variable</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> <code>var variable = ...</code> définit une variable globable à l’extérieur d’une fonction, MAIS on doit y faire référence par <code>g:variable</code> à l’intérieur de la fonction.<br><mode>[COMMAND]</mode> <code>let variable = ...</code>, à l’intérieur d’une fonction, définit une variable locale à la fonction<br><mode>[COMMAND]</mode> <code>g:variable = ...</code> définit une variable globale.</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Retourner</td>
+        <td class="action">une valeur calculée par la fonction</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :return &lt;valeur></td>
+        
+      </tr>
+</table><h3 id='titre32'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>

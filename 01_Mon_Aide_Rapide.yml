@@ -4511,6 +4511,111 @@
 
 # ---------------------------------------------------------------------
 #
+#  @@@ FONCTIONS
+#
+# ---------------------------------------------------------------------
+
+  FONCTIONS:
+
+    -
+      :main_action: Afficher
+      :action:      la liste des fonctions
+      :mode: command
+      :code: ':function'
+
+    -
+      :main_action: Afficher
+      :action:      le code d’une fonction en particulier
+      :mode: command
+      :code: ':function <FonctionName>'
+      
+    -
+      :main_action: Résumé
+      :action: complet
+      :mode: command
+      :code: |
+        ```
+        " Déclaration d'une variable globale hors d'une fonction
+        var variableGlobale = 12
+
+        " Définition de la fonction (doit commencer par une capitale)
+        :function MaFonction(var1, var2, var3)
+
+          " Référence aux arguments dans la fonction
+          if a:var1 > a:var3
+
+          else
+
+          endif
+
+          " Définition d'une variable locale varFonction et
+          " Utilisation de la variable globale dans la fonction
+          let varFonction = g:variableGlobale
+
+          " Pour retourner une valeur
+          :return varFonction
+        :endfunction " fin de la fonction
+
+        " Fonction « à rang » (range)
+        " Fonction s'interrompant à la première erreur (abort)
+        " Fonction à nombre d'arguments variables (19 en tout)
+        :function FonctionARangDeLignes(start,...) range abort
+
+          " Nombre d'arguments
+          let nombreArguments = a:0
+
+          " Référence aux trois premiers arguments
+          let primo  = a:start
+          let deuxio = a:1
+          let tercio = a:2
+
+
+          " `a:firstline` est une référence au NUMÉRO de la première ligne du rang
+          " `a:lastline` est une référence au NUMÉRO de la dernière ligne du rang
+          let premiereLigne = a:firstline
+          let derniereLigne = a:lastline
+
+        :endfunction
+        ```
+
+    -
+      :main_action: Invoquer
+      :action:      une fonction sur chaque ligne du texte courant
+      :mode: command
+      :code: ':<rang> call <NomFonction>([<arguments>])'
+
+    -
+      :main_action: Définir
+      :action:      une fonction
+      :mode: command
+      :code: '```:function <Name>(<vars,...>)\n  <code>\n:endfunction```'
+      :note: 'Le nom doit commencer par une capitale.'
+
+    -
+      :main_action: Référence
+      :action:      à un argument de la fonction
+      :mode: command
+      :code: 'a:<nom de l’argument>'
+      :exemples:
+        - '```:function Max(nombre1, nombre2)\n: if a:nombre1 > a:nombre2\n    ...\n...\n:endfunction```'
+
+    -
+      :main_action: Définir
+      :action:      un type de variable
+      :mode: command
+      :code:
+        - '`var variable = ...` définit une variable globable à l’extérieur d’une fonction, MAIS on doit y faire référence par `g:variable` à l’intérieur de la fonction.'
+        - '`let variable = ...`, à l’intérieur d’une fonction, définit une variable locale à la fonction'
+        - '`g:variable = ...` définit une variable globale.'
+
+    -
+      :main_action: Retourner
+      :action:      une valeur calculée par la fonction
+      :mode: command
+      :code: ':return <valeur>'
+
+# ---------------------------------------------------------------------
+#
 #  @@@ DIVERS
 #
 # ---------------------------------------------------------------------
