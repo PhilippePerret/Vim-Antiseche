@@ -47,7 +47,7 @@
   <body>
     <header>
       <h1>Vim - Antisèche</h1>
-      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Ligne de commande et langage de script</a></li><li><a href='#titre23'>Interface</a></li><li><a href='#titre24'>Options</a></li><li><a href='#titre25'>Nerdtree</a></li><li><a href='#titre26'>Mode ligne de commande (ex)</a></li><li><a href='#titre27'>Fenêtres (non essentiels)</a></li><li><a href='#titre28'>Ctrlp</a></li><li><a href='#titre29'>Signes</a></li><li><a href='#titre30'>Ctags</a></li><li><a href='#titre31'>Fonctions</a></li><li><a href='#titre32'>Divers</a></li></ul>
+      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Commandes personnelles</a></li><li><a href='#titre23'>Ligne de commande et langage de script</a></li><li><a href='#titre24'>Interface</a></li><li><a href='#titre25'>Options</a></li><li><a href='#titre26'>Nerdtree</a></li><li><a href='#titre27'>Mode ligne de commande (ex)</a></li><li><a href='#titre28'>Fenêtres (non essentiels)</a></li><li><a href='#titre29'>Ctrlp</a></li><li><a href='#titre30'>Signes</a></li><li><a href='#titre31'>Ctags</a></li><li><a href='#titre32'>Fonctions</a></li><li><a href='#titre33'>Divers</a></li></ul>
 
     </header>
     <section id="table_shortcuts">
@@ -65,11 +65,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set vi[minfo]=&lt;paramètres></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Voir les paramètres ci-après</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Voir les paramètres ci-après</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -101,11 +101,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> /&lt;nombre lignes></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">l'« historique de recherche » concerne les recherches qui ont été entreprises par <code>/</code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">l'« historique de recherche » concerne les recherches qui ont été entreprises par <code>/</code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -142,11 +142,11 @@
         <td colspan="2" class="shortcut">:set viminfo='1000,f1,:100,/100,%,!</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">signifie qu'on conserve les marques locales de 1000 fichiers (<code>'1000</code>), qu'on conserve les marques globales (<code>f1</code>), qu'on conserve 100 lignes d’history (<code>:100</code>) et 100 ligne d'historique de recherche (<code>/100</code>), qu'on sauve et restaure la liste des buffers (<code>%</code>) et qu'on sauve les variables globales (<code>!</code>).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">signifie qu'on conserve les marques locales de 1000 fichiers (<code>'1000</code>), qu'on conserve les marques globales (<code>f1</code>), qu'on conserve 100 lignes d’history (<code>:100</code>) et 100 ligne d'historique de recherche (<code>/100</code>), qu'on sauve et restaure la liste des buffers (<code>%</code>) et qu'on sauve les variables globales (<code>!</code>).</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Forcer l'écriture</td>
@@ -154,11 +154,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :wviminfo[!] [path/to/fichier]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Sans précision de fichier, c'est le fichier <code>~/.viminfo</code> qui sera utilisé.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Sans précision de fichier, c'est le fichier <code>~/.viminfo</code> qui sera utilisé.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Forcer la lecture</td>
@@ -166,11 +166,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :rviminfo[!] [path/to/fichier]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Sans précision de fichier, c'est le fichier <code>~/.viminfo</code> qui sera utilisé.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Sans précision de fichier, c'est le fichier <code>~/.viminfo</code> qui sera utilisé.</td>
+        </tr>
 </table><h3 id='titre2'>HELP</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
@@ -225,11 +225,11 @@
         <td colspan="2" class="shortcut">:help '&lt;option>'</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Il faut donc l'entourer d'apostrophes simple</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Il faut donc l'entourer d'apostrophes simple</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -249,11 +249,11 @@
         <td colspan="1" class="shortcut">$> vim -V &lt;nombre></td>
         <td><memo>V</memo>erbeux</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Utile pour débugger les scripts Vim.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Utile pour débugger les scripts Vim.</td>
+        </tr>
 </table><h3 id='titre3'>PREMIÈRES COMMANDES UTILES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
@@ -282,11 +282,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_I.png" class="kb" title="I"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La première touche frappée ajoutera un caracètre avant le curseur.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La première touche frappée ajoutera un caracètre avant le curseur.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Activer le mode</td>
@@ -394,11 +394,11 @@
         <td colspan="2" class="shortcut"></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Le mapping est le fait d’associer une touche (ou une combinaison de touches) à une action. C’est une sorte de macro.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Le mapping est le fait d’associer une touche (ou une combinaison de touches) à une action. C’est une sorte de macro.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -424,11 +424,11 @@
         <td colspan="2" class='values'>  avec <code>lettre mode</code> :<br>    <code>i</code> (<code>im[ap]</code>) pour le mode <mode>[INSERT]</mode><br>    <code>c</code> (<code>cm[ap]</code>) pour le mode [COMMAND]<br>    Note : <code>:map!</code> pour les deux modes <mode>[INSERT]</mode> et [COMMAND]<br>    <code>v</code> (<code>vm[ap]</code>) pour le mode <mode>[VISUAL]</mode><br>    <code>n</code> (<code>nm[ap]</code>) pour le mode <mode>[NORMAL]</mode><br>    <code>s</code> (<code>sm[ap]</code>) pour le mode [SELECT]<br>    <code>o</code> (<code>om[ap]</code>) pour l’operator pending (mode dans lequel on entre lorsqu’une touche attend une « motion », par exemple « d » pour <code>delete</code>)</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Apparemment, pour que des lettres (par exemple « CAM ») se transforme en autre chose dans le mode <mode>[INSERT]</mode>, il faut vraiment utiliser <code>imap</code> (voir l’exemple).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Apparemment, pour que des lettres (par exemple « CAM ») se transforme en autre chose dans le mode <mode>[INSERT]</mode>, il faut vraiment utiliser <code>imap</code> (voir l’exemple).</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -469,11 +469,11 @@
         <td colspan="2" class="shortcut">:ab[breviate] &lt;snippet> &lt;remplacement></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Cette abbréviation sera valable pour le mode <mode>[INSERT]</mode> comme pour le mode [COMMAND]. Utiliser <code>ia[bbrev]</code> pour un snippet qui ne fonctionne qu’en mode insertion.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Cette abbréviation sera valable pour le mode <mode>[INSERT]</mode> comme pour le mode [COMMAND]. Utiliser <code>ia[bbrev]</code> pour un snippet qui ne fonctionne qu’en mode insertion.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -486,11 +486,11 @@
         <td colspan="2" class="shortcut">:ia[bbrev] &lt;snippet> &lt;remplacement><br>[dans fichier config] iabbrev &lt;snippet> &lt;remplacement></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut utiliser <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></code> ou <code><img src="./img/clavier/K_Espace.png" class="kb" title="Espace"/></code> pour l’étendre dans mode <mode>[INSERT]</mode>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut utiliser <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></code> ou <code><img src="./img/clavier/K_Espace.png" class="kb" title="Espace"/></code> pour l’étendre dans mode <mode>[INSERT]</mode>.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -611,11 +611,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :pt[ag] &lt;fonction></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ouvre la définition de la <code>&lt;fonction></code> dans la fenêtre de prévisualisation.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ouvre la définition de la <code>&lt;fonction></code> dans la fenêtre de prévisualisation.</td>
+        </tr>
       <tr>
         <td><span class='tag'>preview</span></td>
         <td class="mainaction">Fermer</td>
@@ -672,11 +672,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set scrollbind</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (<code>:vert split</code>) puis taper <code>:set scrollbind</code> pour chacune des layouts.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (<code>:vert split</code>) puis taper <code>:set scrollbind</code> pour chacune des layouts.</td>
+        </tr>
       <tr>
         <td><span class='tag'>layout</span><span class='tag'>size</span></td>
         <td class="mainaction">Redimensionner</td>
@@ -827,11 +827,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :mkview &lt;path/to/file.vim></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">ajouter « ! » à la commande pour forcer la réécriture d’un fichier précédent</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">ajouter « ! » à la commande pour forcer la réécriture d’un fichier précédent</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Recharger</td>
@@ -839,11 +839,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :source &lt;path/to/file.vim></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ce fichier doit avoir été sauvé avec <code>:mkview</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ce fichier doit avoir été sauvé avec <code>:mkview</code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -1018,11 +1018,11 @@
         <td colspan="2" class="shortcut">:set backupdir=/path/to/bckup/folder/</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Par défaut, c'est le dossier du fichier. Si un dossier est choisi de cette manière, attention aux collisions de noms.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Par défaut, c'est le dossier du fichier. Si un dossier est choisi de cette manière, attention aux collisions de noms.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -1065,11 +1065,11 @@
         <td colspan="2" class="shortcut">$> vim -n secret.txt</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Utilisé justement pour les fichier encryptés, afin que les swap-files ne puissent être consultés pendant l'édition du fichier apr un utilisateur qui auraient des superprivilèges.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Utilisé justement pour les fichier encryptés, afin que les swap-files ne puissent être consultés pendant l'édition du fichier apr un utilisateur qui auraient des superprivilèges.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Ouvrir</td>
@@ -1152,11 +1152,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> saveas</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Toutes les sauvegardes suivantes se feront dans ce fichier, contrairement à <code>:write</code> qui n'enregistre que ponctuellement dans un autre fichier.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Toutes les sauvegardes suivantes se feront dans ce fichier, contrairement à <code>:write</code> qui n'enregistre que ponctuellement dans un autre fichier.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Enregistrer</td>
@@ -1183,11 +1183,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> hardcopy > &lt;path/to/file.ps></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">En fait, on utilise la commande pour imprimer, qu’on détourne vers un fichier.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">En fait, on utilise la commande pour imprimer, qu’on détourne vers un fichier.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Fermer</td>
@@ -1202,11 +1202,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> e[xit] [&lt;path/to/file.ext>]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2"><code>exit</code>, contrairement à <code>write</code>, ne sauve que si le fichier a été changé.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2"><code>exit</code>, contrairement à <code>write</code>, ne sauve que si le fichier a été changé.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Fermer</td>
@@ -1226,11 +1226,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :qa[ll]</td>
         <td><memo>q</memo>uit <memo>a</memo>ll</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ajouter <code>!</code> à la fin pour forcer la fermeture sans enregistrer les modifications non enregistrées.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ajouter <code>!</code> à la fin pour forcer la fermeture sans enregistrer les modifications non enregistrées.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Fermer/quitter</td>
@@ -1273,11 +1273,11 @@
         <td colspan="2" class="shortcut">$> vimdiff &lt;path/to/file1> &lt;path/to/file2><br>[COMMAND] :vert splitdiff &lt;path/to/file2></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Avec la seconde solution, le premier fichier doit être ouvert.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Avec la seconde solution, le premier fichier doit être ouvert.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Aller</td>
@@ -1313,11 +1313,11 @@
         <td colspan="2" class="shortcut">1. Écrire le shell<br>2. L'enregistrer (dans change.vim par exemple)<br>3. $> vim -es monfichier.ext &lt; change.vim</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">les options signifient : e = en mode <code>ex</code>, qui permet de shell script, s = en mode silencieux, pour ne pas avoir les retours de commande.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">les options signifient : e = en mode <code>ex</code>, qui permet de shell script, s = en mode silencieux, pour ne pas avoir les retours de commande.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -1330,11 +1330,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :earlier &lt;temps></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Avec &lt;temps> qui peut être en secondes ([x]s) en minutes ([x]m) ou en heures ([x]h).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Avec &lt;temps> qui peut être en secondes ([x]s) en minutes ([x]m) ou en heures ([x]h).</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -1347,11 +1347,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :later &lt;temps></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Avec &lt;temps> qui peut être en secondes ([x]s) en minutes ([x]m) ou en heures ([x]h).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Avec &lt;temps> qui peut être en secondes ([x]s) en minutes ([x]m) ou en heures ([x]h).</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -1536,11 +1536,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :b[uffer] &lt;numéro></td>
         <td><memo>b</memo>uffer</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut jouer <code>:ls</code> avant pour obtenir la liste des buffers avec leur numéro.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut jouer <code>:ls</code> avant pour obtenir la liste des buffers avec leur numéro.</td>
+        </tr>
       <tr>
         <td><span class='tag'>split</span></td>
         <td class="mainaction">Activer</td>
@@ -1618,11 +1618,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;numéro ligne> m[ark] &lt;lettre><br><mode>[COMMAND]</mode> :&lt;numéro ligne> <img src="./img/clavier/K_K.png" class="kb" title="K"/>&lt;lettre></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Avec <img src="./img/clavier/K_K.png" class="kb" title="K"/>, on n’est pas obligé de laisser une espace avant la lettre du registre.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Avec <img src="./img/clavier/K_K.png" class="kb" title="K"/>, on n’est pas obligé de laisser une espace avant la lettre du registre.</td>
+        </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">Déplacer</td>
@@ -1663,11 +1663,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> g;</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut avoir la liste des changements avec <code>:changes</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut avoir la liste des changements avec <code>:changes</code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Retourner</td>
@@ -1675,11 +1675,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x]g, (<img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Virgule.png" class="kb" title="Virgule"/>)</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut avoir la liste des changements avec <code>:changes</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut avoir la liste des changements avec <code>:changes</code>.</td>
+        </tr>
       <tr>
         <td><span class='tag'>document</span></td>
         <td class="mainaction">Aller</td>
@@ -1715,11 +1715,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_J.png" class="kb" title="J"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La ligne « écran » correspond à la nouvelle ligne qu'on voit à l'écran, mais qui appartient peut-être à la même « ligne texte » que la ligne écran précédente.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La ligne « écran » correspond à la nouvelle ligne qu'on voit à l'écran, mais qui appartient peut-être à la même « ligne texte » que la ligne écran précédente.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Aller</td>
@@ -1727,11 +1727,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_J.png" class="kb" title="J"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Cf. la note concernant la commande précédente</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Cf. la note concernant la commande précédente</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Aller</td>
@@ -1753,11 +1753,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x])</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Les phrases sont reconnues grâce aux ponctuations : . (point), ! (point d'exclamation) ? (point d'interrogation). Le point-virgule n'est pas concerné.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Les phrases sont reconnues grâce aux ponctuations : . (point), ! (point d'exclamation) ? (point d'interrogation). Le point-virgule n'est pas concerné.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Aller</td>
@@ -2039,11 +2039,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :keepmarks</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Contrairement à <code>lockmarks</code>, qui ne raccourcit pas le fichier, ici, le fichier peut être raccourci et les marques des lignes supprimées sont supprimées elles-aussi.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Contrairement à <code>lockmarks</code>, qui ne raccourcit pas le fichier, ici, le fichier peut être raccourci et les marques des lignes supprimées sont supprimées elles-aussi.</td>
+        </tr>
       <tr>
         <td><span class='tag'>mark</span></td>
         <td class="mainaction">Afficher</td>
@@ -2072,11 +2072,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_M.png" class="kb" title="M"/>&lt;a-z></td>
         <td><memo>m</memo>arque</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La marque est « locale », c'est-à-dire qu'elle est propre au fichier/buffer et qu'elle ne peut pas être rejointe depuis un autre endroit que le fichier.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La marque est « locale », c'est-à-dire qu'elle est propre au fichier/buffer et qu'elle ne peut pas être rejointe depuis un autre endroit que le fichier.</td>
+        </tr>
       <tr>
         <td><span class='tag'>mark</span><span class='tag'>fichier</span></td>
         <td class="mainaction">Placer</td>
@@ -2084,11 +2084,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_M.png" class="kb" title="M"/>&lt;A-Z></td>
         <td><memo>m</memo>arque</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La marque est « globale », c'est-à-dire qu'on peut l'atteindre même depuis un autre fichier/une autre fenêtre.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La marque est « globale », c'est-à-dire qu'on peut l'atteindre même depuis un autre fichier/une autre fenêtre.</td>
+        </tr>
       <tr>
         <td><span class='tag'>mark</span></td>
         <td class="mainaction">Aller</td>
@@ -2256,11 +2256,11 @@
         <td colspan="2" class="shortcut"><mode>[VISUAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_V.png" class="kb" title="V"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Bascule entre la sélection courante et la précédente</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Bascule entre la sélection courante et la précédente</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Passer en mode</td>
@@ -2268,11 +2268,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_H.png" class="kb" title="H"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Attention, le déplacement ne peut plus se faire avec lettres.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Attention, le déplacement ne peut plus se faire avec lettres.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Passer en mode</td>
@@ -2313,11 +2313,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :global! ...<br><mode>[COMMAND]</mode> :vglobal ...</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Voir la commande précédente.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Voir la commande précédente.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
@@ -2325,11 +2325,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set paste, <img src="./img/clavier/K_Command.png" class="kb" title="Command"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>, :set nopaste</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">En fait, ça a l'air de fonctionner aussi avec <img src="./img/clavier/K_Command.png" class="kb" title="Command"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>normalement.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">En fait, ça a l'air de fonctionner aussi avec <img src="./img/clavier/K_Command.png" class="kb" title="Command"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>normalement.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
@@ -2337,6 +2337,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :[line]read &lt;path/to/the/file.ext></td>
         
       </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si aucune ligne n’est spécifié, ajoute après la ligne courante. Si aucun fichier n’est spécifié, ajoute après le fichier courant.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
@@ -2356,11 +2361,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>&lt;a-z du registre></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">En répétant <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/></code>, on insert le contenu sans interprétation des caractères spéciaux tels que <code>&lt;BS></code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">En répétant <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_R.png" class="kb" title="R"/></code>, on insert le contenu sans interprétation des caractères spéciaux tels que <code>&lt;BS></code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
@@ -2394,11 +2399,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;index ligne 1-start> i[nsert]<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/><br>Lignes ...<br><img src="./img/clavier/K_Point.png" class="kb" title="Point"/><img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/><br></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Je mets « 1-start » mais en fait il faut comprendre que <code>append</code> ajoute au bout de la ligne et que <code>insert</code> insert avant.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Je mets « 1-start » mais en fait il faut comprendre que <code>append</code> ajoute au bout de la ligne et que <code>insert</code> insert avant.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Stopper</td>
@@ -2406,11 +2411,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :stopinsert</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">C’est surtout utile quand on programme des commandes.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">C’est surtout utile quand on programme des commandes.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -2444,11 +2449,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_I.png" class="kb" title="I"/>&lt;texte></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Passe en mode INSERT après la touche <img src="./img/clavier/K_I.png" class="kb" title="I"/></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Passe en mode INSERT après la touche <img src="./img/clavier/K_I.png" class="kb" title="I"/></td>
+        </tr>
       <tr>
         <td><span class='tag'>digraph</span></td>
         <td class="mainaction">Insérer</td>
@@ -2456,11 +2461,11 @@
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/>&lt;2 lettres du digraph></td>
         <td>Spécial <memo>k</memo>aractère</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Voir aussi <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>plus bas.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Voir aussi <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>plus bas.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -2473,11 +2478,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> &lt;fois><img src="./img/clavier/K_I.png" class="kb" title="I"/>&lt;signe> <img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Il faut bien utiliser la touche <img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>et non pas <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/>pour quitter le mode.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Il faut bien utiliser la touche <img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>et non pas <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/>pour quitter le mode.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -2490,11 +2495,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>&lt;signe></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ça concerne aussi bien les retours chariot que les tabulations.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ça concerne aussi bien les retours chariot que les tabulations.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
@@ -2585,11 +2590,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_G.png" class="kb" title="G"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Affiche la colonne/nombre de colonnes, la ligne/nombre de lignes, le mot/nombre de mots, la caractère/nombre de caractères, le byte, nombre de bytes.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Affiche la colonne/nombre de colonnes, la ligne/nombre de lignes, le mot/nombre de mots, la caractère/nombre de caractères, le byte, nombre de bytes.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Modifier</td>
@@ -2668,11 +2673,11 @@
         <td colspan="2" class="shortcut"><mode>[VISUAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Interro.png" class="kb" title="Interro"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Utilise l’encodange &lt;em>Rot13&lt;/em></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Utilise l’encodange &lt;em>Rot13&lt;/em></td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Incrémenter</td>
@@ -2680,11 +2685,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x]<img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_A.png" class="kb" title="A"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Tient compte de la base : un nombre commençant par 0 est considéré comme octal, un nombre commençant par <code>0x</code> est considéré comme hexadécimal</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Tient compte de la base : un nombre commençant par 0 est considéré comme octal, un nombre commençant par <code>0x</code> est considéré comme hexadécimal</td>
+        </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">[Dés]activer</td>
@@ -2706,11 +2711,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set spellfile=&lt;path/to/file.add[,&lt;path/other/file.add]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">L'extension doit obligatoirement être <code>.add</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">L'extension doit obligatoirement être <code>.add</code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Compiler</td>
@@ -2718,11 +2723,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :mkspell [-ascii ]&lt;out-file> &lt;in-file></td>
         <td><memo>m</memo>a<memo>k</memo>e spell</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On ajoute l'option <code>-ascii</code> pour dire à vim de passer tous les caractères non-ASCII.<br>Le nom des fichiers d'entrée doit respecter la convention <code>&lt;langue>_&lt;region></code> (<code>fr_FR</code> pour la France métropolitaine).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On ajoute l'option <code>-ascii</code> pour dire à vim de passer tous les caractères non-ASCII.<br>Le nom des fichiers d'entrée doit respecter la convention <code>&lt;langue>_&lt;region></code> (<code>fr_FR</code> pour la France métropolitaine).</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Ajouter</td>
@@ -2730,11 +2735,11 @@
         <td colspan="2" class="shortcut"></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Le télécharger à l'adresse <code>https://extensions.libreoffice.org/extensions/dictionnaires-francais</code> par exemple.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Le télécharger à l'adresse <code>https://extensions.libreoffice.org/extensions/dictionnaires-francais</code> par exemple.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Ajouter un mot</td>
@@ -2742,11 +2747,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> Placer le curseur sur le mot puis taper <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_G.png" class="kb" title="G"/><br>Ou[COMMAND]:spellg[ood] &lt;mot></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ajouter un index devant la commande si plusieurs dictionnaires sont spécifiés par <code>:set spellfile</code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ajouter un index devant la commande si plusieurs dictionnaires sont spécifiés par <code>:set spellfile</code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -2801,11 +2806,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set iskeyword=&lt;définition></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La valeur peut être une lettre ou son code ASCII</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La valeur peut être une lettre ou son code ASCII</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -2872,11 +2877,11 @@
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/></td>
         <td><memo>w</memo>ord = mot</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Noter qu'il s'agit bien du mot INSERT et pas du mode NORMAL. En mode NORMAL, le raccourci <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>permet notamment de switcher entre les fenêtres.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Noter qu'il s'agit bien du mot INSERT et pas du mode NORMAL. En mode NORMAL, le raccourci <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>permet notamment de switcher entre les fenêtres.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Supprimer</td>
@@ -2884,11 +2889,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_U.png" class="kb" title="U"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Noter qu'il s'agit du mode INSERT.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Noter qu'il s'agit du mode INSERT.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Supprimer</td>
@@ -2896,11 +2901,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
         <td><memo>d</memo>elete</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Elle est mémorisée dans le registre par défaut et peut être pastée à l’aide de <img src="./img/clavier/K_P.png" class="kb" title="P"/>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Elle est mémorisée dans le registre par défaut et peut être pastée à l’aide de <img src="./img/clavier/K_P.png" class="kb" title="P"/>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Supprimer</td>
@@ -2955,11 +2960,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;numéro ligne>delete [registre]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Si le registre est Majuscule, la commande ajoute le texte au texte présent dans le registre minuscule.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si le registre est Majuscule, la commande ajoute le texte au texte présent dans le registre minuscule.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -2972,11 +2977,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :&lt;ligne from> delete [registre] &lt;nombre ligne></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Si le registre est majuscule, on AJOUTE le contenu des lignes au registre.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si le registre est majuscule, on AJOUTE le contenu des lignes au registre.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -2989,11 +2994,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;range> delete [registre]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Si le registre est une capitale, c’est un ajout au texte existant qu’il faut faire.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si le registre est une capitale, c’est un ajout au texte existant qu’il faut faire.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -3006,11 +3011,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :/&lt;mot ligne de>/, /&lt;mot ligne à>/ delete [registre]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Si le <code>&lt;mot ligne à></code> se trouve avant le <code>&lt;mot ligne de></code>, la commande ne produit rien.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si le <code>&lt;mot ligne à></code> se trouve avant le <code>&lt;mot ligne de></code>, la commande ne produit rien.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -3037,11 +3042,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :[&lt;numéro ligne>]/mot de/, [&lt;numéro ligne>]/mot à/ delete [registre]</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Attention de s’assurer que le second mot se trouve bien après le premier.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Attention de s’assurer que le second mot se trouve bien après le premier.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -3054,11 +3059,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_M.png" class="kb" title="M"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Y.png" class="kb" title="Y"/><br><mode>[NORMAL]</mode> etc.</td>
         <td><memo>y</memo>ank</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On fait la distinction entre « yanker », qui mémorise un texte et « copier » qui ajoute un texte au texte.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On fait la distinction entre « yanker », qui mémorise un texte et « copier » qui ajoute un texte au texte.</td>
+        </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">Yanker</td>
@@ -3066,11 +3071,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Y.png" class="kb" title="Y"/><img src="./img/clavier/K_Y.png" class="kb" title="Y"/></td>
         <td><memo>y</memo>ank</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On fait la distinction entre « yanker », qui mémorise un texte et « copier » qui ajoute un texte au texte.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On fait la distinction entre « yanker », qui mémorise un texte et « copier » qui ajoute un texte au texte.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Yanker</td>
@@ -3125,11 +3130,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;range> copy &lt;ligne before></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On fait bien la différence, ici, entre « yanker » (qui ne fait &lt;em>que&lt;/em> mémoriser le texte) et « copier » (qui &lt;em>ajoute&lt;/em> le texte au texte).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On fait bien la différence, ici, entre « yanker » (qui ne fait &lt;em>que&lt;/em> mémoriser le texte) et « copier » (qui &lt;em>ajoute&lt;/em> le texte au texte).</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -3142,11 +3147,11 @@
         <td colspan="2" class="shortcut"><mode>[VISUAL]</mode> sélectionner le texte puis <code>:write &lt;path/to/file.ext></code></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">La commande prévient si un fichier existe déjà. Pour l'écraser, ajouter <code>!</code> à la fin de la commande.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">La commande prévient si un fichier existe déjà. Pour l'écraser, ajouter <code>!</code> à la fin de la commande.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Ajouter</td>
@@ -3154,11 +3159,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :write[!] >> &lt;path/to/file></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Pour être clair, sans « ! », la commande produit une erreur dans le cas où le fichier n’existe pas encore.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Pour être clair, sans « ! », la commande produit une erreur dans le cas où le fichier n’existe pas encore.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">« Piper » le texte actuel</td>
@@ -3180,11 +3185,11 @@
         <td colspan="1" class="shortcut">[x]<img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/><img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/></td>
         <td><memo>==</memo> Mêmes espaces</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2"><code>x</code> est le nombre de lignes à réindenter</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2"><code>x</code> est le nombre de lignes à réindenter</td>
+        </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">Indenter</td>
@@ -3192,11 +3197,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_T.png" class="kb" title="T"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Bien noter que c’est en mode <mode>[INSERT]</mode>.<br>La valeur de l’indentation dépendera de la valeur de l’option <code>shilfwidth</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Bien noter que c’est en mode <mode>[INSERT]</mode>.<br>La valeur de l’indentation dépendera de la valeur de l’option <code>shilfwidth</code>.</td>
+        </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">Désindenter</td>
@@ -3204,11 +3209,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Bien noter que c’est en mode <mode>[INSERT]</mode>.<br>La valeur de l’indentation dépendera de la valeur de l’option <code>shilfwidth</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Bien noter que c’est en mode <mode>[INSERT]</mode>.<br>La valeur de l’indentation dépendera de la valeur de l’option <code>shilfwidth</code>.</td>
+        </tr>
       <tr>
         <td><span class='tag'>ligne</span><span class='tag'>indentation</span></td>
         <td class="mainaction">Indenter</td>
@@ -3254,11 +3259,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> 0 <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Noter plusieurs choses : d’abord, on est en mode <mode>[INSERT]</mode> et donc le <code>0</code> sera écrit à l’écran. Noter ensuite que cette désindentation n’est pas définitive. L’utilisation de <img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/><img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/>la supprimera.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Noter plusieurs choses : d’abord, on est en mode <mode>[INSERT]</mode> et donc le <code>0</code> sera écrit à l’écran. Noter ensuite que cette désindentation n’est pas définitive. L’utilisation de <img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/><img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/>la supprimera.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Désindenter</td>
@@ -3266,11 +3271,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> ^ <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Mêmes remarque que pour la commande précédente.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Mêmes remarque que pour la commande précédente.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -3292,11 +3297,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> Sélectionner le texte puis <code><img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Q.png" class="kb" title="Q"/></code></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Dépend de la définition de <code>textwidth</code> et/ou <code>wrapmargin</code> ci-dessus.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Dépend de la définition de <code>textwidth</code> et/ou <code>wrapmargin</code> ci-dessus.</td>
+        </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">Reformater</td>
@@ -3492,11 +3497,11 @@
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_X.png" class="kb" title="X"/>, choisir l'option avec <img src="./img/clavier/K_Control.png" class="kb" title="Control"/>&lt;touche></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">l'option peut être <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/>: définition de macro, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_F.png" class="kb" title="F"/> : nom de fichier, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/> : dictionnaire, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_T.png" class="kb" title="T"/> : thésaurus, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_I.png" class="kb" title="I"/> : fichiers courants et #includes (en C), <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_L.png" class="kb" title="L"/> : lignes complètes, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/> : “omni” complétion (omnifun)</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">l'option peut être <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/>: définition de macro, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_F.png" class="kb" title="F"/> : nom de fichier, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/> : dictionnaire, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_T.png" class="kb" title="T"/> : thésaurus, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_I.png" class="kb" title="I"/> : fichiers courants et #includes (en C), <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_L.png" class="kb" title="L"/> : lignes complètes, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/> : “omni” complétion (omnifun)</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Afficher</td>
@@ -3525,11 +3530,11 @@
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/>, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_F.png" class="kb" title="F"/></td>
         <td><memo>F</memo>ile</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Utiliser <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_N.png" class="kb" title="N"/></code> pour passer au fichier suivant</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Utiliser <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_N.png" class="kb" title="N"/></code> pour passer au fichier suivant</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Choisir</td>
@@ -3537,11 +3542,11 @@
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/>(x fois)</td>
         <td><memo>P</memo>revious, <memo>p</memo>récédent</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Chaque pression de la combinaison passe au mot suivant</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Chaque pression de la combinaison passe au mot suivant</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Choisir</td>
@@ -3549,11 +3554,11 @@
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_N.png" class="kb" title="N"/>(x fois)</td>
         <td><memo>N</memo>ext, suivant</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On doit avoir afficher la liste des mots avec <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On doit avoir afficher la liste des mots avec <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></code></td>
+        </tr>
 </table><h3 id='titre17'>TEXTE EXTRAS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
@@ -3676,11 +3681,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> /&lt;search>/[+|-]&lt;x></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Recherche en arrière : <code>?&lt;search>?[+|-]&lt;x></code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Recherche en arrière : <code>?&lt;search>?[+|-]&lt;x></code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -3693,11 +3698,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> /</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2"><code>?</code> en arrière</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2"><code>?</code> en arrière</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Répéter</td>
@@ -3705,11 +3710,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> //</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2"><code>??</code> en arrière</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2"><code>??</code> en arrière</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Répéter</td>
@@ -3717,11 +3722,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> //[+|-]&lt;x></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2"><code>??[+|-]&lt;x></code> en arrière</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2"><code>??[+|-]&lt;x></code> en arrière</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Placer le curseur</td>
@@ -3729,11 +3734,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> /&lt;search>/b[+|-]&lt;x><br><mode>[NORMAL]</mode> /&lt;search>/s[+|-]&lt;x></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Recherche en arrière : <code>?&lt;search>?b[+|-]&lt;x></code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Recherche en arrière : <code>?&lt;search>?b[+|-]&lt;x></code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -3753,11 +3758,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> /&lt;search>/e[+|-]&lt;x></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Utiliser le code <code>//&lt;x></code> pour recommencer la recherche avec un autre offset.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Utiliser le code <code>//&lt;x></code> pour recommencer la recherche avec un autre offset.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -3891,11 +3896,11 @@
         <td colspan="1" class='values'>  avec <code>&lt;flags></code> :<br>    <code>g</code> => toutes les occurrences dans la ligne courante<br>    <code>p</code> => en écrivant ((p)rint) les lignes modifiées<br>    <code>c</code> => demande confirmation pour chaque changement<br>    <code>e</code> => pas de sortie d’erreur, même si aucune occurrence<br>    <code>i</code> => substitution non sensible à la casse<br>    <code>I</code> => substitution sensible à la casse, même si l’option dit le contraire<br>    <code>l</code> => imprime la ligne en mode « liste » après la substitution<br>    <code>n</code> => indique le nombre de substitution opérée mais sans rien faire.<br>    <code>r</code> => si la pattern de recherche est vide, utiliser la précédente</td>
         <td></td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut remplacer le « / » par n’importe quel autre caractère à part un nombre, une lettre, la balance arrière, les doubles guillemets ou la barre verticale. Voir les exemples.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut remplacer le « / » par n’importe quel autre caractère à part un nombre, une lettre, la balance arrière, les doubles guillemets ou la barre verticale. Voir les exemples.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -3929,11 +3934,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;de ligne>,&lt;à ligne> s/.../.../g</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Pour la dernière ligne, on peut utiliser <code><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Pour la dernière ligne, on peut utiliser <code><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/></code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Substituer</td>
@@ -3960,11 +3965,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :&lt;rang> & &lt;drapeau></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Il faut répéter les drapeaux s’il y en a dans la définition initiale</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Il faut répéter les drapeaux s’il y en a dans la définition initiale</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -3977,11 +3982,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]gdefault</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Attention, ça peut entrainer des conséquences fâcheuses sur certains scripts.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Attention, ça peut entrainer des conséquences fâcheuses sur certains scripts.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Remplacer</td>
@@ -4003,11 +4008,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> [x]s&lt;texte></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Vim passe en mode INSERT après que la touche <img src="./img/clavier/K_S.png" class="kb" title="S"/>a été pressée.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Vim passe en mode INSERT après que la touche <img src="./img/clavier/K_S.png" class="kb" title="S"/>a été pressée.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Remplacer</td>
@@ -4015,11 +4020,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> s&lt;texte></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Mais contrairement à <img src="./img/clavier/K_R.png" class="kb" title="R"/>qui reste en mode <mode>[NORMAL]</mode>, Vim reste en mode <mode>[INSERT]</mode> après que la touche <img src="./img/clavier/K_S.png" class="kb" title="S"/>a été pressée.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Mais contrairement à <img src="./img/clavier/K_R.png" class="kb" title="R"/>qui reste en mode <mode>[NORMAL]</mode>, Vim reste en mode <mode>[INSERT]</mode> après que la touche <img src="./img/clavier/K_S.png" class="kb" title="S"/>a été pressée.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Remplacer</td>
@@ -4027,11 +4032,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_S.png" class="kb" title="S"/>&lt;texte></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Vim passe en mode INSERT après que la touche <img src="./img/clavier/K_S.png" class="kb" title="S"/>a été pressée.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Vim passe en mode INSERT après que la touche <img src="./img/clavier/K_S.png" class="kb" title="S"/>a été pressée.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Remplacer</td>
@@ -4114,11 +4119,11 @@
         <td colspan="1" class="shortcut">\u<br>[[:upper:]]</td>
         <td><memo>u</memo>pper</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Plus rapide que de faire <code>[A-Z]</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Plus rapide que de faire <code>[A-Z]</code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Rechercher</td>
@@ -4133,11 +4138,11 @@
         <td colspan="1" class="shortcut">\l<br>[[:lower:]]</td>
         <td><memo>l</memo>ower</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Plus rapide que <code>[a-z]</code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Plus rapide que <code>[a-z]</code></td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Rechercher</td>
@@ -4285,11 +4290,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> "1 <img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Les autres suppressions se trouvent dans les registres de 2 à 9</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Les autres suppressions se trouvent dans les registres de 2 à 9</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Insérer</td>
@@ -4297,11 +4302,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> "2 <img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Les autres suppressions se trouvent dans les registres de 3 à 9</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Les autres suppressions se trouvent dans les registres de 3 à 9</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Ajouter</td>
@@ -4375,11 +4380,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> q:<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_F.png" class="kb" title="F"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Définir l’option <code>cmdwinheight</code> (<code>cwh</code>) pour régler la hauteur de la fenêtre affichant la liste.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Définir l’option <code>cmdwinheight</code> (<code>cwh</code>) pour régler la hauteur de la fenêtre affichant la liste.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Quitter</td>
@@ -4457,11 +4462,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :startinsert</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Correspond à la touche <img src="./img/clavier/K_I.png" class="kb" title="I"/>en mode normal.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Correspond à la touche <img src="./img/clavier/K_I.png" class="kb" title="I"/>en mode normal.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Demander</td>
@@ -4520,11 +4525,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :echon &lt;texte></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Dans l’exemple, la barre verticale permet de jouer plusieurs commandes.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Dans l’exemple, la barre verticale permet de jouer plusieurs commandes.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -4543,11 +4548,11 @@
         <td colspan="2" class='values'>  avec <code>&lt;type couleur></code> :<br>    ErrorMsg</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Pour voir les types de couleur, taper <code>:hi[ghlight]</code> en console. <code>hl</code> comme <code>highlight</code>. </td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Pour voir les types de couleur, taper <code>:hi[ghlight]</code> en console. <code>hl</code> comme <code>highlight</code>. </td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -4560,11 +4565,11 @@
         <td colspan="1" class="shortcut"><mode>[COMMAND]</mode> :echoe[rr]</td>
         <td>Comme <memo>echo</memo> <memo>err</memo>eur</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Si employé dans un script ou une fonctoin, ce code ajoute la ligne dans l’historique des erreurs et ajoute un numéro de ligne.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si employé dans un script ou une fonctoin, ce code ajoute la ligne dans l’historique des erreurs et ajoute un numéro de ligne.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Écrire</td>
@@ -4572,12 +4577,121 @@
         <td colspan="1" class="shortcut"><mode>[COMMAND]</mode> :echom[sg]</td>
         <td><memo>echo</memo> <memo>m</memo>e<memo>s</memo>sa<memo>g</memo>e</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Si employé dans un script ou une fonction, ajoute aux messages de suivi qu’on peut relire avec <code>:messages</code>.</td>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Si employé dans un script ou une fonction, ajoute aux messages de suivi qu’on peut relire avec <code>:messages</code>.</td>
+        </tr>
+</table><h3 id='titre22'>COMMANDES PERSONNELLES</h3><table cellspacing="0" cellpadding="0">  <tr>
+    <th width="100">Tags</th>
+    <th width="160">Action</th>
+    <th width="480">Sous-action</th>
+    <th width="490">Shortcut</th>
+    <th width="280">Mnémo</th>
+  </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Créer</td>
+        <td class="action">une commande</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :command &lt;NomCommande> &lt;code à exécuter></td>
+        
       </tr>
-</table><h3 id='titre22'>LIGNE DE COMMANDE ET LANGAGE DE SCRIPT</h3><table cellspacing="0" cellpadding="0">  <tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Les commandes personnelles doivent commencer par une capitale.</td>
+        </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:command SuppEntete :1delete</code> => quand on tape <code>:SuppEntete</code>, cela supprime la première ligne</div><div class="exemple"><code>:command &lt;SID>Delete :1,delete</code> => Définit la commande <code>Delete</code>, mais en lui collant un préfixe qui supprimera toute collision possible avec des fonctions ou commandes existantes.</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Lister</td>
+        <td class="action">les commandes personnalisées</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :command</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">une commande personnalisée</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :delcommand &lt;NomCommande></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Supprimer</td>
+        <td class="action">toutes les commandes personnalisées</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :comclear</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">les arguments d’une commande</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :command -nargs=&lt;valeur> &lt;NomCommande> &lt;code utilisant les arguments></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>&lt;valeur></code> :<br>    <code>0</code> => aucun argument<br>    <code>1</code> => un argument, 2, etc.<br>    <code>*</code> => nombre indéterminé d’arguments<br>    <code>?</code> => Zéro ou un argument<br>    <code>+</code> => Un ou plus arguments</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><pre><code>" Soit la commande définie par :
+
+:command -nargs=+ Dire :echo "&lt;args>"
+
+" Si l’on joue :
+
+:Dire Bonjour tout le monde !
+
+" Cela écrira en console :
+
+Bonjour tout le monde !</code></pre></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Utiliser</td>
+        <td class="action">un rang de ligne comme argument</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :command &lt;-range> &lt;Commande> &lt;code à exécuter></td>
+        
+      </tr>
+      <tr class='values'>
+        <td colspan='2'></td>
+        <td class='titre'>Valeurs</td>
+        <td colspan="2" class='values'>  avec <code>&lt;-range></code> :<br>    <code>-range</code> => un rang est attendu. Défaut : la ligne courante<br>    <code>-range=%</code> => rang attendu, par défaut, le fichier entier<br>    <code>-range=&lt;count></code> => juste un numéro de ligne dont le numéro est <code>&lt;count></code></td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Lorsqu’un rang est fourni, <code>&lt;line1></code> et <code>&lt;line2></code> fournissent les valeurs de ce rang.</td>
+        </tr>
+      <tr>
+        <td><span class='tag'>commandes</span></td>
+        <td class="mainaction">Passer des arguments</td>
+        <td class="action">à une fonction comme une liste</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :command -narg=* MaCommande :call UneFonction(&lt;f-args>)</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><pre><code>" Quand on fera :
+
+MaCommande un deux trois
+
+" Ça correspondra à un appel :
+
+UneFonction("un", "deux", "trois")</code></pre></div></td>
+      </tr>
+</table><h3 id='titre23'>LIGNE DE COMMANDE ET LANGAGE DE SCRIPT</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4591,14 +4705,14 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :if {condition} | &lt;statement> | elseif | &lt;statement> | else | &lt;statement> | endif</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Bien sûr, les « | » peuvent être remplacés par des retours à la ligne avec ajoute de « : » en début de ligne : <pre><code>:if &lt;condition>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Bien sûr, les « | » peuvent être remplacés par des retours à la ligne avec ajoute de « : » en début de ligne : <pre><code>:if &lt;condition>
 : &lt;statement>
 : &lt;statement>
 :endif</code></pre></td>
-      </tr>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -4614,11 +4728,11 @@
 :endwhile</code></pre></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut passer directement à la valeur suivante avec <code>continue</code> ou sortir de la boucle avec <code>break</code>.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut passer directement à la valeur suivante avec <code>continue</code> ou sortir de la boucle avec <code>break</code>.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Exécuter</td>
@@ -4663,11 +4777,11 @@
 :endtry</code></pre> </td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On lève une erreur à l’aide de <code>:throw "&lt;erreur>"</code> dans le statement. On utile <code>:finish</code> pour finir le code du bloc try.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On lève une erreur à l’aide de <code>:throw "&lt;erreur>"</code> dans le statement. On utile <code>:finish</code> pour finir le code du bloc try.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -4677,7 +4791,7 @@
 : echo "Cette commande est inconue."
 :endtry</code></pre></div></td>
       </tr>
-</table><h3 id='titre23'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre24'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4717,11 +4831,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> set background=&lt;light|dark></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Il faut bien sûr que le thème courant possède ces deux versions. Essayer par exemple avec <code>elrodeo</code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Il faut bien sûr que le thème courant possède ces deux versions. Essayer par exemple avec <code>elrodeo</code></td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -4735,11 +4849,11 @@
         <td colspan="2" class='values'>  avec <code>&lt;groupe></code> :<br>    <code>Keyword</code> : les mots-clés du langage<br>    <code>Comment</code> : les commentaires<br>    etc.</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Pour une version plus avancée de l’utilisation, voir l’aide.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Pour une version plus avancée de l’utilisation, voir l’aide.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -4773,11 +4887,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set foldmethod=marker; :set foldmarker=&lt;entrée>,&lt;sortie><br><mode>[COMMAND]</mode> :set fdm=marker; :set fdr=&lt;in>,&lt;out></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ensuite, on peut ajouter un level après l’entrée et la sortie. Par exemple :<br><code>&lt;1<br>Mon texte de niveau 1<br>&lt;2<br>Le texte de niveau 2.Autre ligne dans le niveau 2<br>>2<br>>1</code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ensuite, on peut ajouter un level après l’entrée et la sortie. Par exemple :<br><code>&lt;1<br>Mon texte de niveau 1<br>&lt;2<br>Le texte de niveau 2.Autre ligne dans le niveau 2<br>>2<br>>1</code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -4817,11 +4931,11 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Z.png" class="kb" title="Z"/><img src="./img/clavier/K_D.png" class="kb" title="D"/></td>
         <td><memo>d</memo>elete</td>
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Il suffit de se trouver dans le folding et d’exécuter cette combinaison.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Il suffit de se trouver dans le folding et d’exécuter cette combinaison.</td>
+        </tr>
       <tr>
         <td><span class='tag'>folding</span></td>
         <td class="mainaction">Supprimer</td>
@@ -4892,11 +5006,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :% folddoopen &lt;command></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On peut faire la même chose avec les foldings fermés à l’aide de <code>folddoclosed</code> (mais bon, c’est un peu risqué quand même).</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On peut faire la même chose avec les foldings fermés à l’aide de <code>folddoclosed</code> (mais bon, c’est un peu risqué quand même).</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -4909,11 +5023,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set foldo[pen]=&lt;liste valeurs><br><mode>[NORMAL]</mode> :set fdo=&lt;valeurs></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Consulter l’aide pour voir toutes les valeurs possibles.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Consulter l’aide pour voir toutes les valeurs possibles.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
@@ -4927,7 +5041,7 @@
         <td colspan="2" class='values'>  avec <code>valeur</code> :<br>    <code>diff</code> en fonction de l’opération checkant les différences<br>    <code>expr</code> : folding créés par une l’expression définie par <code>foldexpr</code> (<code>fde</code>)<br>    <code>indent</code> : folding créés par l’indentation<br>    <code>manual</code> : folding créés manuellement<br>    <code>marker</code> : folding créés par des markers<br>    <code>syntax</code> : folding créés par la syntaxe (n’importe quel élément de syntaxe qui possède l’option <code>fold</code>)</td>
         
       </tr>
-</table><h3 id='titre24'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre25'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -4936,16 +5050,78 @@
   </tr>
       <tr>
         <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">de lire le .vimrc dans le dossier courant</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set exrc</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note 1</td>
+          <td colspan="2">L’option est désactivée par défaut, ce qui fait que c’est toujours le .vimrc placé à la racine du $HOME qui est lu.</td>
+        </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note 2</td>
+          <td colspan="2">Jouer la commande <code>:set secure</code> avant pour empêcher l’exécution des <code>autocommand</code>, <code>write</code> et <code>shell</code> quand on met cette option pour un dossier inconnue.</td>
+        </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la valeur d'une option non booléenne</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>=&lt;valeur><br><mode>[COMMAND]</mode> :set &lt;option>:&lt;valeur></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Régler</td>
+        <td class="action">plusieurs valeurs d’options à la fois</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>=&lt;valeur> &lt;autre option>=&lt;valeur> &lt;option booléenne> etc.</td>
+        
+      </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Régler</td>
+        <td class="action">les options pour un fichier</td>
+        <td colspan="2" class="shortcut"><mode>[FILE]</mode> /* vim: set &lt;option>=&lt;valeur> : &lt;opt>=&lt;val> : &lt;opt bool> : */</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Cette ligne doit IMPÉRATIVEMENT être placée sur la PREMIÈRE LIGNE du fichier. C’est ce qu’on appelle la « modeline » (ligne de mode)</td>
+        </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">le nombre de ligne pour la modeline</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set modelines=&lt;nombre de lignes au début du fichier</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Activer/désactiver</td>
+        <td class="action">le mode Modeline</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]modeline</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">En mode « modeline », Vim lit les x premières lignes d’un fichier ouvert pour régler les options</td>
+        </tr>
+      <tr>
+        <td></td>
         <td class="mainaction">[Dés]activer</td>
-        <td class="action">l'enroulement des lignes à l'affichage</td>
+        <td class="action">l’enroulement des lignes à l’affichage</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set [no]wrap</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Avec <code>nowrap</code>, les lignes ne seront pas enroulées et s'étendront sur une seule ligne d'affichage.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Avec <code>nowrap</code>, les lignes ne seront pas enroulées et s'étendront sur une seule ligne d'affichage.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">[Dés]activer</td>
@@ -4956,7 +5132,7 @@
       <tr>
         <td></td>
         <td class="mainaction">Activer/désactiver</td>
-        <td class="action">l'option de la relecture automatique (après modification du fichier ailleurs)</td>
+        <td class="action">l’option de la relecture automatique (après modification du fichier ailleurs)</td>
         <td colspan="2" class="shortcut">:set [no]autoread</td>
         
       </tr>
@@ -4964,14 +5140,14 @@
         <td></td>
         <td class="mainaction">Afficher</td>
         <td class="action">l’état d'une option</td>
-        <td colspan="1" class="shortcut">:set &lt;option>?</td>
+        <td colspan="1" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>?</td>
         <td><memo>?</memo> interroger</td>
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Activer</td>
         <td class="action">une option off/on</td>
-        <td colspan="2" class="shortcut">:set &lt;option></td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option></td>
         
       </tr>
       <tr>
@@ -4984,14 +5160,125 @@
       <tr>
         <td></td>
         <td class="mainaction">Régler</td>
-        <td class="action">la valeur d'une option non on/off</td>
-        <td colspan="2" class="shortcut">:set &lt;opt>=&lt;valeur></td>
+        <td class="action">une option sur sa valeur par défaut</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>&</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Régler</td>
+        <td class="action">toutes les options sur leur valeur par défaut</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set all&</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Inverser</td>
+        <td class="action">la valeur d’une option</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>!<br><mode>[COMMAND]</mode> :set inv&lt;option></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set wrap!</code> => si l’« enroulage » avait été désactivé avec <code>:set nowrap</code> avant, il est remis avec cette commande.</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Augmenter</td>
+        <td class="action">la valeur d’une option numérique</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>+=&lt;valeur numérique></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Diminuer</td>
+        <td class="action">la valeur d’une option numérique</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>-=&lt;valeur numérique></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Multiplier</td>
+        <td class="action">la valeur d’une option numérique</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>^=&lt;valeur numérique></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Ajouter</td>
+        <td class="action">une valeur à une option liste</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>+=&lt;valeur string></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>:set cinwords+=test</code> => cinwords contient <code>["test"]</code>, <code>:set cinwords+=end</code> => cinwords = <code>["test","end"]</code></div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Retirer</td>
+        <td class="action">une valeur à une option liste</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set &lt;option>-=&lt;valeur></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple">si <code>cinwords</code> a la valeur <code>["test", "end"]</code> alors le code <code>:set cinwords-=test</code> la mettra à <code>["end"]</code></div></td>
+      </tr>
+      <tr class="main">
+        <td></td>
+        <td class="mainaction">Activer[/désactiver]</td>
+        <td class="action">la confirmation au lieu de l’erreur</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]confirm</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Par exemple, en tant normal, lorsque l’on veut quitter Vim mais que le fichier courant a été modifié sans être enregistré, Vim provoque une erreur. Avec l’option <code>confirm</code> activée, Vim demande s’il faut sauver le fichier avant.</td>
+        </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Augmenter</td>
+        <td class="action">le nombre de lignes pour l’affichage d’une commande</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set cmdheight=&lt;nombre lignes></td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher[/masquer]</td>
+        <td class="action">le mode en bas à gauche de l’écran</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]showmode</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher[/masquer]</td>
+        <td class="action">la commande en version réduite en bas à droite de l’écran</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]showcmd</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Activer[/désactiver]</td>
+        <td class="action">l’alerte visuelle (flash de l’écran)</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]visualbell</td>
+        
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Activer[/désactiver]</td>
+        <td class="action">l’alerte sonore</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]errorbell</td>
         
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Définir</td>
-        <td class="action">l'ampleur du scroll avec <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_U.png" class="kb" title="U"/></td>
+        <td class="action">l’ampleur du scroll avec <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_U.png" class="kb" title="U"/></td>
         <td colspan="2" class="shortcut">:set scroll=&lt;nombre de lignes></td>
         
       </tr>
@@ -5016,7 +5303,7 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]equalalways</td>
         
       </tr>
-</table><h3 id='titre25'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre26'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5037,7 +5324,7 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         <td><memo>c</memo>urrent</td>
       </tr>
-</table><h3 id='titre26'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre27'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5065,12 +5352,12 @@
         <td colspan="2" class="shortcut">:shell</td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Taper «exit» pour revenir dans Vim.</td>
-      </tr>
-</table><h3 id='titre27'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Taper «exit» pour revenir dans Vim.</td>
+        </tr>
+</table><h3 id='titre28'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5112,11 +5399,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, <img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Attention, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, <img src="./img/clavier/K_N.png" class="kb" title="N"/>ne passe pas à la suivante (next) mais crée un nouveau split.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Attention, <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, <img src="./img/clavier/K_N.png" class="kb" title="N"/>ne passe pas à la suivante (next) mais crée un nouveau split.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Intervertir</td>
@@ -5131,11 +5418,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_X.png" class="kb" title="X"/></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">S’il n’y a pas de fenêtre en dessous, intervertit avec la précédente.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">S’il n’y a pas de fenêtre en dessous, intervertit avec la précédente.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Égaliser</td>
@@ -5157,7 +5444,7 @@
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>/<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_R.png" class="kb" title="R"/></td>
         <td><memo>w</memo>indow, <memo>r</memo>epositionne</td>
       </tr>
-</table><h3 id='titre28'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre29'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5351,11 +5638,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> "_<img src="./img/clavier/K_D.png" class="kb" title="D"/>&lt;motion></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Ce registre spécial s’appelle le « black hole », le trou noir. Il permet de ne pas mémoriser la suppression dans les registres de 1 à 9.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Ce registre spécial s’appelle le « black hole », le trou noir. Il permet de ne pas mémoriser la suppression dans les registres de 1 à 9.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -5389,7 +5676,7 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/><br><img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/></td>
         
       </tr>
-</table><h3 id='titre29'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre30'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5403,11 +5690,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :sign define &lt;nom> text=&lt;texte> texthl=&lt;groupe></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Il y a d'autres paramètres possibles, voir l'aide</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Il y a d'autres paramètres possibles, voir l'aide</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Placer</td>
@@ -5455,7 +5742,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :sign line &lt;nom du fichier></td>
         
       </tr>
-</table><h3 id='titre30'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre31'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5490,7 +5777,7 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
         
       </tr>
-</table><h3 id='titre31'>FONCTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre32'>FONCTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5534,11 +5821,11 @@
 :endfunction</code></pre></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Le nom doit commencer par une capitale.</td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Le nom doit commencer par une capitale.</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Référence</td>
@@ -5569,7 +5856,7 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :return &lt;valeur></td>
         
       </tr>
-</table><h3 id='titre32'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre33'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480">Sous-action</th>
@@ -5634,11 +5921,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :redir > &lt;path/to/file.ext></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">Noter que ça ne fonctionne qu’une fois. Sinon il faut utiliser l’ajout avec <code>>></code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Noter que ça ne fonctionne qu’une fois. Sinon il faut utiliser l’ajout avec <code>>></code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
@@ -5670,11 +5957,11 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :norm[al] &lt;commande complète></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">En « programmation », il est important de « finir » les commandes, par exemple avec <code>&lt;<img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>></code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">En « programmation », il est important de « finir » les commandes, par exemple avec <code>&lt;<img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/>></code></td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -5694,11 +5981,11 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :undo &lt;numéro annulation></td>
         
       </tr>
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">On obtient le numéro d'annulation à l'aide de <code>:undolist</code></td>
-      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">On obtient le numéro d'annulation à l'aide de <code>:undolist</code></td>
+        </tr>
 </table>
     </section>
   </body>

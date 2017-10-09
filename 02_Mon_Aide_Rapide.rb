@@ -108,6 +108,8 @@ SHORTCUTS.each do |element_titre, data_element|
     #   :memo         Le repère mnémotechnique
     #   :exemples     Une liste éventuelle d'exemples. Ils sont mis dans
     #                 une rangée supplémentaire qui se rétracte
+    #   :note         Une note
+    #   :notes        Une liste de notes
     #   :tags         les tags du raccourci
 
     tags = data_sc[:tags]
@@ -166,14 +168,21 @@ SHORTCUTS.each do |element_titre, data_element|
     end
 
     # S'il y a une note, on l'ajoute sous la ligne
-    if data_sc[:note]
-      rangee += <<-HTML
-      <tr class="notes">
-        <td colspan="2"></td>
-        <td class="titre">Note</td>
-        <td colspan="2">#{formate(data_sc[:note])}</td>
-      </tr>
-      HTML
+    if data_sc[:note] || data_sc[:notes]
+      data_sc[:notes].is_a?(String) && data_sc[:notes] = [data_sc[:notes]]
+      data_sc[:notes] ||= Array.new
+      data_sc[:note] && data_sc[:notes] << data_sc[:note]
+      nombre_notes = data_sc[:notes].count
+      data_sc[:notes].each_with_index do |note, index|
+        titre = nombre_notes > 1 ? "Note #{index + 1}" : "Note"
+        rangee += <<-HTML
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">#{titre}</td>
+          <td colspan="2">#{formate(note)}</td>
+        </tr>
+        HTML
+      end
     end
 
     # S'il y a des exemples, on les ajoute dans une rangée en dessous.

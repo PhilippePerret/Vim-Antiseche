@@ -3758,6 +3758,77 @@
 
 # ---------------------------------------------------------------------
 #
+#   @@@ COMMANDES PERSONNELLES
+#
+# ---------------------------------------------------------------------
+
+  COMMANDES PERSONNELLES:
+
+    -
+      :main_action: Créer
+      :action:      une commande
+      :mode: command
+      :code: ':command <NomCommande> <code à exécuter>'
+      :note: 'Les commandes personnelles doivent commencer par une capitale.'
+      :exemples:
+        - '`:command SuppEntete :1delete` => quand on tape `:SuppEntete`, cela supprime la première ligne'
+        - '`:command <SID>Delete :1,delete` => Définit la commande `Delete`, mais en lui collant un préfixe qui supprimera toute collision possible avec des fonctions ou commandes existantes.'
+
+    -
+      :main_action: Lister
+      :action:      les commandes personnalisées
+      :mode: command
+      :code: ':command'
+
+    -
+      :main_action: Supprimer
+      :action:      une commande personnalisée
+      :mode: command
+      :code: ':delcommand <NomCommande>'
+
+    -
+      :main_action: Supprimer
+      :action:      toutes les commandes personnalisées
+      :mode: command
+      :code: ':comclear'
+
+    -
+      :main_action: Définir
+      :action:      les arguments d’une commande
+      :mode: command
+      :code: ':command -nargs=<valeur> <NomCommande> <code utilisant les arguments>'
+      :values:
+        '<valeur>':
+          - '`0` => aucun argument'
+          - '`1` => un argument, 2, etc.'
+          - '`*` => nombre indéterminé d’arguments'
+          - '`?` => Zéro ou un argument'
+          - '`+` => Un ou plus arguments'
+      :exemples:
+        - '```" Soit la commande définie par :\n\n:command -nargs=+ Dire :echo "<args>"\n\n" Si l’on joue :\n\n:Dire Bonjour tout le monde !\n\n" Cela écrira en console :\n\nBonjour tout le monde !```'
+
+    -
+      :main_action: Utiliser
+      :action:      un rang de ligne comme argument
+      :mode: command
+      :code: ':command <-range> <Commande> <code à exécuter>'
+      :note: 'Lorsqu’un rang est fourni, `<line1>` et `<line2>` fournissent les valeurs de ce rang.'
+      :values:
+        '<-range>':
+          - '`-range` => un rang est attendu. Défaut : la ligne courante'
+          - '`-range=%` => rang attendu, par défaut, le fichier entier'
+          - '`-range=<count>` => juste un numéro de ligne dont le numéro est `<count>`'
+
+    -
+      :main_action: Passer des arguments
+      :action:      à une fonction comme une liste
+      :mode: command
+      :code: ':command -narg=* MaCommande :call UneFonction(<f-args>)'
+      :exemples:
+        - '```" Quand on fera :\n\nMaCommande un deux trois\n\n" Ça correspondra à un appel :\n\nUneFonction("un", "deux", "trois")```'
+      :tags: commandes
+# ---------------------------------------------------------------------
+#
 #   @@@ LIGNE DE COMMANDE ET LANGAGE DE SCRIPT
 #
 # ---------------------------------------------------------------------
@@ -4052,8 +4123,52 @@
   OPTIONS:
 
     -
-      :main_action: "[Dés]activer"
-      :action: "l'enroulement des lignes à l'affichage"
+      :main_action: Définir
+      :action:      de lire le .vimrc dans le dossier courant
+      :mode: command
+      :code: ':set exrc'
+      :notes:
+        - 'L’option est désactivée par défaut, ce qui fait que c’est toujours le .vimrc placé à la racine du $HOME qui est lu.'
+        - 'Jouer la commande `:set secure` avant pour empêcher l’exécution des `autocommand`, `write` et `shell` quand on met cette option pour un dossier inconnue.'
+
+    -
+      :main_action: Définir
+      :action:      la valeur d'une option non booléenne
+      :mode: command
+      :code:
+        - ':set <option>=<valeur>'
+        - ':set <option>:<valeur>'
+
+    -
+      :main_action: Régler
+      :action:      plusieurs valeurs d’options à la fois
+      :mode: command
+      :code: ':set <option>=<valeur> <autre option>=<valeur> <option booléenne> etc.'
+
+    -
+      :main_action: Régler
+      :action:      les options pour un fichier
+      :mode: file
+      :code: '/* vim: set <option>=<valeur> : <opt>=<val> : <opt bool> : */'
+      :note: 'Cette ligne doit IMPÉRATIVEMENT être placée sur la PREMIÈRE LIGNE du fichier. C’est ce qu’on appelle la « modeline » (ligne de mode)'
+      :important: true
+
+    -
+      :main_action: Définir
+      :action:      le nombre de ligne pour la modeline
+      :mode: command
+      :code: ':set modelines=<nombre de lignes au début du fichier'
+
+    -
+      :main_action: Activer/désactiver
+      :action:      le mode Modeline
+      :mode: command
+      :code: ':set [no]modeline'
+      :note: 'En mode « modeline », Vim lit les x premières lignes d’un fichier ouvert pour régler les options'
+
+    -
+      :main_action: '[Dés]activer'
+      :action:      l’enroulement des lignes à l’affichage
       :mode: normal
       :code: ":set [no]wrap"
       :note: "Avec `nowrap`, les lignes ne seront pas enroulées et s'étendront sur une seule ligne d'affichage."
@@ -4065,36 +4180,126 @@
       :code: ":set [no]spell"
 
     -
-      :main_action: "Activer/désactiver"
-      :action: "l'option de la relecture automatique (après modification du fichier ailleurs)"
+      :main_action: Activer/désactiver
+      :action:      l’option de la relecture automatique (après modification du fichier ailleurs)
       :code: ":set [no]autoread"
 
     -
       :main_action: Afficher
       :action:      l’état d'une option
-      :code: ":set <option>?"
+      :mode: command
+      :code: ':set <option>?'
       :memo: "((?)) interroger"
 
     -
       :main_action: Activer
-      :action:      'une option off/on'
-      :code: ":set <option>"
+      :action:      une option off/on
+      :mode: command
+      :code: ':set <option>'
 
     -
       :main_action: Désactiver
       :action:      une option
-      :code: ":set no<option>"
+      :code: ':set no<option>'
 
     -
       :main_action: Régler
-      :action:      "la valeur d'une option non on/off"
-      :code: ":set <opt>=<valeur>"
+      :action:      une option sur sa valeur par défaut
+      :mode: command
+      :code: ':set <option>&'
+
+    -
+      :main_action: Régler
+      :action:      toutes les options sur leur valeur par défaut
+      :mode: command
+      :code: ':set all&'
+
+    -
+      :main_action: Inverser
+      :action:      la valeur d’une option
+      :mode: command
+      :code:
+        - ':set <option>!'
+        - ':set inv<option>'
+      :exemples:
+        - '`:set wrap!` => si l’« enroulage » avait été désactivé avec `:set nowrap` avant, il est remis avec cette commande.'
+
+    -
+      :main_action: Augmenter
+      :action:      la valeur d’une option numérique
+      :mode: command
+      :code: ':set <option>+=<valeur numérique>'
+
+    -
+      :main_action: Diminuer
+      :action:      la valeur d’une option numérique
+      :mode: command
+      :code: ':set <option>-=<valeur numérique>'
+
+    -
+      :main_action: Multiplier
+      :action:      la valeur d’une option numérique
+      :mode: command
+      :code: ':set <option>^=<valeur numérique>'
+
+    -
+      :main_action: Ajouter
+      :action:      une valeur à une option liste
+      :mode: command
+      :code: ':set <option>+=<valeur string>'
+      :exemples:
+        - '`:set cinwords+=test` => cinwords contient `["test"]`, `:set cinwords+=end` => cinwords = `["test","end"]`'
+
+    -
+      :main_action: Retirer
+      :action:      une valeur à une option liste
+      :mode: command
+      :code: ':set <option>-=<valeur>'
+      :exemples:
+        - 'si `cinwords` a la valeur `["test", "end"]` alors le code `:set cinwords-=test` la mettra à `["end"]`'
+
+    -
+      :main_action: Activer[/désactiver]
+      :action:      la confirmation au lieu de l’erreur
+      :mode: command
+      :code: ':set [no]confirm'
+      :note: 'Par exemple, en tant normal, lorsque l’on veut quitter Vim mais que le fichier courant a été modifié sans être enregistré, Vim provoque une erreur. Avec l’option `confirm` activée, Vim demande s’il faut sauver le fichier avant.'
+      :important: true
+
+    -
+      :main_action: Augmenter
+      :action:      le nombre de lignes pour l’affichage d’une commande
+      :mode: command
+      :code: ':set cmdheight=<nombre lignes>'
+
+    -
+      :main_action: Afficher[/masquer]
+      :action:      le mode en bas à gauche de l’écran
+      :mode: command
+      :code: ':set [no]showmode'
+
+    -
+      :main_action: Afficher[/masquer]
+      :action:      la commande en version réduite en bas à droite de l’écran
+      :mode: command
+      :code: ':set [no]showcmd'
+
+    -
+      :main_action: Activer[/désactiver]
+      :action:      l’alerte visuelle (flash de l’écran)
+      :mode: command
+      :code: ':set [no]visualbell'
+
+    -
+      :main_action: Activer[/désactiver]
+      :action:      l’alerte sonore
+      :mode: command
+      :code: ':set [no]errorbell'
 
     -
       :main_action: Définir
-      :action: "l'ampleur du scroll avec CTRL KeyU"
+      :action:      l’ampleur du scroll avec CTRL KeyU
       :code: ":set scroll=<nombre de lignes>"
-
 
     -
       :main_action: Définir
@@ -4470,7 +4675,7 @@
 
     -
       :main_action: Afficher
-      :action: la liste des signes
+      :action:      la liste des signes
       :mode: normal
       :code: ":sign list[ file=<fichier>|buffer=<id buf>]"
 
@@ -4528,7 +4733,7 @@
       :action:      le code d’une fonction en particulier
       :mode: command
       :code: ':function <FonctionName>'
-      
+
     -
       :main_action: Résumé
       :action: complet
