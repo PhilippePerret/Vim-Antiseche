@@ -116,42 +116,49 @@
 
     -
       :main_action: Passer en revue
-      :action: "les tags parcourues"
+      :action:      les tags parcourues
       :mode: normal
-      :code: "CTRL KeyO"
+      :code: CTRL KeyO
       :tags: tag
 
     -
       :main_action: Obtenir l’aide
-      :action: "d'une commande dans un mode particulier"
+      :action:      d’une commande dans un mode particulier
       :mode: normal
       :code: "<préfixe>_<commande>"
       :exemples:
-        - "`i_CTRL-h` — Préfixes : i (insert), v (visual), c (command)"
+        - "`i_CTRL-KeyH` — Préfixes : i (insert), v (visual), c (command)"
       :tags: aide commande
 
     -
       :main_action: Obtenir l’aide
-      :action: ":sur une option"
+      :action:      sur une option
       :code: ":help '<option>'"
-      :note: "Il faut donc l'entourer d'apostrophes simple"
+      :note: "Il faut donc l'entourer d’apostrophes simple"
       :exemples:
         - ":help 'nowrap'"
       :tags: aide option
 
     -
-      :main_action: "Obtenir de l’aide"
-      :action: sur le mot sous le curseur
+      :main_action: Obtenir de l’aide
+      :action:      sur le mot sous le curseur
       :mode: normal
       :code: "MAJ KeyK"
       :memo: "((K))eyword lookup"
 
     -
       :main_action: Lancer Vim
-      :action: "en mode Verbose"
-      :code: "$> vim -V <nombre>"
-      :memo: "((V))erbeux"
-      :note: "Utile pour débugger les scripts Vim."
+      :action:      en mode Verbose
+      :code: '$> vim -V <nombre>'
+      :memo: '((V))erbeux'
+      :note: 'Utile pour débugger les scripts Vim.'
+
+    -
+      :main_action: Définir
+      :action:      la hauteur de la fenêtre d’aide
+      :mode: command
+      :code: ':set helpheight=<nombre de lignes>'
+
 
 # ---------------------------------------------------------------------
 #
@@ -478,6 +485,12 @@
         - 'CTRL KeyW KeyZ'
       :memo: '((p))review close'
       :tags: preview
+
+    -
+      :main_action: Définir
+      :action:      la hauteur de la fenêtre de prévisualisation
+      :mode: normal
+      :code: ':set previewheight=<nombre de lignes>'
 
     -
       :main_action: Split
@@ -2019,9 +2032,12 @@
       :main_action: Insérer
       :action:      le résultat d’une commande à la ligne courante [ou après une certaine ligne]
       :mode: command
-      :code: ':[line]read !<commande>'
+      :code:
+        - ':[line]read !<commande>'
+        - ':r!<commande>'
       :exemples:
         - '`:4 read !echo "Bonjour"` => écrit « Bonjour » après la 4e ligne.'
+        - '`r!ls` => écrit les fichiers du dossier courant dans la fenêtre courante'
 
     -
       :main_action: Insérer
@@ -2889,24 +2905,33 @@
   AUTOCOMPLÉTION:
 
     -
+      :main_action: Afficher/ne plus afficher
+      :action:      les fichiers possibles sur la barre de statut
+      :mode: command
+      :code: ':set [no]wildmenu'
+      :note: 'Cette option agit lorsque l’on cherche un path par autocomplétion et qu’il y a plusieurs <em>candidats</em> pour répondre au wildcard.'
+      :exemples:
+        - 'Si l’on fait `:e ./au TAB` et qu’il y a plusieurs fichiers commençant par « au » dans le dossier, le nom de tous ces fichiers sera affiché dans la barre de statut et l’on pourra choisir le fichier voulu à l’aide de la touche TAB.'
+
+    -
       :main_action: Activer
-      :action: "l'autocomplétion"
+      :action:      l’autocomplétion
       :code: "Démarrer Vim avec `$> vim -N`"
       :important: true
 
     -
       :main_action: Spécifier
-      :action: "un ou plusieurs dictionnaires d'autocomplétion"
+      :action:      un ou plusieurs dictionnaires d’autocomplétion
       :code: ":set dictionary=file1,file2..."
 
     -
       :main_action: Spécifier
-      :action: "un ou plusieurs fichiers thésaurus"
+      :action:      un ou plusieurs fichiers thésaurus
       :code: ":set thesaurus=file1,file2,..."
 
     -
       :main_action: Restreindre
-      :action: "à une liste d'éléments (dictionnaire, tags, etc.)"
+      :action:      'à une liste d’éléments (dictionnaire, tags, etc.)'
       :mode: insert
       :code: "CTRL KeyX, choisir l'option avec CTRL <touche>"
       :note: "l'option peut être CTRL KeyD : définition de macro, CTRL KeyF : nom de fichier, CTRL KeyK : dictionnaire, CTRL KeyT : thésaurus, CTRL KeyI : fichiers courants et #includes (en C), CTRL KeyL : lignes complètes, CTRL KeyO : “omni” complétion (omnifun)"
@@ -4106,13 +4131,20 @@
         - ':set foldmethod=<valeur>'
         - ':set fdm=<valeur>'
       :values:
-        'valeur':
+        '<valeur>':
           - '`diff` en fonction de l’opération checkant les différences'
           - '`expr` : folding créés par une l’expression définie par `foldexpr` (`fde`)'
           - '`indent` : folding créés par l’indentation'
           - '`manual` : folding créés manuellement'
           - '`marker` : folding créés par des markers'
           - '`syntax` : folding créés par la syntaxe (n’importe quel élément de syntaxe qui possède l’option `fold`)'
+
+    -
+      :main_action: Définir
+      :action:      la ligne d’état
+      :mode: command
+      :code: ':set statusline'
+      :note: "Voir l’aide pour toutes les possibilités : `:help 'statusline'`."
 
 # ---------------------------------------------------------------------
 #
@@ -4504,42 +4536,42 @@
 
     -
       :main_action: Définir
-      :action: "dossier du fichier courant comme dossier courant"
+      :action:      dossier du fichier courant comme dossier courant
       :code: "@cd %:h"
 
     -
-      :main_action: "Vider"
-      :action: "le cache"
+      :main_action: Vider
+      :action:      le cache
       :code: F5
 
     -
       :main_action: Définir
-      :action: "les fichiers/dossiers exclus des résultats"
+      :action:      les fichiers/dossiers exclus des résultats
       :code: "Utiliser le `wildignore` de vim\nOu let g:ctrlp_custom_ignore = ''"
       :memo: "`set wildignore+=...,...,...`"
 
     -
       :main_action: Chercher
-      :action: "des résultats dans l'historique"
+      :action:      des résultats dans l’historique
       :code: CTRL KeyN et CTRL KeyP
 
     -
-      :main_action: "Marquer/démarquer"
-      :action: "des fichiers à ouvrir"
+      :main_action: Marquer/démarquer
+      :action:      des fichiers à ouvrir
       :code: CTRL KeyZ
       :memo: Peut le marquer aussi pour le créer (et ses parents)
 
     -
       :main_action: Ouvrir
-      :action: "plusieurs fichiers marqués par CTRL-z"
+      :action:      'plusieurs fichiers marqués par CTRL-z'
       :code: CTRL KeyO
       :memo: "Voir les valeurs l'option g:ctrlp_open_multiple_files"
 
     -
       :main_action: Ouvrir
-      :action: "le fichier dans une nouvelle tab"
+      :action:      le fichier dans une nouvelle tab
       :code: CTRL KeyT
-      :memo: "((t))ab"
+      :memo: '((t))ab'
 
     -
       :main_action: Ouvrir

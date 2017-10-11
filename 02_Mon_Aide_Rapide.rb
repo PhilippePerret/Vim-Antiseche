@@ -66,10 +66,11 @@ def formate t
   .gsub(/\bCTRL\b ?/, keyboard('Control'))
   .gsub(/\bESC\b ?/, keyboard('Escape'))
   .gsub(/\bMAJ\b ?/, keyboard('Maj'))
+  .gsub(/\bTAB\b ?/, keyboard('Tab'))
   .gsub(/ ?\bENTER\b/, keyboard('Entree'))
   .gsub(/\bARROW_UP\b/, keyboard('FlecheH'))
   .gsub(/\bARROW_DOWN\b/, keyboard('FlecheB'))
-  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Virgule) ?/){keyboard($1)}
+  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Tab|Virgule) ?/){keyboard($1)}
   .gsub(/Key([A-Z]) ?/){keyboard($1.upcase)}
   .gsub(/\`\`\`(.*?)\`\`\`/m){
     c = $1.gsub(/\\n/, "[RC]").strip

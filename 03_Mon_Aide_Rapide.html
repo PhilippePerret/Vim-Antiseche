@@ -209,26 +209,26 @@
       <tr>
         <td><span class='tag'>aide</span><span class='tag'>commande</span></td>
         <td class="mainaction">Obtenir l’aide</td>
-        <td class="action">d'une commande dans un mode particulier</td>
+        <td class="action">d’une commande dans un mode particulier</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> &lt;préfixe>_&lt;commande></td>
         
       </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple"><code>i_CTRL-h</code> — Préfixes : i (insert), v (visual), c (command)</div></td>
+        <td colspan="2"><div class="exemple"><code>i_CTRL-<img src="./img/clavier/K_H.png" class="kb" title="H"/></code> — Préfixes : i (insert), v (visual), c (command)</div></td>
       </tr>
       <tr>
         <td><span class='tag'>aide</span><span class='tag'>option</span></td>
         <td class="mainaction">Obtenir l’aide</td>
-        <td class="action">:sur une option</td>
+        <td class="action">sur une option</td>
         <td colspan="2" class="shortcut">:help '&lt;option>'</td>
         
       </tr>
         <tr class="notes">
           <td colspan="2"></td>
           <td class="titre">Note</td>
-          <td colspan="2">Il faut donc l'entourer d'apostrophes simple</td>
+          <td colspan="2">Il faut donc l'entourer d’apostrophes simple</td>
         </tr>
       <tr class="exemples">
         <td colspan="2"></td>
@@ -254,6 +254,13 @@
           <td class="titre">Note</td>
           <td colspan="2">Utile pour débugger les scripts Vim.</td>
         </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la hauteur de la fenêtre d’aide</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set helpheight=&lt;nombre de lignes></td>
+        
+      </tr>
 </table><h3 id='titre3'>PREMIÈRES COMMANDES UTILES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
@@ -622,6 +629,13 @@
         <td class="action">la fenêtre de prévisualisation</td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :pc[lose]<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/></td>
         <td><memo>p</memo>review close</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la hauteur de la fenêtre de prévisualisation</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set previewheight=&lt;nombre de lignes></td>
+        
       </tr>
       <tr>
         <td><span class='tag'>split</span></td>
@@ -1074,7 +1088,7 @@
         <td></td>
         <td class="mainaction">Ouvrir</td>
         <td class="action">un fichier quelconque en édition</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :e <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/><br>=> La liste du dossier courant s'affiche<br>&lt;debut>TAB<br>=> Le nom se développe.</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :e <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_D.png" class="kb" title="D"/><br>=> La liste du dossier courant s'affiche<br>&lt;debut><img src="./img/clavier/K_Tab.png" class="kb" title="Tab"/><br>=> Le nom se développe.</td>
         <td><memo>e</memo>dit</td>
       </tr>
       <tr>
@@ -1653,7 +1667,7 @@
         <td></td>
         <td class="mainaction">Retourner</td>
         <td class="action">à la position suivante</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> TAB</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Tab.png" class="kb" title="Tab"/></td>
         
       </tr>
       <tr class="main">
@@ -2346,13 +2360,13 @@
         <td></td>
         <td class="mainaction">Insérer</td>
         <td class="action">le résultat d’une commande à la ligne courante [ou après une certaine ligne]</td>
-        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :[line]read !&lt;commande></td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :[line]read !&lt;commande><br><mode>[COMMAND]</mode> :r!&lt;commande></td>
         
       </tr>
       <tr class="exemples">
         <td colspan="2"></td>
-        <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple"><code>:4 read !echo "Bonjour"</code> => écrit « Bonjour » après la 4e ligne.</div></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:4 read !echo "Bonjour"</code> => écrit « Bonjour » après la 4e ligne.</div><div class="exemple"><code>r!ls</code> => écrit les fichiers du dossier courant dans la fenêtre courante</div></td>
       </tr>
       <tr>
         <td></td>
@@ -3469,17 +3483,34 @@
     <th width="490">Shortcut</th>
     <th width="280">Mnémo</th>
   </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher/ne plus afficher</td>
+        <td class="action">les fichiers possibles sur la barre de statut</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]wildmenu</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Cette option agit lorsque l’on cherche un path par autocomplétion et qu’il y a plusieurs &lt;em>candidats&lt;/em> pour répondre au wildcard.</td>
+        </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple">Si l’on fait <code>:e ./au <img src="./img/clavier/K_Tab.png" class="kb" title="Tab"/></code> et qu’il y a plusieurs fichiers commençant par « au » dans le dossier, le nom de tous ces fichiers sera affiché dans la barre de statut et l’on pourra choisir le fichier voulu à l’aide de la touche <img src="./img/clavier/K_Tab.png" class="kb" title="Tab"/>.</div></td>
+      </tr>
       <tr class="main">
         <td></td>
         <td class="mainaction">Activer</td>
-        <td class="action">l'autocomplétion</td>
+        <td class="action">l’autocomplétion</td>
         <td colspan="2" class="shortcut">Démarrer Vim avec <code>$> vim -N</code></td>
         
       </tr>
       <tr>
         <td></td>
         <td class="mainaction">Spécifier</td>
-        <td class="action">un ou plusieurs dictionnaires d'autocomplétion</td>
+        <td class="action">un ou plusieurs dictionnaires d’autocomplétion</td>
         <td colspan="2" class="shortcut">:set dictionary=file1,file2...</td>
         
       </tr>
@@ -3493,7 +3524,7 @@
       <tr>
         <td></td>
         <td class="mainaction">Restreindre</td>
-        <td class="action">à une liste d'éléments (dictionnaire, tags, etc.)</td>
+        <td class="action">à une liste d’éléments (dictionnaire, tags, etc.)</td>
         <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_X.png" class="kb" title="X"/>, choisir l'option avec <img src="./img/clavier/K_Control.png" class="kb" title="Control"/>&lt;touche></td>
         
       </tr>
@@ -5038,9 +5069,21 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
       <tr class='values'>
         <td colspan='2'></td>
         <td class='titre'>Valeurs</td>
-        <td colspan="2" class='values'>  avec <code>valeur</code> :<br>    <code>diff</code> en fonction de l’opération checkant les différences<br>    <code>expr</code> : folding créés par une l’expression définie par <code>foldexpr</code> (<code>fde</code>)<br>    <code>indent</code> : folding créés par l’indentation<br>    <code>manual</code> : folding créés manuellement<br>    <code>marker</code> : folding créés par des markers<br>    <code>syntax</code> : folding créés par la syntaxe (n’importe quel élément de syntaxe qui possède l’option <code>fold</code>)</td>
+        <td colspan="2" class='values'>  avec <code>&lt;valeur></code> :<br>    <code>diff</code> en fonction de l’opération checkant les différences<br>    <code>expr</code> : folding créés par une l’expression définie par <code>foldexpr</code> (<code>fde</code>)<br>    <code>indent</code> : folding créés par l’indentation<br>    <code>manual</code> : folding créés manuellement<br>    <code>marker</code> : folding créés par des markers<br>    <code>syntax</code> : folding créés par la syntaxe (n’importe quel élément de syntaxe qui possède l’option <code>fold</code>)</td>
         
       </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Définir</td>
+        <td class="action">la ligne d’état</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set statusline</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Voir l’aide pour toutes les possibilités : <code>:help 'statusline'</code>.</td>
+        </tr>
 </table><h3 id='titre25'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
@@ -5543,7 +5586,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
       <tr>
         <td></td>
         <td class="mainaction">Chercher</td>
-        <td class="action">des résultats dans l'historique</td>
+        <td class="action">des résultats dans l’historique</td>
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_N.png" class="kb" title="N"/>et <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></td>
         
       </tr>
