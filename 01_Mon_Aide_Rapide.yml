@@ -1360,14 +1360,14 @@
   DÉPLACEMENTS:
 
     -
-      :main_action: Marquer
-      :action:      la ligne courante.
+      :main_action: Mettre un signet (mark)
+      :action:      sur la ligne courante.
       :mode: normal
       :code: 'm[ark] <lettre>'
 
     -
-      :main_action: Marquer
-      :action:      une ligne pour son numéro.
+      :main_action: Mettre un signet (mark)
+      :action:      sur une ligne pour son numéro.
       :mode: command
       :code:
         - ':<numéro ligne> m[ark] <lettre>'
@@ -1464,6 +1464,12 @@
       :mode: normal
       :code: KeyJ
       :note: "Cf. la note concernant la commande précédente"
+
+    -
+      :main_action: Régler les options
+      :action:      pour que les touches H, M, L, G et CTRL-END (?) retourne au début de la ligne
+      :mode: command
+      :code: ':set [no]startofline'
 
     -
       :main_action: Aller
@@ -2912,6 +2918,37 @@
       :note: 'Cette option agit lorsque l’on cherche un path par autocomplétion et qu’il y a plusieurs <em>candidats</em> pour répondre au wildcard.'
       :exemples:
         - 'Si l’on fait `:e ./au TAB` et qu’il y a plusieurs fichiers commençant par « au » dans le dossier, le nom de tous ces fichiers sera affiché dans la barre de statut et l’on pourra choisir le fichier voulu à l’aide de la touche TAB.'
+
+    -
+      :main_action: Régler l’autocomplétion fichier
+      :action:      sur le plus long fichier
+      :mode: command
+      :code:
+        -':set wildmode=longest (1)'
+        -':set wildmode=longest:full'
+      :note:
+        - 'Remplit avec le plus long fichier plus s’arrête'
+        - 'Remplit avec le plus long fichier pour poursuit si on continue de tabuler.'
+        - 'Pour le moment, dans le Terminal, ça ne fait rien…'
+
+    -
+      :main_action: Régler l’affichage de
+      :action:      la liste des fichiers possibles quand la touche d’autocomplétion fichier est jouée
+      :mode: command
+      :code: ':set wildmode=list'
+      :note: 'Il semble que ça ne fonctionne pas comme décrit dans le fichier VIM, car ce mode n’a pas besoin de `list:full` pour procéder à l’autocomplétion après avoir affiché la liste.'
+
+    -
+      :main_action: Alterner les modes
+      action:       d’autocomplétion de fichier
+      :mode: command
+      :code: ':set wildmode=<mode 1>,<mode 2>, etc.'
+      :values:
+        '<mode X>':
+          - '`full`'
+          - '`longest` => le plus long nom de fichier'
+          - '`list` => par liste'
+
 
     -
       :main_action: Activer
@@ -4953,4 +4990,27 @@
       :code: ":undo <numéro annulation>"
       :note: "On obtient le numéro d'annulation à l'aide de `:undolist`"
       :tags: undo
+
+    -
+      :main_action: Afficher
+      :action:      le nom du terminal courant
+      :mode: command
+      :code: ':set term?'
+      :note: 'C’est donc l’option `term` qui contient ce nom (mais je crois qu’elle ne se règle pas)'
+
+    -
+      :main_action: Régler
+      :action:      le mode verbeux (verbose)
+      :mode: command
+      :code: ':set verbose=<valeur>'
+      :note: "Pour les valeurs, voir l’aide (`:help 'verbose'`)"
+
+    -
+      :main_action: Régler
+      :action:      le mode silencieux [sans message d’erreur]
+      :mode: command
+      :code: ':set silent[!]'
+      :exemples:
+        - '`:set silent` => n’affiche que les messages d’erreur'
+        - '`:set silent!` => n’affiche rien, pas même les messages d’erreur (i.e. mode sans erreur)'
 ---
