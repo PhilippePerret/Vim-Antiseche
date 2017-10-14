@@ -2475,16 +2475,16 @@
 
     -
       :main_action: Supprimer
-      action:       jusqu’à la fin du mot courant ou du xième mot
+      :action:      jusqu’à la fin du mot courant ou du xième mot
       :mode: normal
       :code:
         - KeyDKeyW
-        - 'd[x]KeyW'
+        - 'KeyD[x]KeyW'
       :memo: "((d))elete ((w))ord"
       :exemples:
-        - "\"c'est un ant<sel>i</sel>dote pour les\" -> dw -> \"c'est un ant pour les\""
-        - "\"c'est un <sel>a</sel>ntidote pour les\" -> dw -> \"c'est un pour les\""
-        - "\"c'est <sel>u</sel>n antidote pour les\" -> d3w -> \"c'est les\""
+        - "\"c'est un ant<sel>i</sel>dote pour les\", KeyDKeyW => \"c'est un ant pour les\""
+        - "\"c'est un <sel>a</sel>ntidote pour les\", KeyDKeyW => \"c'est un pour les\" (le mot complet supprimé)"
+        - "\"c'est <sel>u</sel>n antidote pour les\", KeyD3KeyW => \"c'est les\" (trois mots supprimés)"
 
     -
       :main_action: Supprimer
@@ -2974,13 +2974,13 @@
       :note: "l'option peut être CTRL KeyD : définition de macro, CTRL KeyF : nom de fichier, CTRL KeyK : dictionnaire, CTRL KeyT : thésaurus, CTRL KeyI : fichiers courants et #includes (en C), CTRL KeyL : lignes complètes, CTRL KeyO : “omni” complétion (omnifun)"
     -
       :main_action: Afficher
-      :action: "les mots suggérés"
+      :action:      les mots suggérés
       :mode: normal
       :code: CTRL KeyP
 
     -
       :main_action: Suggérer
-      :action: "un mot du thésaurus"
+      :action:      un mot du thésaurus
       :mode: insert
       :code: CTRL KeyP, CTRL KeyT
       :memo: "((T))hesaurus"
@@ -4631,7 +4631,8 @@
       :action:      vers le haut
       :mode: insert
       :code: CTRL KeyK
-      :memo: '((k)) comme le déplacment dans Vim'
+      :memo: '((k)) comme le déplacement dans Vim'
+      :note: 'Je ne suis pas sûr du tout que ça fasse ça…'
 
     -
       :main_action: Déplacer le curseur
@@ -4895,6 +4896,14 @@
 # ---------------------------------------------------------------------
 
   DIVERS:
+
+    -
+      :main_action: Afficher
+      :action:      'la valeur entre `<` et `>` d’une touche'
+      :mode: insert
+      :code: 'CTRL KeyK <touche>'
+      :exemples:
+        - '`CTRL KeyK F2` => va afficher `<F2>`'
 
     -
       :main_action: Afficher

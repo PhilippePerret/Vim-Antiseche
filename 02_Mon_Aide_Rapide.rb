@@ -57,6 +57,7 @@ end
 def formate t
   t != nil || (return '')
   t.to_s
+  .gsub(/<(\/?)sel>/,'__\1SELECTION__')
   .gsub(/</,'&lt;')
   .gsub(/\(\((.*?)\)\)/,'<memo>\1</memo>')
   .gsub(/(\[(?:NORMAL|INSERT|VISUAL|VISUEL)\])/, '<mode>\1</mode>')
@@ -78,6 +79,7 @@ def formate t
   }
   .gsub(/\`(.*?)\`/m,'<code>\1</code>')
   .gsub(/\n/,'<br>')
+  .gsub(/__(\/?)SELECTION__/,'<\1sel>')
   .gsub(/\[RC\]/,"\n")
 end
 def tag mot
@@ -260,6 +262,7 @@ table = <<-HTML
       p.explication:hover{opacity:1;}
       pre{background-color:#333;padding:.5em}
       code{background-color:#333;color:white;padding:0 4px;}
+      sel{background-color:#550;color:white;padding:0 1px;}
     </style>
   </head>
   <body>

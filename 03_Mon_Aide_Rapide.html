@@ -42,6 +42,7 @@
       p.explication:hover{opacity:1;}
       pre{background-color:#333;padding:.5em}
       code{background-color:#333;color:white;padding:0 4px;}
+      sel{background-color:#550;color:white;padding:0 1px;}
     </style>
   </head>
   <body>
@@ -2937,14 +2938,14 @@
       <tr>
         <td></td>
         <td class="mainaction">Supprimer</td>
-        <td class="action"></td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><br><mode>[NORMAL]</mode> d[x]<img src="./img/clavier/K_W.png" class="kb" title="W"/></td>
+        <td class="action">jusqu’à la fin du mot courant ou du xième mot</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_D.png" class="kb" title="D"/>[x]<img src="./img/clavier/K_W.png" class="kb" title="W"/></td>
         <td><memo>d</memo>elete <memo>w</memo>ord</td>
       </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
-        <td colspan="2"><div class="exemple">"c'est un ant&lt;sel>i&lt;/sel>dote pour les" -> dw -> "c'est un ant pour les"</div><div class="exemple">"c'est un &lt;sel>a&lt;/sel>ntidote pour les" -> dw -> "c'est un pour les"</div><div class="exemple">"c'est &lt;sel>u&lt;/sel>n antidote pour les" -> d3w -> "c'est les"</div></td>
+        <td colspan="2"><div class="exemple">"c'est un ant<sel>i</sel>dote pour les", <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>=> "c'est un ant pour les"</div><div class="exemple">"c'est un <sel>a</sel>ntidote pour les", <img src="./img/clavier/K_D.png" class="kb" title="D"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>=> "c'est un pour les" (le mot complet supprimé)</div><div class="exemple">"c'est <sel>u</sel>n antidote pour les", <img src="./img/clavier/K_D.png" class="kb" title="D"/>3<img src="./img/clavier/K_W.png" class="kb" title="W"/>=> "c'est les" (trois mots supprimés)</div></td>
       </tr>
       <tr>
         <td></td>
@@ -5674,8 +5675,13 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td class="mainaction">Déplacer la sélection</td>
         <td class="action">vers le haut</td>
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/></td>
-        <td><memo>k</memo> comme le déplacment dans Vim</td>
+        <td><memo>k</memo> comme le déplacement dans Vim</td>
       </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Je ne suis pas sûr du tout que ça fasse ça…</td>
+        </tr>
       <tr>
         <td></td>
         <td class="mainaction">Déplacer le curseur</td>
@@ -5950,6 +5956,18 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
     <th width="490">Shortcut</th>
     <th width="280">Mnémo</th>
   </tr>
+      <tr>
+        <td></td>
+        <td class="mainaction">Afficher</td>
+        <td class="action">la valeur entre <code>&lt;</code> et <code>></code> d’une touche</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/>&lt;touche></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/>F2</code> => va afficher <code>&lt;F2></code></div></td>
+      </tr>
       <tr>
         <td><span class='tag'>history</span></td>
         <td class="mainaction">Afficher</td>
