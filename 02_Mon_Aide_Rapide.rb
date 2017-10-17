@@ -41,7 +41,7 @@ entete =
   <tr>
     <th width="#{COLUMN4_WIDTH}">Tags</th>
     <th width="#{COLUMN0_WIDTH}">Action</th>
-    <th width="#{COLUMN1_WIDTH}">Sous-action</th>
+    <th width="#{COLUMN1_WIDTH}"><!-- Sous-action --></th>
     <th width="#{COLUMN2_WIDTH}">Shortcut</th>
     <th width="#{COLUMN3_WIDTH}">Mnémo</th>
   </tr>
@@ -147,8 +147,7 @@ SHORTCUTS.each do |element_titre, data_element|
       <<-HTML
       <tr#{main_tr_class}>
         <td>#{tags}</td>
-        <td class="mainaction">#{formate(data_sc[:main_action])}</td>
-        <td class="action">#{formate(data_sc[:action])}</td>
+        <td class='mainaction' colspan='2'>#{formate(data_sc[:main_action])} #{formate(data_sc[:action])}</td>
         <td colspan="#{no_memo ? '2' : '1'}" class="shortcut">#{code}</td>
         #{cellule_memo}
       </tr>
@@ -177,11 +176,10 @@ SHORTCUTS.each do |element_titre, data_element|
       data_sc[:note] && data_sc[:notes] << data_sc[:note]
       nombre_notes = data_sc[:notes].count
       data_sc[:notes].each_with_index do |note, index|
-        titre = nombre_notes > 1 ? "Note #{index + 1}" : "Note"
         rangee += <<-HTML
         <tr class="notes">
           <td colspan="2"></td>
-          <td class="titre">#{titre}</td>
+          <td class="titre">#{nombre_notes > 1 ? "Note #{index + 1}" : 'Note'}</td>
           <td colspan="2">#{formate(note)}</td>
         </tr>
         HTML
@@ -196,11 +194,10 @@ SHORTCUTS.each do |element_titre, data_element|
       exemples = exemples.collect do |exemple|
         "<div class=\"exemple\">#{formate(exemple)}</div>"
       end.join('')
-      s = nombre_exemples > 1 ? 's' : ''
       rangee += <<-HTML
       <tr class="exemples">
         <td colspan="2"></td>
-        <td class="titre"><em>Exemple#{s}</em></td>
+        <td class="titre"><em>Exemple#{nombre_exemples > 1 ? 's' : ''}</em></td>
         <td colspan="2">#{exemples}</td>
       </tr>
       HTML
@@ -228,7 +225,7 @@ table = <<-HTML
       header{position:fixed;top:0;background-color:white;margin:0;z-index:100;}
       header a, header a:link, header a:visited, header a:hover {color:blue;}
       header h1{margin:0;padding:12px 24px;font-weight:none;font-size:23pt;}
-      section#table_shortcuts{margin:2em;z-index:1;}
+      section#table_shortcuts{margin:9em 2em;z-index:1;}
       td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px}
       table tr.values td.values{white-space:pre-wrap;font-size:11pt;font-family:Courier;background-color:#CCC!important;}
       table tr.main td{border-top:2px solid green;border-bottom:2px solid green;background-color:#EFE;}
@@ -243,7 +240,8 @@ table = <<-HTML
       table tr.notes td.titre{text-align:right;padding-right:2em;}
       table tr.exemples{font-size:0.85em;opacity:0.3}
       table tr.exemples:hover{opacity:1}
-      table tr.exemples td.titre{font-style:italic;text-align:right;padding-right:2em;}
+      table td.titre{font-style:italic;text-align:right;padding-right:2em;}
+      /*table tr.exemples td.titre{font-style:italic;text-align:right;padding-right:2em;}*/
       td.mainaction, td.action{font-family:Arial,Helvetica;font-size:0.9em;}
       td.mainaction{text-align:left;padding-right:0.5em;}
       td.action{font-weight: normal;}

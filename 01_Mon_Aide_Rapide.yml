@@ -18,61 +18,22 @@
     -
       :main_action: Définir
       :action: "les éléments à sauver dans le fichier viminfo"
-      :mode: normal
+      :mode: command
       :code: ":set vi[minfo]=<paramètres>"
-      :note: "Voir les paramètres ci-après"
-
-    -
-      :main_action: Définir
-      :action: "le nombre de fichiers pour lesquels il faut sauver les marques locales."
-      :mode: normal
-      :code: "'<nombre> (apostrophe et nombre)"
+      :values:
+        '<parametres>':
+          - "`'<nombre>` : le nombre de fichiers pour lesquels il faut sauver les marques locales. P.e. `:set vi='1000`"
+          - '`f1`/`f0` : sauvegarde ou non des marques globales. P.e. `:set vi=f1` (oui)'
+          - '`/<nombre>` : nombre de lignes d’historique de recherche (entreprises par `/`). P.e. `:set vi=/100` => 100 lignes de recherche'
+          - '`%` : conservation de la liste des buffers. P.e. `:set vi=%`'
+          - '`!` : conservation des variables globales. P.e. `:set vi=!`'
       :exemples:
-        - "`:set viminfo='1000` => on gardera les marques locales de 1000 fichiers"
+        - "`:set viminfo='1000,f1,:100,/100,%,!` => on conserve les marques locales de 1000 fichiers (`'1000`), qu'on conserve les marques globales (`f1`), qu'on conserve 100 lignes d’history (`:100`) et 100 ligne d'historique de recherche (`/100`), qu'on sauve et restaure la liste des buffers (`%`) et qu'on sauve les variables globales (`!`)."
 
     -
-      :main_action: Définir
-      :action: "si les marques globales doivent être sauvées ou non"
-      :mode: normal
-      :code:
-        - 'f1 (oui)'
-        - 'f0 (non)'
-      :exemples:
-        - "`:set viminfo=f1` => les marques globales seront conservées"
-
-    -
-      :main_action: Définir
-      :action: "le nombre de ligne d'historique de recherche"
-      :mode: normal
-      :code: "/<nombre lignes>"
-      :exemples:
-        - "`:set viminfo=/100`"
-      :note: "l'« historique de recherche » concerne les recherches qui ont été entreprises par `/`"
-
-    -
-      :main_action: Définir
-      :action: "le fait de conserver la liste des buffers"
-      :code: "%"
-      :exemples:
-        - "`:set viminfo=%`"
-
-    -
-      :main_action: Définir
-      :action: "de conserver les variables globales"
-      :code: "!"
-      :exemples:
-        - "`:set viminfo=!`"
-
-    -
-      :main_action: Définir
-      :action:      un viminfo type
-      :code: ":set viminfo='1000,f1,:100,/100,%,!"
-      :note: "signifie qu'on conserve les marques locales de 1000 fichiers (`'1000`), qu'on conserve les marques globales (`f1`), qu'on conserve 100 lignes d’history (`:100`) et 100 ligne d'historique de recherche (`/100`), qu'on sauve et restaure la liste des buffers (`%`) et qu'on sauve les variables globales (`!`)."
-
-    -
-      :main_action: "Forcer l'écriture"
-      :action: "de viminfo"
-      :mode: normal
+      :main_action: Forcer l’écriture
+      :action:      de viminfo
+      :mode: command
       :code: ":wviminfo[!] [path/to/fichier]"
       :note: "Sans précision de fichier, c'est le fichier `~/.viminfo` qui sera utilisé."
 
