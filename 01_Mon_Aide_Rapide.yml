@@ -19,7 +19,8 @@
       :main_action: Définir
       :action: "les éléments à sauver dans le fichier viminfo"
       :mode: command
-      :code: ":set vi[minfo]=<paramètres>"
+      :code: ":set viminfo"
+      :c:    ':set vi=<paramètres>'
       :values:
         '<parametres>':
           - "`'<nombre>` : le nombre de fichiers pour lesquels il faut sauver les marques locales. P.e. `:set vi='1000`"
@@ -53,31 +54,50 @@
   HELP:
 
     -
-      :main_action: Aide
-      :action: Ouvrir
-      :mode: normal
-      :code: ":h[elp]"
+      :main_action: Ouvrir
+      :action:      l’aide
+      :mode: command
+      :code: ':help'
+      :c:     ':h'
       :memo: "((h))elp"
       :tags: aide
 
     -
+      :main_action: Tagger
+      :action:      un dossier
+      :mode: command
+      :code: ':! ctags -R .'
+      :note:
+        - '« tagger un dossier » consiste à repérer toutes les fonctions, les définitions, etc.'
+        - 'Il faut se trouver à la racine du dossier voulu (dossier du programme)'
+        - 'On peut définir le fichier où seront placées les tags avec l’option `-f <path/to/file>`'
+        - 'Ça fonctionne parfaitement en Ruby'
+        - 'On peut le faire en dehors de Vim, puisque c’est une ligne de commande : `ctags -R .`'
+
+    -
       :main_action: Se rendre
-      :action: "à une tag (pas de `CTRL ]` sur mac)"
+      :action:      à une tag
       :mode: normal
-      :code: "CTRL KeyDollar"
+      :code: CTRL KeyDollar
+      :exemples:
+        - 'Se placer sur l’utilisation d’une méthode, taper `CTRL KeyDollar` => Vim ouvre le fichier contenant la définition de la méthode et l’affiche.'
+      :notes:
+        - '« se rendre à une tag » signifie par exemple « se rendre à la définition d’une fonction/méthode »'
+        - 'Utiliser `CTRL KeyT` pour revenir à l’endroit précédent'
+        - 'Normalement, c’est `CTRL ]`, mais ça ne fonctionne pas sur Mac'
       :tags: tag
 
     -
       :main_action: Revenir
-      :action: "à la tag précédente"
+      :action:      à la position précédente (après avoir cherché une tag)
       :mode: normal
-      :code: "CTRL KeyT"
-      :memo: "((T))ag"
+      :code: 'CTRL KeyT'
+      :memo: '((T))ag'
       :tags: tag
 
     -
       :main_action: Passer en revue
-      :action:      les tags parcourues
+      :action:      les tags parcourues (au cours de la session)
       :mode: normal
       :code: CTRL KeyO
       :tags: tag
@@ -86,25 +106,32 @@
       :main_action: Obtenir l’aide
       :action:      d’une commande dans un mode particulier
       :mode: normal
-      :code: "<préfixe>_<commande>"
+      :code: ':help <préfixe mode>_<commande>'
+      :c:    ':h <pref>_<commande>'
+      :values:
+        '<préfixe mode>':
+          - '`i` pour mode insertion'
+          - '`v` pour mode visual'
+          - '`c` pour mode command'
       :exemples:
-        - "`i_CTRL-KeyH` — Préfixes : i (insert), v (visual), c (command)"
+        - "`:h i_CTRL-H` => conduit à l’aide sur la command `CTRL KeyH` en mode insertion"
       :tags: aide commande
 
     -
       :main_action: Obtenir l’aide
       :action:      sur une option
       :code: ":help '<option>'"
-      :note: "Il faut donc l'entourer d’apostrophes simple"
+      :c:    ":h '<option>'"
+      :note: "Il faut l'entourer d’apostrophes simple"
       :exemples:
-        - ":help 'nowrap'"
+        - "`:help 'nowrap'` => conduit à l’aide à propos de l’option « nowrap »"
       :tags: aide option
 
     -
       :main_action: Obtenir de l’aide
       :action:      sur le mot sous le curseur
       :mode: normal
-      :code: "MAJ KeyK"
+      :code: 'MAJ KeyK'
       :memo: "((K))eyword lookup"
 
     -
@@ -130,42 +157,47 @@
   PREMIÈRES COMMANDES UTILES:
 
     -
-      :main_action: "Activer le mode"
-      :action: "INSERT en se plaçant au bout de la ligne"
+      :main_action: Activer le mode
+      :action:      INSERT en se plaçant au bout de la ligne
       :mode: normal
-      :code: "MAJ KeyA"
+      :code: MAJ KeyA
       :important: true
 
     -
-      :main_action: "Activer le mode"
-      :action: "INSERT en se plaçant après le caractère courant"
+      :main_action: Activer le mode
+      :action:      INSERT en se plaçant après le caractère courant
       :mode: normal
-      :code: "KeyA"
+      :code: KeyA
 
     -
-      :main_action: "Activer le mode"
-      :action: "INSERT avant le caractère courant"
+      :main_action: Activer le mode
+      :action:      INSERT avant le caractère courant
       :mode: normal
       :code: KeyI
-      :note: "La première touche frappée ajoutera un caracètre avant le curseur."
+      :note: La première touche frappée ajoutera un caractère avant le curseur.
 
     -
-      :main_action: "Activer le mode"
-      :action: "VISUAL normal"
+      :main_action: Activer le mode
+      :action:      VISUAL normal
       :mode: normal
-      :code: "KeyV"
+      :code: KeyV
+      :note: 'Le mode visual « normal » se distingue du mode par ligne et du mode par block.'
 
     -
-      :main_action: "Activer le mode"
-      :action: "VISUAL ligne"
+      :main_action: Activer le mode
+      :action:      VISUAL ligne
       :mode: normal
       :code: MAJ KeyV
+      :note: 'Le mode visual « ligne » permet de sélectionner des lignes entières.'
 
     -
-      :main_action: "Activer le mode"
-      :action: "VISUAL block"
+      :main_action: Activer le mode
+      :action:      VISUAL block
       :mode: normal
       :code: CTRL KeyV
+      :note: 'Le mode visual « block » permet de sélectionner des blocks de signes, sans tenir compte des lignes, comme si c’était un dessin. Cf. l’exemple.'
+      :exemples:
+        "`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;C<sel>eci est u</sel>n dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;U<sel>une sorte</sel>de dessin&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;P<sel>our pouvo</sel> sélectionner&nbsp;\n&nbsp;T<sel>out en bl</sel>ock.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"
 
     -
       :main_action: "Quitter un mode"

@@ -121,20 +121,31 @@ SHORTCUTS.each do |element_titre, data_element|
     end
 
     # Le code
+    # --------
+    # Si la donnée :c existe, c'est la version raccourci du code, on met
+    # alors la version complet à droite et la version raccourcie à gauche
+    # Si la donnée :code est une liste, c'est une liste de possibilités
+    # Pour le moment, on ne peut pas avoir les deux ensemble.
     code = data_sc[:code]
-    code.is_a?(Array) || code = [code]
-    code = code.collect do |c|
-      if data_sc[:mode]
-        "<mode>[#{data_sc[:mode].upcase}]</mode> #{formate(c)}"
+    code_court = data_sc[:c]
+
+    code =
+      if code_court != nil
+        m = data_sc[:mode] ? "<mode>[#{data_sc[:mode].upcase}]</mode> " : ''
+        "<complet>#{formate(code)}</complet>#{m}#{formate(code_court)}"
       else
-        formate(c)
+        code.is_a?(Array) || code = [code]
+        code.collect do |c|
+          if data_sc[:mode]
+            "<mode>[#{data_sc[:mode].upcase}]</mode> #{formate(c)}"
+          else
+            formate(c)
+          end
+        end.join('<br>')
       end
-    end.join('<br>')
 
     # Est-ce que c'est une rangée importante ?
     is_importante = !!data_sc[:important]
-
-    main_tr_class = is_importante ? ' class="main"' : ''
 
     # Pour savoir s'il y a un repère mnémotechnique. S'il n'y en a
     # pas, on allonge la taille de la cellule contenant le code, les
@@ -145,7 +156,7 @@ SHORTCUTS.each do |element_titre, data_element|
     # On construit la rangée principale
     rangee =
       <<-HTML
-      <tr#{main_tr_class}>
+      <tr class="mainaction#{is_importante ? ' main' : ''}">
         <td>#{tags}</td>
         <td class='mainaction' colspan='2'>#{formate(data_sc[:main_action])} #{formate(data_sc[:action])}</td>
         <td colspan="#{no_memo ? '2' : '1'}" class="shortcut">#{code}</td>
@@ -171,9 +182,8 @@ SHORTCUTS.each do |element_titre, data_element|
 
     # S'il y a une note, on l'ajoute sous la ligne
     if data_sc[:note] || data_sc[:notes]
+      data_sc.key?(:notes) || data_sc.merge!(notes: data_sc.delete(:note))
       data_sc[:notes].is_a?(String) && data_sc[:notes] = [data_sc[:notes]]
-      data_sc[:notes] ||= Array.new
-      data_sc[:note] && data_sc[:notes] << data_sc[:note]
       nombre_notes = data_sc[:notes].count
       data_sc[:notes].each_with_index do |note, index|
         rangee += <<-HTML
@@ -226,6 +236,24 @@ table = <<-HTML
       header a, header a:link, header a:visited, header a:hover {color:blue;}
       header h1{margin:0;padding:12px 24px;font-weight:none;font-size:23pt;}
       section#table_shortcuts{margin:9em 2em;z-index:1;}
+      /* Pour afficher et masquer les rangées en glissant la souris */
+      table tr.mainaction { visibility: visible; }
+      table tr:not(.mainaction) { visibility: hidden; }
+      table tr.mainaction:hover + tr:not(.mainaction),
+      table tr.mainaction:hover + tr:not(.mainaction) + tr:not(.mainaction),
+      table tr.mainaction:hover + tr:not(.mainaction) + tr:not(.mainaction) + tr:not(.mainaction),
+      table tr.mainaction:hover + tr:not(.mainaction) + tr:not(.mainaction) + tr:not(.mainaction) + tr:not(.mainaction)
+      { visibility: visible;}
+
+      /* Ne pas jouer sur l'opacité si on joue sur la visibilité
+      table tr.notes{opacity:0.3;}
+      table tr.notes:hover{opacity:1;}
+      table tr.exemples{font-size:0.85em;opacity:0.3}
+      table tr.exemples:hover{opacity:1}
+      p.explication{opacity:0.5;}
+      p.explication:hover{opacity:1;}
+      */
+
       td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px}
       table tr.values td.values{white-space:pre-wrap;font-size:11pt;font-family:Courier;background-color:#CCC!important;}
       table tr.main td{border-top:2px solid green;border-bottom:2px solid green;background-color:#EFE;}
@@ -234,12 +262,11 @@ table = <<-HTML
       table tr:hover td{border-color:red;}
       table tr th{text-align:left;font-style:italic;color:#777;font-weight:normal;}
       table tr td{vertical-align:top;}
-      table tr.notes{opacity:0.3;}
-      table tr.notes:hover{opacity:1;}
+
+
       table tr.notes td{font-size:0.9em;font-style:italic;}
       table tr.notes td.titre{text-align:right;padding-right:2em;}
-      table tr.exemples{font-size:0.85em;opacity:0.3}
-      table tr.exemples:hover{opacity:1}
+      table tr.exemples{font-size:0.85em}
       table td.titre{font-style:italic;text-align:right;padding-right:2em;}
       /*table tr.exemples td.titre{font-style:italic;text-align:right;padding-right:2em;}*/
       td.mainaction, td.action{font-family:Arial,Helvetica;font-size:0.9em;}
@@ -253,14 +280,14 @@ table = <<-HTML
       memo:before{content:'<';font-size:8pt;vertical-align:middle;}
       memo:after{content:'>';font-size:8pt;vertical-align:middle;}
       mode{color:#AAA;font-size:0.8em;font-weight:normal;}
+      complet{float:right;margin-right:2em;} /* pour le code complet, en regard du code raccourci */
       ul#tdm{list-style:none;margin:1em 0}
       ul#tdm li{margin:0;margin-right:1em;padding:0;display:inline;}
       ul#tdm li a{font-family:Arial;font-size:12pt;}
-      p.explication{font-color:#555;opacity:0.5;font-style:italic;font-size:0.75em;}
-      p.explication:hover{opacity:1;}
+      p.explication{font-color:#555;font-style:italic;font-size:0.75em;}
       pre{background-color:#333;padding:.5em}
       code{background-color:#333;color:white;padding:0 4px;}
-      sel{background-color:#550;color:white;padding:0 1px;}
+      sel{background-color:#FFE700;color:black;padding:0 1px;}
     </style>
   </head>
   <body>
