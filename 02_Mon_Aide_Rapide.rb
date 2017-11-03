@@ -71,7 +71,7 @@ def formate t
   .gsub(/ ?\bENTER\b/, keyboard('Entree'))
   .gsub(/\bARROW_UP\b/, keyboard('FlecheH'))
   .gsub(/\bARROW_DOWN\b/, keyboard('FlecheB'))
-  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|Point_virgule|Point|SupInf|Tab|Virgule) ?/){keyboard($1)}
+  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|PointVirgule|Point|SupInf|Tab|Virgule) ?/){keyboard($1)}
   .gsub(/Key([A-Z]) ?/){keyboard($1.upcase)}
   .gsub(/\`\`\`(.*?)\`\`\`/m){
     c = $1.gsub(/\\n/, "[RC]").strip
@@ -254,7 +254,9 @@ table = <<-HTML
       p.explication:hover{opacity:1;}
       */
 
-      td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px}
+      /* Le code */
+      td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px;white-space:pre;}
+
       table tr.values td.values{white-space:pre-wrap;font-size:11pt;font-family:Courier;background-color:#CCC!important;}
       table tr.main td{border-top:2px solid green;border-bottom:2px solid green;background-color:#EFE;}
       table tr td{border-width:2px 0;border-style:solid;border-color:white;}
@@ -280,13 +282,13 @@ table = <<-HTML
       memo:before{content:'<';font-size:8pt;vertical-align:middle;}
       memo:after{content:'>';font-size:8pt;vertical-align:middle;}
       mode{color:#AAA;font-size:0.8em;font-weight:normal;}
-      complet{float:right;margin-right:2em;} /* pour le code complet, en regard du code raccourci */
+      complet{float:right;margin-right:2em;white-space:nowrap;} /* pour le code complet, en regard du code raccourci */
       ul#tdm{list-style:none;margin:1em 0}
       ul#tdm li{margin:0;margin-right:1em;padding:0;display:inline;}
       ul#tdm li a{font-family:Arial;font-size:12pt;}
       p.explication{font-color:#555;font-style:italic;font-size:0.75em;}
       pre{background-color:#333;padding:.5em}
-      code{background-color:#333;color:white;padding:0 4px;}
+      code{background-color:#333;color:white;padding:0 4px;white-space:nowrap;}
       sel{background-color:#FFE700;color:black;padding:0 1px;}
     </style>
   </head>

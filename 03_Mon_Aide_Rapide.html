@@ -27,7 +27,9 @@
       p.explication:hover{opacity:1;}
       */
 
-      td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px}
+      /* Le code */
+      td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px;white-space:nowrap;}
+
       table tr.values td.values{white-space:pre-wrap;font-size:11pt;font-family:Courier;background-color:#CCC!important;}
       table tr.main td{border-top:2px solid green;border-bottom:2px solid green;background-color:#EFE;}
       table tr td{border-width:2px 0;border-style:solid;border-color:white;}
@@ -53,20 +55,20 @@
       memo:before{content:'<';font-size:8pt;vertical-align:middle;}
       memo:after{content:'>';font-size:8pt;vertical-align:middle;}
       mode{color:#AAA;font-size:0.8em;font-weight:normal;}
-      complet{float:right;margin-right:2em;} /* pour le code complet, en regard du code raccourci */
+      complet{float:right;margin-right:2em;white-space:nowrap;} /* pour le code complet, en regard du code raccourci */
       ul#tdm{list-style:none;margin:1em 0}
       ul#tdm li{margin:0;margin-right:1em;padding:0;display:inline;}
       ul#tdm li a{font-family:Arial;font-size:12pt;}
       p.explication{font-color:#555;font-style:italic;font-size:0.75em;}
       pre{background-color:#333;padding:.5em}
-      code{background-color:#333;color:white;padding:0 4px;}
+      code{background-color:#333;color:white;padding:0 4px;white-space:nowrap;}
       sel{background-color:#FFE700;color:black;padding:0 1px;}
     </style>
   </head>
   <body>
     <header>
       <h1>Vim - Antisèche</h1>
-      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Help</a></li><li><a href='#titre3'>Premières commandes utiles</a></li><li><a href='#titre4'>Sessions</a></li><li><a href='#titre5'>Mapping</a></li><li><a href='#titre6'>Snippets</a></li><li><a href='#titre7'>Fenêtres & layout</a></li><li><a href='#titre8'>Tabs</a></li><li><a href='#titre9'>Fichiers</a></li><li><a href='#titre10'>Multi-fichiers</a></li><li><a href='#titre11'>Buffers</a></li><li><a href='#titre12'>Déplacements</a></li><li><a href='#titre13'>Marques</a></li><li><a href='#titre14'>Sélection</a></li><li><a href='#titre15'>Texte</a></li><li><a href='#titre16'>Autocomplétion</a></li><li><a href='#titre17'>Texte extras</a></li><li><a href='#titre18'>Recherche et remplacement</a></li><li><a href='#titre19'>Expression régulières</a></li><li><a href='#titre20'>Presse-papier (registre)</a></li><li><a href='#titre21'>Commandes</a></li><li><a href='#titre22'>Commandes personnelles</a></li><li><a href='#titre23'>Ligne de commande et langage de script</a></li><li><a href='#titre24'>Interface</a></li><li><a href='#titre25'>Options</a></li><li><a href='#titre26'>Nerdtree</a></li><li><a href='#titre27'>Mode ligne de commande (ex)</a></li><li><a href='#titre28'>Fenêtres (non essentiels)</a></li><li><a href='#titre29'>Ctrlp</a></li><li><a href='#titre30'>Signes</a></li><li><a href='#titre31'>Ctags</a></li><li><a href='#titre32'>Fonctions</a></li><li><a href='#titre33'>Divers</a></li></ul>
+      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Utiles</a></li><li><a href='#titre3'>Help</a></li><li><a href='#titre4'>Premières commandes utiles</a></li><li><a href='#titre5'>Sessions</a></li><li><a href='#titre6'>Mapping</a></li><li><a href='#titre7'>Snippets</a></li><li><a href='#titre8'>Fenêtres & layout</a></li><li><a href='#titre9'>Tabs</a></li><li><a href='#titre10'>Fichiers</a></li><li><a href='#titre11'>Multi-fichiers</a></li><li><a href='#titre12'>Buffers</a></li><li><a href='#titre13'>Déplacements</a></li><li><a href='#titre14'>Marques</a></li><li><a href='#titre15'>Sélection</a></li><li><a href='#titre16'>Texte</a></li><li><a href='#titre17'>Autocomplétion</a></li><li><a href='#titre18'>Texte extras</a></li><li><a href='#titre19'>Recherche et remplacement</a></li><li><a href='#titre20'>Expression régulières</a></li><li><a href='#titre21'>Presse-papier (registre)</a></li><li><a href='#titre22'>Commandes</a></li><li><a href='#titre23'>Commandes personnelles</a></li><li><a href='#titre24'>Ligne de commande et langage de script</a></li><li><a href='#titre25'>Interface</a></li><li><a href='#titre26'>Options</a></li><li><a href='#titre27'>Nerdtree</a></li><li><a href='#titre28'>Mode ligne de commande (ex)</a></li><li><a href='#titre29'>Fenêtres (non essentiels)</a></li><li><a href='#titre30'>Ctrlp</a></li><li><a href='#titre31'>Signes</a></li><li><a href='#titre32'>Ctags</a></li><li><a href='#titre33'>Fonctions</a></li><li><a href='#titre34'>Divers</a></li></ul>
 
     </header>
     <section id="table_shortcuts">
@@ -116,7 +118,20 @@
           <td class="titre">Note</td>
           <td colspan="2">Sans précision de fichier, c'est le fichier <code>~/.viminfo</code> qui sera utilisé.</td>
         </tr>
-</table><h3 id='titre2'>HELP</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre2'>UTILES</h3><table cellspacing="0" cellpadding="0">  <tr>
+    <th width="100">Tags</th>
+    <th width="160">Action</th>
+    <th width="480"><!-- Sous-action --></th>
+    <th width="490">Shortcut</th>
+    <th width="280">Mnémo</th>
+  </tr>
+      <tr class="mainaction">
+        <td></td>
+        <td class='mainaction' colspan='2'>Touches dans les commandes</td>
+        <td colspan="2" class="shortcut">&lt;left>   = left arrow    = flèche gauche<br>&lt;up      = up arrow      = flèche haut<br>&lt;right>  = right arrow   = flèche droite<br>&lt;down>   = down arrow    = flèche bas<br>&lt;CR>     = Return        = touche entrée<br>&lt;BS>     = Backstack     = touche effacement arrière</td>
+        
+      </tr>
+</table><h3 id='titre3'>HELP</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -254,7 +269,7 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set helpheight=&lt;nombre de lignes></td>
         
       </tr>
-</table><h3 id='titre3'>PREMIÈRES COMMANDES UTILES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre4'>PREMIÈRES COMMANDES UTILES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -320,7 +335,7 @@
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;C<sel>eci est u</sel>n dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;U<sel>une sorte</sel> de dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;P<sel>our pouvo</sel> sélectionner&nbsp;<br>&nbsp;T<sel>out en bl</sel>ock.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div></td>
+        <td colspan="2"><div class="exemple"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;C<sel>eci est u</sel>n dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;U<sel>une sorte</sel>de dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;P<sel>our pouvo</sel> sélectionner&nbsp;<br>&nbsp;T<sel>out en bl</sel>ock.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div></td>
       </tr>
       <tr class="mainaction">
         <td><span class='tag'>annuler</span><span class='tag'>quitter</span></td>
@@ -328,25 +343,25 @@
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/><br><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         
       </tr>
-      <tr class="mainaction">
+      <tr class="mainaction main">
         <td><span class='tag'>action</span></td>
         <td class='mainaction' colspan='2'>Répéter la dernière action</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> . (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>;)</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> . (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_PointVirgule.png" class="kb" title="PointVirgule"/>)</td>
         
       </tr>
       <tr class="mainaction">
         <td><span class='tag'>macro</span></td>
         <td class='mainaction' colspan='2'>Enregistrer une macro</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Q.png" class="kb" title="Q"/>&lt;<img src="./img/clavier/K_A.png" class="kb" title="A"/>-<img src="./img/clavier/K_Z.png" class="kb" title="Z"/>> &lt;jouer> <img src="./img/clavier/K_Q.png" class="kb" title="Q"/></td>
-        <td><memo>q</memo> = bout à gauche du clavier</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Q.png" class="kb" title="Q"/>&lt;<img src="./img/clavier/K_A.png" class="kb" title="A"/>-<img src="./img/clavier/K_Z.png" class="kb" title="Z"/>> &lt;jouer la macro> <img src="./img/clavier/K_Q.png" class="kb" title="Q"/></td>
+        <td>ma<memo>q</memo>ro</td>
       </tr>
       <tr class="mainaction">
         <td><span class='tag'>macro</span></td>
         <td class='mainaction' colspan='2'>Jouer une macro</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> @&lt;a-z></td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Arobase.png" class="kb" title="Arobase"/>&lt;a-z></td>
         
       </tr>
-</table><h3 id='titre4'>SESSIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre5'>SESSIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -356,7 +371,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Enregistrer la session courante</td>
-        <td colspan="1" class="shortcut"><mode>[COMMAND]</mode> :mks[ession] &lt;fichier></td>
+        <td colspan="1" class="shortcut"><complet>:mksession &lt;fichier></complet><mode>[COMMAND]</mode> :mks &lt;fichier></td>
         <td><memo>m</memo>a<memo>k</memo>e <memo>s</memo>ession</td>
       </tr>
       <tr class="exemples">
@@ -370,6 +385,11 @@
         <td colspan="2" class="shortcut">[COMMAND] :so[urce] &lt;fichier session><br>$> vim -c ":source &lt;fichier session>"</td>
         
       </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Pour définir ce qui doit être sauvé au cours d’une session, cf. la définition suivante.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
@@ -387,7 +407,7 @@
         <td colspan="2" class='values'>  avec <code>&lt;element></code> :<br>    <code>buffers</code> sauve les buffers<br>    <code>globals</code> sauve les variables globales qui commencent par une majuscule et contiennent au moins une minuscule<br>    <code>help</code> sauve la fenêtre d’aide<br>    <code>blank</code> sauve les fenêtres vides ouvertes<br>    <code>options</code> sauve toutes les options et la carte clavier (keyboard mapping)<br>    <code>winpos</code> sauve les positions de fenêtre (GUI)<br>    <code>resize</code> sauve la taille de l’écran<br>    <code>winsize</code> sauve les tailles des fenêtres si possible<br>    <code>slash</code> sauve les paths escapés (pour utilisation de unix/mac à windaubes)<br>    <code>unix</code> sauve avec des retours chariots unix</td>
         
       </tr>
-</table><h3 id='titre5'>MAPPING</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre6'>MAPPING</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -407,7 +427,7 @@
         </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Définir une map</td>
+        <td class='mainaction' colspan='2'>Définir une map pour la session courante</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :map &lt;touche> &lt;action></td>
         
       </tr>
@@ -440,7 +460,7 @@
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Lister toutes les maps</td>
+        <td class='mainaction' colspan='2'>Lister toutes les maps (enregistrées ou non)</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :map</td>
         
       </tr>
@@ -452,11 +472,11 @@
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'> toutes les mappings</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :mapc[lear]</td>
+        <td class='mainaction' colspan='2'>Supprimer toutes les mappings</td>
+        <td colspan="2" class="shortcut"><complet>:mapclear</complet><mode>[NORMAL]</mode> :mapc</td>
         
       </tr>
-</table><h3 id='titre6'>SNIPPETS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre7'>SNIPPETS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -507,9 +527,20 @@
         <td colspan="2"><div class="exemple"><code>:cabbreviate l list</code></div><div class="exemple"><code>:ca J Joaquim</code></div></td>
       </tr>
       <tr class="mainaction">
+        <td></td>
+        <td class='mainaction' colspan='2'>Définir des abbréviations (ou des mappings) pour un type de fichier</td>
+        <td colspan="2" class="shortcut">Créer un fichier avec le nom du language dans le dossier <code>~/.vim/ftpluging</code> avec l’extension <code>.vim</code></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple">Dans le fichier <code>~/.vim/ftplugin/ruby.vim</code>, on peut placer les abréviations et mappings pour le code ruby et elles seront automatiquement chargées au lancement d’un fichier ruby.</div></td>
+      </tr>
+      <tr class="mainaction">
         <td><span class='tag'>snippet</span></td>
-        <td class='mainaction' colspan='2'>Expendre une abbréviation en mode INSERT</td>
-        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> &lt;snippet><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/><br><mode>[INSERT]</mode> &lt;snippet> <img src="./img/clavier/K_Espace.png" class="kb" title="Espace"/></td>
+        <td class='mainaction' colspan='2'>Résoudre une abbréviation en mode INSERT</td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> &lt;snippet><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Dollar.png" class="kb" title="Dollar"/><br><mode>[INSERT]</mode> &lt;snippet><img src="./img/clavier/K_Espace.png" class="kb" title="Espace"/></td>
         
       </tr>
       <tr class="mainaction">
@@ -566,7 +597,7 @@
         <td colspan="2" class="shortcut">:so[urce] &lt;path/to/fichier></td>
         
       </tr>
-</table><h3 id='titre7'>FENÊTRES & LAYOUT</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre8'>FENÊTRES & LAYOUT</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -818,7 +849,7 @@
         <td colspan="2" class='values'>  avec <code>&lt;Lx></code> :<br>    <code>cursor</code> sauve la position du curseur<br>    <code>folds</code> sauve l’état courant des foldings<br>    <code>options</code> sauve les options incluant les options locales pour les buffers et fenêtres</td>
         
       </tr>
-</table><h3 id='titre8'>TABS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre9'>TABS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -931,13 +962,19 @@
         <td colspan="2" class='values'>  avec <code>&lt;nombre></code> :<br>    0 : ne jamais afficher<br>    1 : afficher quand onglets<br>    2 : toujours afficher</td>
         
       </tr>
-</table><h3 id='titre9'>FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre10'>FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
     <th width="490">Shortcut</th>
     <th width="280">Mnémo</th>
   </tr>
+      <tr class="mainaction">
+        <td></td>
+        <td class='mainaction' colspan='2'>Définir le type du fichier (non détecté)</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set filetype=&lt;le type></td>
+        
+      </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>[Ne plus] Produire un backup</td>
@@ -1263,7 +1300,7 @@
         <td class="titre"><em>Exemple</em></td>
         <td colspan="2"><div class="exemple">Quand on a joué avant <code>:earlier 1h</code> (retour à l'état du fichier 1 heure avant), la commande <code>:later 1h</code> fait revenir au dernier état du fichier.</div></td>
       </tr>
-</table><h3 id='titre10'>MULTI-FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre11'>MULTI-FICHIERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -1353,7 +1390,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :set noautowrite</td>
         
       </tr>
-</table><h3 id='titre11'>BUFFERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre12'>BUFFERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -1473,7 +1510,23 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :bd!</td>
         <td><memo>b</memo>uffser <memo>d</memo>elete</td>
       </tr>
-</table><h3 id='titre12'>DÉPLACEMENTS</h3><table cellspacing="0" cellpadding="0">  <tr>
+      <tr class="mainaction">
+        <td></td>
+        <td class='mainaction' colspan='2'>Supprimer tous les buffers courant</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> &lt;premier>,&lt;dernier>bd</td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note 1</td>
+          <td colspan="2">À ma connaissance, il n’a pas de commande pour refermer d’un coup tous les buffers, mais on peut utiliser cette astuce.</td>
+        </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note 2</td>
+          <td colspan="2">Elle fonctionne même s’il y a des “trous” (des numéros de buffer absents)</td>
+        </tr>
+</table><h3 id='titre13'>DÉPLACEMENTS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -1842,7 +1895,7 @@
         <td colspan="2" class="shortcut">:set whichwrap=&lt;lettre></td>
         
       </tr>
-</table><h3 id='titre13'>MARQUES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre14'>MARQUES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -1918,7 +1971,7 @@
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> '&lt;a-zA-Z><br><mode>[NORMAL]</mode> `&lt;a-zA-Z></td>
         <td>"'" se rend au début de la ligne<br>"`" se rend à la ligne/colonne de la marque.</td>
       </tr>
-</table><h3 id='titre14'>SÉLECTION</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre15'>SÉLECTION</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -2087,7 +2140,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_H.png" class="kb" title="H"/></td>
         
       </tr>
-</table><h3 id='titre15'>TEXTE</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre16'>TEXTE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -3143,7 +3196,7 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :=</td>
         
       </tr>
-</table><h3 id='titre16'>AUTOCOMPLÉTION</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre17'>AUTOCOMPLÉTION</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -3290,7 +3343,7 @@
           <td class="titre">Note</td>
           <td colspan="2">On doit avoir afficher la liste des mots avec <code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_P.png" class="kb" title="P"/></code></td>
         </tr>
-</table><h3 id='titre17'>TEXTE EXTRAS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre18'>TEXTE EXTRAS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -3338,7 +3391,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :match none</td>
         
       </tr>
-</table><h3 id='titre18'>RECHERCHE ET REMPLACEMENT</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre19'>RECHERCHE ET REMPLACEMENT</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -3540,7 +3593,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Chercher en avant la première occurrence de la lettre, puis les suivantes</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_F.png" class="kb" title="F"/>&lt;lettre>, puis ; (<img src="./img/clavier/K_Point_virgule.png" class="kb" title="Point_virgule"/>) pour les suivantes, ou « , » (virgule) pour les précédentes.</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_F.png" class="kb" title="F"/>&lt;lettre>, puis ; (<img src="./img/clavier/K_PointVirgule.png" class="kb" title="PointVirgule"/>) pour les suivantes, ou « , » (virgule) pour les précédentes.</td>
         
       </tr>
       <tr class="mainaction">
@@ -3725,7 +3778,7 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_H.png" class="kb" title="H"/>, <img src="./img/clavier/K_FlecheG.png" class="kb" title="FlecheG"/>/<img src="./img/clavier/K_FlecheD.png" class="kb" title="FlecheD"/>pour sélectionner, &lt;texte></td>
         
       </tr>
-</table><h3 id='titre19'>EXPRESSION RÉGULIÈRES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre20'>EXPRESSION RÉGULIÈRES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -3870,7 +3923,7 @@
         <td class="titre"><em>Exemple</em></td>
         <td colspan="2"><div class="exemple">dans <code>a\([b-d]\)1\([0-5]\)</code>, "\1" faire référence à "[b-d]" et "\2" fait référence à "[0-5]".</div></td>
       </tr>
-</table><h3 id='titre20'>PRESSE-PAPIER (REGISTRE)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre21'>PRESSE-PAPIER (REGISTRE)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4007,7 +4060,7 @@
         <td colspan="2" class="shortcut">"_</td>
         
       </tr>
-</table><h3 id='titre21'>COMMANDES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre22'>COMMANDES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4208,7 +4261,7 @@
           <td class="titre">Note</td>
           <td colspan="2">Si employé dans un script ou une fonction, ajoute aux messages de suivi qu’on peut relire avec <code>:messages</code>.</td>
         </tr>
-</table><h3 id='titre22'>COMMANDES PERSONNELLES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre23'>COMMANDES PERSONNELLES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4310,7 +4363,7 @@ MaCommande un deux trois
 
 UneFonction("un", "deux", "trois")</code></pre></div></td>
       </tr>
-</table><h3 id='titre23'>LIGNE DE COMMANDE ET LANGAGE DE SCRIPT</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre24'>LIGNE DE COMMANDE ET LANGAGE DE SCRIPT</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4405,7 +4458,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
 : echo "Cette commande est inconue."
 :endtry</code></pre></div></td>
       </tr>
-</table><h3 id='titre24'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre25'>INTERFACE</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4641,7 +4694,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
           <td class="titre">Note</td>
           <td colspan="2">Voir l’aide pour toutes les possibilités : <code>:help 'statusline'</code>.</td>
         </tr>
-</table><h3 id='titre25'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre26'>OPTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4873,7 +4926,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set [no]equalalways</td>
         
       </tr>
-</table><h3 id='titre26'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre27'>NERDTree</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4892,7 +4945,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_C.png" class="kb" title="C"/></td>
         <td><memo>c</memo>urrent</td>
       </tr>
-</table><h3 id='titre27'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre28'>MODE LIGNE DE COMMANDE (EX)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4922,7 +4975,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
           <td class="titre">Note</td>
           <td colspan="2">Taper «exit» pour revenir dans Vim.</td>
         </tr>
-</table><h3 id='titre28'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre29'>FENÊTRES (non essentiels)</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -4999,7 +5052,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_R.png" class="kb" title="R"/>/<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_R.png" class="kb" title="R"/></td>
         <td><memo>w</memo>indow, <memo>r</memo>epositionne</td>
       </tr>
-</table><h3 id='titre29'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre30'>CTRLP</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -5206,7 +5259,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_C.png" class="kb" title="C"/><br><img src="./img/clavier/K_Escape.png" class="kb" title="Escape"/></td>
         
       </tr>
-</table><h3 id='titre30'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre31'>SIGNES</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -5265,7 +5318,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :sign line &lt;nom du fichier></td>
         
       </tr>
-</table><h3 id='titre31'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre32'>CTAGS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -5296,7 +5349,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="2" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_O.png" class="kb" title="O"/></td>
         
       </tr>
-</table><h3 id='titre32'>FONCTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre33'>FONCTIONS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -5367,7 +5420,7 @@ UneFonction("un", "deux", "trois")</code></pre></div></td>
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :return &lt;valeur></td>
         
       </tr>
-</table><h3 id='titre33'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre34'>DIVERS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>

@@ -47,6 +47,24 @@
 
 # ---------------------------------------------------------------------
 #
+#   @@@ UTILES
+#
+# ---------------------------------------------------------------------
+
+  UTILES:
+    -
+      :main_action: Touches
+      :action:      dans les commandes
+      :code:
+        - '<left>   = left arrow    = flèche gauche'
+        - '<up      = up arrow      = flèche haut'
+        - '<right>  = right arrow   = flèche droite'
+        - '<down>   = down arrow    = flèche bas'
+        - '<CR>     = Return        = touche entrée'
+        - '<BS>     = Backstack     = touche effacement arrière'
+
+# ---------------------------------------------------------------------
+#
 #   @@@ AIDE
 #
 # ---------------------------------------------------------------------
@@ -197,11 +215,11 @@
       :code: CTRL KeyV
       :note: 'Le mode visual « block » permet de sélectionner des blocks de signes, sans tenir compte des lignes, comme si c’était un dessin. Cf. l’exemple.'
       :exemples:
-        "`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;C<sel>eci est u</sel>n dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;U<sel>une sorte</sel>de dessin&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;P<sel>our pouvo</sel> sélectionner&nbsp;\n&nbsp;T<sel>out en bl</sel>ock.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"
+        "`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;C<sel>eci est u</sel>n dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;U<sel>une sorte</sel>de dessin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;P<sel>our pouvo</sel> sélectionner&nbsp;\n&nbsp;T<sel>out en bl</sel>ock.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"
 
     -
-      :main_action: "Quitter un mode"
-      :action: "quelconque, annuler, renoncer"
+      :main_action: Quitter un mode
+      :action:      quelconque, annuler, renoncer
       :code:
         - ESC
         - CTRL KeyC
@@ -209,24 +227,25 @@
 
     -
       :main_action: Répéter
-      :action:  "la dernière action"
+      :action:      la dernière action
       :mode: normal
-      :code: ". (MAJ ;)"
+      :code: '. (MAJ KeyPointVirgule)'
       :tags: action
+      :important: true
 
     -
       :main_action: Enregistrer
-      :action: "une macro"
+      :action:      une macro
       :mode: normal
-      :code: "KeyQ<KeyA-KeyZ> <jouer> KeyQ"
-      :memo: ((q)) = bout à gauche du clavier
+      :code: KeyQ<KeyA-KeyZ> <jouer la macro> KeyQ
+      :memo: ma((q))ro
       :tags: macro
 
     -
       :main_action: Jouer
-      :action: "une macro"
+      :action:      une macro
       :mode: normal
-      :code: "@<a-z>"
+      :code: 'KeyArobase<a-z>'
       :tags: macro
 
 # ---------------------------------------------------------------------
@@ -239,9 +258,10 @@
 
     -
       :main_action: Enregistrer
-      :action: la session courante
+      :action:      la session courante
       :mode: command
-      :code: ':mks[ession] <fichier>'
+      :code: ':mksession <fichier>'
+      :c:    ':mks <fichier>'
       :memo: '((m))a((k))e ((s))ession'
       :exemples:
         - '`:mksessions session.vim` => enregistre l’état courante dans "session.vim"'
@@ -249,17 +269,18 @@
 
     -
       :main_action: Restaurer
-      :action: une session précédente
+      :action:      une session précédente
       :code:
         - '[COMMAND] :so[urce] <fichier session>'
         - '$> vim -c ":source <fichier session>"'
       :exemples:
         - '`:source session.vim` => restaure la session enregistrée dans "session.vim"'
         - '`$> vim -c ":source session.vim"`'
+      :note: 'Pour définir ce qui doit être sauvé au cours d’une session, cf. la définition suivante.'
 
     -
       :main_action: Définir
-      :action: ce qui doit être mémorisé dans une session
+      :action:      ce qui doit être mémorisé dans une session
       :mode: command
       :code: ':set sessionoptions=<element1>,<element2>,<element3>...<elementN>'
       :values:
@@ -291,7 +312,7 @@
 
     -
       :main_action: Définir
-      :action:      une map
+      :action:      une map pour la session courante
       :mode: normal
       :code: ':map <touche> <action>'
       :exemples:
@@ -320,7 +341,7 @@
 
     -
       :main_action: Lister
-      :action:      toutes les maps
+      :action:      toutes les maps (enregistrées ou non)
       :mode: normal
       :code: ':map'
 
@@ -331,10 +352,11 @@
       :code: ':[<mode>]unmap <touche>'
 
     -
-      :main_actin: Supprimer
-      :action:     toutes les mappings
+      :main_action: Supprimer
+      :action:      toutes les mappings
       :mode: normal
-      :code: ':mapc[lear]'
+      :code: ':mapclear'
+      :c:    ':mapc'
 
 # ---------------------------------------------------------------------
 #
@@ -374,12 +396,20 @@
       :tags: snippet
 
     -
-      :main_action: Expendre
+      :main_action: Définir
+      :action:      des abbréviations (ou des mappings) pour un type de fichier
+      :code:
+        - 'Créer un fichier avec le nom du language dans le dossier `~/.vim/ftpluging` avec l’extension `.vim`'
+      :exemples:
+        - 'Dans le fichier `~/.vim/ftplugin/ruby.vim`, on peut placer les abréviations et mappings pour le code ruby et elles seront automatiquement chargées au lancement d’un fichier ruby.'
+
+    -
+      :main_action: Résoudre
       :action:      une abbréviation en mode INSERT
       :mode: insert
       :code:
         - '<snippet>CTRL KeyDollar'
-        - '<snippet> SPACE'
+        - '<snippet>SPACE'
       :tags: snippet
 
     -
@@ -443,6 +473,7 @@
 #
 #   @@@ FENETRES
 #
+# XXX
 # ---------------------------------------------------------------------
 
   FENÊTRES & LAYOUT:
@@ -824,6 +855,14 @@
 # ---------------------------------------------------------------------
 
   FICHIERS:
+
+    -
+      :main_action: Définir
+      :action:      le type du fichier (non détecté)
+      :mode: command
+      :code: ':set filetype=<le type>'
+      :exemple:
+        - '`set filetype=rspec` => définit le type du fichier comme RSPEC.'
 
     -
       :main_action: '[Ne plus] Produire'
@@ -1343,6 +1382,14 @@
       :code: ":bd!"
       :memo: ((b))uffser ((d))elete
 
+    -
+      :main_action: Supprimer
+      :action:      tous les buffers courant
+      :mode: command
+      :code: :<premier>,<dernier>bd
+      :note:
+        - 'À ma connaissance, il n’a pas de commande pour refermer d’un coup tous les buffers, mais on peut utiliser cette astuce.'
+        - 'Elle fonctionne même s’il y a des “trous” (des numéros de buffer absents)'
 
 # ---------------------------------------------------------------------
 #
@@ -3236,7 +3283,7 @@
       :main_action: Chercher
       :action: "en avant la première occurrence de la lettre, puis les suivantes"
       :mode: normal
-      :code: "KeyF<lettre>, puis ; (KeyPoint_virgule) pour les suivantes, ou « , » (virgule) pour les précédentes."
+      :code: "KeyF<lettre>, puis ; (KeyPointVirgule) pour les suivantes, ou « , » (virgule) pour les précédentes."
 
     -
       :main_action: Chercher
