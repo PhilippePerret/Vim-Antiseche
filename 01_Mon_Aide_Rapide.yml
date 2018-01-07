@@ -471,43 +471,50 @@
 
 # ---------------------------------------------------------------------
 #
-#   @@@ FENETRES
+#   @@@ FENETRES & HUBLOTS
 #
-# XXX
+#
 # ---------------------------------------------------------------------
 
-  FENÊTRES & LAYOUT:
+  FENÊTRES & HUBLOTS:
 
     -
       :main_action: Ouvrir
-      :action: "plusieurs fichiers dans des layouts"
-      :code: "$> vim -o file1 path/file2 file3"
+      :action:      plusieurs fichiers dans des “hublots”
+      :code: "$> vim -o<nombre fichiers> file1 path/file2 file3"
       :exemples:
-        - "Indiquer un nombre pour limiter le nombre de layouts : `vim -o3`"
+        - '`vim -o3 ./*.rb` => Ouvrir au maximum 3 fichiers ruby du dossier courant'
+        - "Indiquer un nombre pour limiter le nombre de hublots : `vim -o3`"
+      :note:
+        'J’appelle “HUBLOT” la traduction de “VIEWPORT” ou “LAYOUT”. C’est la sous-fenêtre dans la fenêtre, où apparait l’extrait du fichier, comme dans le hublot du navire apparait un extrait de la mer.'
 
     -
       :main_action: Ouvrir
       :action:      la fenêtre alternative
       :mode: normal
       :code: 'CTRL KeyW ^'
+      :notes: 'TODO Qu’est-ce qu’une fenêtre alternative ?'
 
     -
-      :main_action: Ouvrir
-      :action:      dans la fenêtre de prévisualisation
+      :main_action: Afficher
+      :action:      la définition de la fonction
       :mode: normal
-      :code: ':pt[ag] <fonction>'
-      :note: 'Ouvre la définition de la `<fonction>` dans la fenêtre de prévisualisation.'
-      :tags: preview
+      :code: ':ptag <fonction>'
+      :c: ':pt'
+      :note: 'Il faut avoir, au prélable, demandé de faire la liste des méthoes par `:!ctags -R .`'
+      :tags: function
 
     -
       :main_action: Fermer
       :action:      la fenêtre de prévisualisation
       :mode: normal
       :code:
-        - ':pc[lose]'
+        - ':pclose'
         - 'CTRL KeyW CTRL KeyZ'
         - 'CTRL KeyW KeyZ'
+      :c: ':pc'
       :memo: '((p))review close'
+      :note: 'Elle se ferme même lorsque l’on n’est pas dedans'
       :tags: preview
 
     -
@@ -518,23 +525,34 @@
 
     -
       :main_action: Split
-      :action:      "(signature générale)"
+      :action:      '(signature générale)'
       :mode: normal
-      :code: ":<count> +<commande> sp[lit] <path/to/file>"
+      :code: ':[<hauteur> ][+<commande> ][++<opt> ]sp[lit][ <path/to/file>"]'
+      :c: ':sp'
+      :exemples:
+        - '`:10 split` ou `:10sp` splitte la fenêtre en 2 en faisant une nouvelle vue de 10 lignes'
+        - '`:split mon/fichier.txt` splitte la fenêtre en 2 et ouvre le fichier désigné dans la nouvelle vue.'
+        - '`:+ split fichier.txt` splitte la fenêtre en ouvrant fichier.txt dedans et se place sur la dernière ligne (`+`)'
+        - '`:+10 split fichier.txt` splitte la fenêtre en ouvrant fichier.txt dedans et se place sur la 10e ligne'
+        - '`:+/XXX split fichier.txt` splitte la fenêtre en ouvrant fichier.txt dedans et se place sur la 1ère ligne contenant “XXX”'
+        - '`:++fileformat=dos split fichier.doc` splitte la fenêtre en ouvrant fichier.txt dans un format DOS.'
+      :notes:
+        - 'Pour voir le détail des +commandes et des options, rechercher `:help +cmd` et `:help ++opt`'
       :tags: split
 
     -
       :main_action: Spliter
       :action:      la fenêtre active
       :code:
-        - ':sp[it]'
+        - ':spit'
         - CTRL KeyW KeyN
+      :c: ':sp'
       :memo: ((sp))iter
       :tags: split fenêtre
 
     -
       :main_action: Spliter
-      :action:      la fenêtre en créant un nouveau fichier dans le nouveau layout
+      :action:      la fenêtre en créant un nouveau fichier dans le nouveau hublot
       :mode: normal
       :code: ':new'
       :tags: split fichier
@@ -542,114 +560,135 @@
     -
       :main_action: Spliter
       :action:      verticalement la fenêtre active
-      :code:
-        - ':vs'
-        - ':vsp'
-        - ':vsplit'
+      :code: ':vsplit'
+      :c: ":vs\n:vsp"
       :memo: ((v))ertical ((sp))lit
       :tags: split fenêtre
 
     -
       :main_action: Spliter
-      :action:      en définissant la taille (lignes) du nouveau layout
+      :action:      en définissant la taille (lignes) du nouveau hublot
       :code: "<nombre ligne>sp"
-      :tags: layout ligne
+      :tags: hublot ligne
 
     -
       :main_action: Spliter
-      :action:      verticalement en définissant la taille (colonne) du nouveau layout
+      :action:      verticalement en définissant la taille (colonne) du nouveau hublot
       :code: "<nombre colonnes>vsp"
-      :tags: layout ligne
+      :tags: hublot ligne
 
     -
       :main_action: Faire défiler
       :action:      deux fenêtres en même temps
       :mode: command
       :code: ':set scrollbind'
-      :note: 'La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (`:vert split`) puis taper `:set scrollbind` pour chacune des layouts.'
+      :note: 'La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (`:vert split`) puis taper `:set scrollbind` pour chacune des hublots.'
 
     -
-      :main_action: Redimensionner
-      :action: "précisément le layout courant"
-      :mode: normal
-      :code: ":resize [+|-]<nombre>"
+      :main_action: Aggrandir
+      :action:      le hublot courant quand on focusse dedans
+      :mode: command
+      :code: ':set winheight=36'
       :exemples:
-        - "`:resize 10` => mets le layout à 10 lignes"
-        - "`:resize +10` => augmente le layout de 10 lignes"
-        - "`:resize -10` => diminue le layout de 10 lignes"
-      :tags: layout size
+        - '`set winheight=40` est placé dans le .vimrc. La fenêtre est splittée en deux hublots horizontaux. Dès qu’on focusse dans l’un d’eux, il prend la taille de 40 lignes.'
+      :important: true
+      :tags: hublot split
 
     -
       :main_action: Redimensionner
-      :action: "verticalement précisément le layout courant"
-      :mode: normal
-      :code: ":vert :resize [+|-]<nombre>"
-      :exemples:
-        - "`:vert :resize 100` => mets le layout à 100 colonnes"
-        - "`:vert :resize +100` => augmente le layout de 100 colonnes"
-        - "`:vert :resize -100` => diminer le layout de 100 colonnes"
-
-    -
-      :main_action: Redimensionner
-      :action: "le layout en l'aggrandissant"
-      :mode: normal
-      :code: "CTRL KeyW, [x] MAJ +"
-      :tags: layout size
-
-    -
-      :main_action: Redimensionner
-      :action: "en maximisant le layout courant"
+      :action:      précisément le hublot courant
       :mode: normal
       :code:
-        - 'CTRL KeyW _ (MAJ -)'
+        - ':resize [+|-]<nombre>'
+        - 'z <nombre>KeyEntree'
+      :c: ':res'
+      :exemples:
+        - "`:resize 10` => mets le hublot à 10 lignes"
+        - "`:res +10` => augmente le hublot de 10 lignes"
+        - "`:res -10` => diminue le hublot de 10 lignes"
+      :tags: hublot size
+
+    -
+      :main_action: Redimensionner
+      :action:      verticalement précisément le hublot courant
+      :mode: normal
+      :code:
+        - ':vert :resize [+|-]<nombre>'
+      :c: ':vert res'
+      :exemples:
+        - "`:vert :resize 100` => mets le hublot à 100 colonnes"
+        - "`:vert :res +100` => augmente le hublot de 100 colonnes"
+        - "`:vert :res -100` => diminer le hublot de 100 colonnes"
+
+    -
+      :main_action: Redimensionner
+      :action:      le hublot en l’aggrandissant
+      :mode: normal
+      :code: "CTRL KeyW, <nombre> MAJKeyPlus|KeyMoins"
+      :exemples:
+        - '`CTRL KeyW, 10 MAJKeyPlus` augmente la taille du hublot courant de 10 lignes'
+        - '`CTRL KeyW, 20 KeyMoins` diminue la taille du hublot courant de 20 lignes'
+      :tags: hublot size
+
+    -
+      :main_action: Redimensionner
+      :action:      en maximisant le hublot courant
+      :mode: normal
+      :code:
+        - 'CTRL KeyW, MAJ KeyMoins (underscore)'
         - ':resize (sans arg)'
-      :tags: layout size
+      :tags: hublot size
 
     -
       :main_action: Redimensionner
-      :action: "le layout en le diminuant"
+      :action:      le hublot en le diminuant
       :mode: normal
-      :code: "CTRL KeyW, [x] -"
-      :tags: layout size
+      :code: 'CTRL KeyW, [x] KeyMoins'
+      :tags: hublot size
 
     -
       :main_action: Redimensionner
-      :action: "tous les layouts à la même taille"
+      :action:      tous les hublots à la même taille
       :mode: normal
-      :code: "CTRL KeyW ="
-      :tags: layout size
+      :code: 'CTRL KeyW KeyEgal'
+      :tags: hublot size
 
     -
       :main_action: Activer
-      :action: "un layout à l'autre"
+      :action:      le hublot suivant
+      :mode: normal
       :code: CTRL KeyWKeyW
       :memo: CTRL ((w))indow (fenêtre)
-      :tags: layout
+      :tags: hublot
 
     -
       :main_action: Activer
-      :action: "le layout en dessous"
-      :code: "CTRL KeyWKeyJ"
-      :memo: "KeyJ comme pour descendre dans Vim"
+      :action:      le hublot en dessous du courant
+      :mode: normal
+      :code: CTRL KeyWKeyJ
+      :memo: 'KeyJ comme pour descendre dans Vim'
 
     -
       :main_action: Activer
-      :action: "le layout à droite"
-      :code: "CTRL KeyWKeyL"
-      :memo: "KeyL comme pour aller à droite dans Vim"
+      :action:      le hublot à droite
+      :mode: normal
+      :code: CTRL KeyWKeyL
+      :memo: 'KeyL comme pour aller à droite dans Vim'
 
     -
       :main_action: Activer
-      :action: "le layout au-dessus"
-      :code: "CTRL KeyWKeyK"
-      :memo: "KeyK comme pour monter dans Vim"
+      :action:      le hublot au-dessus
+      :mode: normal
+      :code: CTRL KeyWKeyK
+      :memo: 'KeyK comme pour monter dans Vim'
 
     -
       :main_action: Activer
-      :action: "le layout à gauche"
-      :code: "CTRL KeyWKeyH"
-      :memo: "KeyH comme pour aller à gauche dans Vim"
+      :action:      le hublot à gauche
+      :code: CTRL KeyWKeyH
+      :memo: 'KeyH comme pour aller à gauche dans Vim'
 
+# XXX
     -
       :main_action: Fermer
       :action: "la fenêtre courante"
@@ -747,6 +786,13 @@
 
     -
       :main_action: Ouvrir
+      :action:      le fichier sous le curseur
+      :mode: normal
+      :code: KeyG KeyF
+      :important: true
+
+    -
+      :main_action: Ouvrir
       :action:      un fichier dans une nouvel tab
       :mode: NORMAL
       :code: ":tabedit path/to/file"
@@ -783,45 +829,44 @@
       :main_action: Fermer
       :action:      toutes les tabs sauf la courante
       :mode: normal
-      :code: ":tabo[nly]"
+      :code: ':tabonly'
+      :c: ':tabo'
       :memo: "((only)) = seulement"
 
     -
       :main_action: Activer
       :action:      la tab suivante (première si dernière)
       :mode: normal
-      :code: ":tabn[ext]"
-      :memo: "((next)) = prochaine"
+      :code: ":tabnext"
+      :c: ':tabn'
 
     -
       :main_action: Activer
       :action:      la tab précédente (dernière si première)
       :mode: normal
-      :code:
-        - ':tabp[revious]'
-        - ':tabN[ext]'
-      :memo: "((previous)) = précédente"
+      :code: ":tabprevious\n[NORMAL] :tabNext"
+      :c: ":tabp\n:tabN"
 
     -
       :main_action: Activer
       :action:      la première tab
       :mode: normal
-      :code:
-        - ':tabfirst'
-        - ':tabrewind'
-        - ':tabr'
+      :code: ":tabfirst\n[NORMAL] :tabrewind"
+      :c: ":tabfir\ntabr"
 
     -
       :main_action: Activer
       :action:      la dernière tab
       :mode: normal
-      :code: ":tabl[ast]"
+      :code: ":tablast"
+      :c: ':tabl'
 
     -
       :main_action: Activer
       :action:      une tab pour son index (1-start)
       :mode: normal
-      :code: ":tabn[ext] <index>"
+      :code: ":tabnext <index>"
+      :c: ':tabn'
 
     -
       :main_action: Exécuter une commande
@@ -835,7 +880,8 @@
       :main_action: Placer
       :action:      une tab après une autre
       :mode: command
-      :code: ':tabm[ove]'
+      :code: ':tabmove'
+      :c: ':tabm'
 
     -
       :main_action: Définir
@@ -855,6 +901,16 @@
 # ---------------------------------------------------------------------
 
   FICHIERS:
+
+# TODO
+
+    -
+      :main_action: Browser
+      :action:      les fichiers
+      :mode: normal
+      :code: ':browse'
+      :c: ':bro'
+      :notes: 'TODO Voir ce qu’on fait avec'
 
     -
       :main_action: Définir
@@ -887,13 +943,6 @@
       :main_action: Définir
       :action:      les fichiers à ne pas backuper
       :code: ":set backupskip=..."
-
-    -
-      :main_action: Ouvrir
-      :action:      le fichier sous le curseur
-      :mode: normal
-      :code: KeyG KeyF
-      :important: true
 
     -
       :main_action: Ouvrir
@@ -962,7 +1011,7 @@
 
     -
       :main_action: Nouveau
-      :action:      layout en splitant la fenêtre courante
+      :action:      hublot en splitant la fenêtre courante
       :mode: normal
       :code: "CTRL KeyWKeyN"
 
@@ -2064,7 +2113,7 @@
       :main_action: Insérer
       :action:      le texte du presse-papier système
       :mode: normal
-      :code: ":set paste, CMD KeyV, :set nopaste"
+      :code: ':set paste, CMD KeyV, :set nopaste'
       :note: "En fait, ça a l'air de fonctionner aussi avec CMD KeyV normalement."
 
     -
@@ -2168,8 +2217,11 @@
       :memo: Spécial ((k))aractère
       :note: "Voir aussi CTRL KeyV plus bas."
       :exemples:
+        - "`CTRL KeyK a>` affichera â (a circonflexe)"
+        - "`CTRL KeyK i:` affichera ï (i tréma)"
         - "Taper `:digraphs` pour voir la liste."
       :tags: digraph
+      :important: true
 
     -
       :main_action: Insérer
@@ -2184,7 +2236,10 @@
       :main_action: Insérer
       :action:      n’importe quel caractère tel quel.
       :mode: insert
-      :code: CTRL KeyV <signe>
+      :code: CTRL KeyV <signe>|<numéro unicode>
+      :exemples:
+        - '`CTRL KeyV â` va écrire "â" à l’écran'
+        - '`CTRL KeyV 226` va écrire aussi "â" à l’écran'
       :note: 'Ça concerne aussi bien les retours chariot que les tabulations.'
 
     -
@@ -2215,8 +2270,10 @@
       :code: '"=<expression> ENTER KeyP'
       :exemples:
         - '`"=12*12 ENTER KeyP` insert « 144 » au curseur'
+        - '`"= %:p ENTER KeyP` insert le path (`:p`) du fichier courant (`%`) au curseur'
         - '`"=$HOME ENTER KeyP` colle au curseur le chemin vers home'
         - '`"=$PWD ENTER KeyP` colle au curseur le chemin vers le dossier racine courant.'
+
 
     -
       :main_action: Insérer

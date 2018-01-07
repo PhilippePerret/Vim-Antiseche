@@ -66,12 +66,12 @@ def formate t
   .gsub(/\bSPACE\b/, keyboard('Espace'))
   .gsub(/\bCTRL\b ?/, keyboard('Control'))
   .gsub(/\bESC\b ?/, keyboard('Escape'))
-  .gsub(/\bMAJ\b ?/, keyboard('Maj'))
+  .gsub(/\bMAJ\b? ?/, keyboard('Maj'))
   .gsub(/\bTAB\b ?/, keyboard('Tab'))
   .gsub(/ ?\bENTER\b/, keyboard('Entree'))
   .gsub(/\bARROW_UP\b/, keyboard('FlecheH'))
   .gsub(/\bARROW_DOWN\b/, keyboard('FlecheB'))
-  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|PointVirgule|Point|SupInf|Tab|Virgule) ?/){keyboard($1)}
+  .gsub(/Key(Arobase|CrochetO|CrochetF|Diese|Dollar|FlecheG|FlecheD|FlecheH|FlecheB|Egal|Etoile|Interro|Livre|Moins|Plus|PointVirgule|Point|SupInf|Tab|Virgule) ?/){keyboard($1)}
   .gsub(/Key([A-Z]) ?/){keyboard($1.upcase)}
   .gsub(/\`\`\`(.*?)\`\`\`/m){
     c = $1.gsub(/\\n/, "[RC]").strip
@@ -132,7 +132,7 @@ SHORTCUTS.each do |element_titre, data_element|
     code =
       if code_court != nil
         m = data_sc[:mode] ? "<mode>[#{data_sc[:mode].upcase}]</mode> " : ''
-        "<complet>#{formate(code)}</complet>#{m}#{formate(code_court)}"
+        "<codecourt>#{formate(code_court)}</codecourt>#{m}<complet>#{formate(code)}</complet>"
       else
         code.is_a?(Array) || code = [code]
         code.collect do |c|
@@ -282,7 +282,8 @@ table = <<-HTML
       memo:before{content:'<';font-size:8pt;vertical-align:middle;}
       memo:after{content:'>';font-size:8pt;vertical-align:middle;}
       mode{color:#AAA;font-size:0.8em;font-weight:normal;}
-      complet{float:right;margin-right:2em;white-space:nowrap;} /* pour le code complet, en regard du code raccourci */
+      complet{white-space:nowrap;} /* pour le code complet, en regard du code raccourci */
+      codecourt{float:right;margin-right:2em;white-space:nowrap;} /* code cours, en regard du code complet*/
       ul#tdm{list-style:none;margin:1em 0}
       ul#tdm li{margin:0;margin-right:1em;padding:0;display:inline;}
       ul#tdm li a{font-family:Arial;font-size:12pt;}

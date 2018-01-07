@@ -28,7 +28,7 @@
       */
 
       /* Le code */
-      td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px;white-space:nowrap;}
+      td.shortcut{font-family:Courier;font-size:0.72em;background-color:#333!important;color:white!important;padding:4px;white-space:pre;}
 
       table tr.values td.values{white-space:pre-wrap;font-size:11pt;font-family:Courier;background-color:#CCC!important;}
       table tr.main td{border-top:2px solid green;border-bottom:2px solid green;background-color:#EFE;}
@@ -55,7 +55,8 @@
       memo:before{content:'<';font-size:8pt;vertical-align:middle;}
       memo:after{content:'>';font-size:8pt;vertical-align:middle;}
       mode{color:#AAA;font-size:0.8em;font-weight:normal;}
-      complet{float:right;margin-right:2em;white-space:nowrap;} /* pour le code complet, en regard du code raccourci */
+      complet{white-space:nowrap;} /* pour le code complet, en regard du code raccourci */
+      codecourt{float:right;margin-right:2em;white-space:nowrap;} /* code cours, en regard du code complet*/
       ul#tdm{list-style:none;margin:1em 0}
       ul#tdm li{margin:0;margin-right:1em;padding:0;display:inline;}
       ul#tdm li a{font-family:Arial;font-size:12pt;}
@@ -68,7 +69,7 @@
   <body>
     <header>
       <h1>Vim - Antisèche</h1>
-      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Utiles</a></li><li><a href='#titre3'>Help</a></li><li><a href='#titre4'>Premières commandes utiles</a></li><li><a href='#titre5'>Sessions</a></li><li><a href='#titre6'>Mapping</a></li><li><a href='#titre7'>Snippets</a></li><li><a href='#titre8'>Fenêtres & layout</a></li><li><a href='#titre9'>Tabs</a></li><li><a href='#titre10'>Fichiers</a></li><li><a href='#titre11'>Multi-fichiers</a></li><li><a href='#titre12'>Buffers</a></li><li><a href='#titre13'>Déplacements</a></li><li><a href='#titre14'>Marques</a></li><li><a href='#titre15'>Sélection</a></li><li><a href='#titre16'>Texte</a></li><li><a href='#titre17'>Autocomplétion</a></li><li><a href='#titre18'>Texte extras</a></li><li><a href='#titre19'>Recherche et remplacement</a></li><li><a href='#titre20'>Expression régulières</a></li><li><a href='#titre21'>Presse-papier (registre)</a></li><li><a href='#titre22'>Commandes</a></li><li><a href='#titre23'>Commandes personnelles</a></li><li><a href='#titre24'>Ligne de commande et langage de script</a></li><li><a href='#titre25'>Interface</a></li><li><a href='#titre26'>Options</a></li><li><a href='#titre27'>Nerdtree</a></li><li><a href='#titre28'>Mode ligne de commande (ex)</a></li><li><a href='#titre29'>Fenêtres (non essentiels)</a></li><li><a href='#titre30'>Ctrlp</a></li><li><a href='#titre31'>Signes</a></li><li><a href='#titre32'>Ctags</a></li><li><a href='#titre33'>Fonctions</a></li><li><a href='#titre34'>Divers</a></li></ul>
+      <ul id="tdm"><li><a href='#titre1'>Viminfo</a></li><li><a href='#titre2'>Utiles</a></li><li><a href='#titre3'>Help</a></li><li><a href='#titre4'>Premières commandes utiles</a></li><li><a href='#titre5'>Sessions</a></li><li><a href='#titre6'>Mapping</a></li><li><a href='#titre7'>Snippets</a></li><li><a href='#titre8'>Fenêtres & hublots</a></li><li><a href='#titre9'>Tabs</a></li><li><a href='#titre10'>Fichiers</a></li><li><a href='#titre11'>Multi-fichiers</a></li><li><a href='#titre12'>Buffers</a></li><li><a href='#titre13'>Déplacements</a></li><li><a href='#titre14'>Marques</a></li><li><a href='#titre15'>Sélection</a></li><li><a href='#titre16'>Texte</a></li><li><a href='#titre17'>Autocomplétion</a></li><li><a href='#titre18'>Texte extras</a></li><li><a href='#titre19'>Recherche et remplacement</a></li><li><a href='#titre20'>Expression régulières</a></li><li><a href='#titre21'>Presse-papier (registre)</a></li><li><a href='#titre22'>Commandes</a></li><li><a href='#titre23'>Commandes personnelles</a></li><li><a href='#titre24'>Ligne de commande et langage de script</a></li><li><a href='#titre25'>Interface</a></li><li><a href='#titre26'>Options</a></li><li><a href='#titre27'>Nerdtree</a></li><li><a href='#titre28'>Mode ligne de commande (ex)</a></li><li><a href='#titre29'>Fenêtres (non essentiels)</a></li><li><a href='#titre30'>Ctrlp</a></li><li><a href='#titre31'>Signes</a></li><li><a href='#titre32'>Ctags</a></li><li><a href='#titre33'>Fonctions</a></li><li><a href='#titre34'>Divers</a></li></ul>
 
     </header>
     <section id="table_shortcuts">
@@ -82,7 +83,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Définir les éléments à sauver dans le fichier viminfo</td>
-        <td colspan="2" class="shortcut"><complet>:set viminfo</complet><mode>[COMMAND]</mode> :set vi=&lt;paramètres></td>
+        <td colspan="2" class="shortcut"><codecourt>:set vi=&lt;paramètres></codecourt><mode>[COMMAND]</mode> <complet>:set viminfo</complet></td>
         
       </tr>
       <tr class='values'>
@@ -141,7 +142,7 @@
       <tr class="mainaction">
         <td><span class='tag'>aide</span></td>
         <td class='mainaction' colspan='2'>Ouvrir l’aide</td>
-        <td colspan="1" class="shortcut"><complet>:help</complet><mode>[COMMAND]</mode> :h</td>
+        <td colspan="1" class="shortcut"><codecourt>:h</codecourt><mode>[COMMAND]</mode> <complet>:help</complet></td>
         <td><memo>h</memo>elp</td>
       </tr>
       <tr class="mainaction">
@@ -216,7 +217,7 @@
       <tr class="mainaction">
         <td><span class='tag'>aide</span><span class='tag'>commande</span></td>
         <td class='mainaction' colspan='2'>Obtenir l’aide d’une commande dans un mode particulier</td>
-        <td colspan="2" class="shortcut"><complet>:help &lt;préfixe mode>_&lt;commande></complet><mode>[NORMAL]</mode> :h &lt;pref>_&lt;commande></td>
+        <td colspan="2" class="shortcut"><codecourt>:h &lt;pref>_&lt;commande></codecourt><mode>[NORMAL]</mode> <complet>:help &lt;préfixe mode>_&lt;commande></complet></td>
         
       </tr>
       <tr class='values'>
@@ -233,7 +234,7 @@
       <tr class="mainaction">
         <td><span class='tag'>aide</span><span class='tag'>option</span></td>
         <td class='mainaction' colspan='2'>Obtenir l’aide sur une option</td>
-        <td colspan="2" class="shortcut"><complet>:help '&lt;option>'</complet>:h '&lt;option>'</td>
+        <td colspan="2" class="shortcut"><codecourt>:h '&lt;option>'</codecourt><complet>:help '&lt;option>'</complet></td>
         
       </tr>
         <tr class="notes">
@@ -371,7 +372,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Enregistrer la session courante</td>
-        <td colspan="1" class="shortcut"><complet>:mksession &lt;fichier></complet><mode>[COMMAND]</mode> :mks &lt;fichier></td>
+        <td colspan="1" class="shortcut"><codecourt>:mks &lt;fichier></codecourt><mode>[COMMAND]</mode> <complet>:mksession &lt;fichier></complet></td>
         <td><memo>m</memo>a<memo>k</memo>e <memo>s</memo>ession</td>
       </tr>
       <tr class="exemples">
@@ -473,7 +474,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Supprimer toutes les mappings</td>
-        <td colspan="2" class="shortcut"><complet>:mapclear</complet><mode>[NORMAL]</mode> :mapc</td>
+        <td colspan="2" class="shortcut"><codecourt>:mapc</codecourt><mode>[NORMAL]</mode> <complet>:mapclear</complet></td>
         
       </tr>
 </table><h3 id='titre7'>SNIPPETS</h3><table cellspacing="0" cellpadding="0">  <tr>
@@ -597,7 +598,7 @@
         <td colspan="2" class="shortcut">:so[urce] &lt;path/to/fichier></td>
         
       </tr>
-</table><h3 id='titre8'>FENÊTRES & LAYOUT</h3><table cellspacing="0" cellpadding="0">  <tr>
+</table><h3 id='titre8'>FENÊTRES & HUBLOTS</h3><table cellspacing="0" cellpadding="0">  <tr>
     <th width="100">Tags</th>
     <th width="160">Action</th>
     <th width="480"><!-- Sous-action --></th>
@@ -606,14 +607,19 @@
   </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Ouvrir plusieurs fichiers dans des layouts</td>
-        <td colspan="2" class="shortcut">$> vim -o file1 path/file2 file3</td>
+        <td class='mainaction' colspan='2'>Ouvrir plusieurs fichiers dans des “hublots”</td>
+        <td colspan="2" class="shortcut">$> vim -o&lt;nombre fichiers> file1 path/file2 file3</td>
         
       </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">J’appelle “HUBLOT” la traduction de “VIEWPORT” ou “LAYOUT”. C’est la sous-fenêtre dans la fenêtre, où apparait l’extrait du fichier, comme dans le hublot du navire apparait un extrait de la mer.</td>
+        </tr>
       <tr class="exemples">
         <td colspan="2"></td>
-        <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple">Indiquer un nombre pour limiter le nombre de layouts : <code>vim -o3</code></div></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>vim -o3 ./*.rb</code> => Ouvrir au maximum 3 fichiers ruby du dossier courant</div><div class="exemple">Indiquer un nombre pour limiter le nombre de hublots : <code>vim -o3</code></div></td>
       </tr>
       <tr class="mainaction">
         <td></td>
@@ -621,23 +627,33 @@
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>^</td>
         
       </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">TODO Qu’est-ce qu’une fenêtre alternative ?</td>
+        </tr>
       <tr class="mainaction">
-        <td><span class='tag'>preview</span></td>
-        <td class='mainaction' colspan='2'>Ouvrir dans la fenêtre de prévisualisation</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :pt[ag] &lt;fonction></td>
+        <td><span class='tag'>function</span></td>
+        <td class='mainaction' colspan='2'>Afficher la définition de la fonction</td>
+        <td colspan="2" class="shortcut"><codecourt>:pt</codecourt><mode>[NORMAL]</mode> <complet>:ptag &lt;fonction></complet></td>
         
       </tr>
         <tr class="notes">
           <td colspan="2"></td>
           <td class="titre">Note</td>
-          <td colspan="2">Ouvre la définition de la <code>&lt;fonction></code> dans la fenêtre de prévisualisation.</td>
+          <td colspan="2">Il faut avoir, au prélable, demandé de faire la liste des méthoes par <code>:!ctags -R .</code></td>
         </tr>
       <tr class="mainaction">
         <td><span class='tag'>preview</span></td>
         <td class='mainaction' colspan='2'>Fermer la fenêtre de prévisualisation</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :pc[lose]<br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/><br><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/></td>
+        <td colspan="1" class="shortcut"><codecourt>:pc</codecourt><mode>[NORMAL]</mode> <complet>[":pclose", "<img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/>", "<img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Z.png" class="kb" title="Z"/>"]</complet></td>
         <td><memo>p</memo>review close</td>
       </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Elle se ferme même lorsque l’on n’est pas dedans</td>
+        </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Définir la hauteur de la fenêtre de prévisualisation</td>
@@ -647,36 +663,46 @@
       <tr class="mainaction">
         <td><span class='tag'>split</span></td>
         <td class='mainaction' colspan='2'>Split (signature générale)</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :&lt;count> +&lt;commande> sp[lit] &lt;path/to/file></td>
+        <td colspan="2" class="shortcut"><codecourt>:sp</codecourt><mode>[NORMAL]</mode> <complet>:[&lt;hauteur> ][+&lt;commande> ][++&lt;opt> ]sp[lit][ &lt;path/to/file>"]</complet></td>
         
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">Pour voir le détail des +commandes et des options, rechercher <code>:help +cmd</code> et <code>:help ++opt</code></td>
+        </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code>:10 split</code> ou <code>:10sp</code> splitte la fenêtre en 2 en faisant une nouvelle vue de 10 lignes</div><div class="exemple"><code>:split mon/fichier.txt</code> splitte la fenêtre en 2 et ouvre le fichier désigné dans la nouvelle vue.</div><div class="exemple"><code>:+ split fichier.txt</code> splitte la fenêtre en ouvrant fichier.txt dedans et se place sur la dernière ligne (<code>+</code>)</div><div class="exemple"><code>:+10 split fichier.txt</code> splitte la fenêtre en ouvrant fichier.txt dedans et se place sur la 10e ligne</div><div class="exemple"><code>:+/XXX split fichier.txt</code> splitte la fenêtre en ouvrant fichier.txt dedans et se place sur la 1ère ligne contenant “XXX”</div><div class="exemple"><code>:++fileformat=dos split fichier.doc</code> splitte la fenêtre en ouvrant fichier.txt dans un format DOS.</div></td>
       </tr>
       <tr class="mainaction">
         <td><span class='tag'>split</span><span class='tag'>fenêtre</span></td>
         <td class='mainaction' colspan='2'>Spliter la fenêtre active</td>
-        <td colspan="1" class="shortcut">:sp[it]<br><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_N.png" class="kb" title="N"/></td>
+        <td colspan="1" class="shortcut"><codecourt>:sp</codecourt><complet>[":spit", "<img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_N.png" class="kb" title="N"/>"]</complet></td>
         <td><memo>sp</memo>iter</td>
       </tr>
       <tr class="mainaction">
         <td><span class='tag'>split</span><span class='tag'>fichier</span></td>
-        <td class='mainaction' colspan='2'>Spliter la fenêtre en créant un nouveau fichier dans le nouveau layout</td>
+        <td class='mainaction' colspan='2'>Spliter la fenêtre en créant un nouveau fichier dans le nouveau hublot</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :new</td>
         
       </tr>
       <tr class="mainaction">
         <td><span class='tag'>split</span><span class='tag'>fenêtre</span></td>
         <td class='mainaction' colspan='2'>Spliter verticalement la fenêtre active</td>
-        <td colspan="1" class="shortcut">:vs<br>:vsp<br>:vsplit</td>
+        <td colspan="1" class="shortcut"><codecourt>:vs<br>:vsp</codecourt><complet>:vsplit</complet></td>
         <td><memo>v</memo>ertical <memo>sp</memo>lit</td>
       </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>ligne</span></td>
-        <td class='mainaction' colspan='2'>Spliter en définissant la taille (lignes) du nouveau layout</td>
+        <td><span class='tag'>hublot</span><span class='tag'>ligne</span></td>
+        <td class='mainaction' colspan='2'>Spliter en définissant la taille (lignes) du nouveau hublot</td>
         <td colspan="2" class="shortcut">&lt;nombre ligne>sp</td>
         
       </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>ligne</span></td>
-        <td class='mainaction' colspan='2'>Spliter verticalement en définissant la taille (colonne) du nouveau layout</td>
+        <td><span class='tag'>hublot</span><span class='tag'>ligne</span></td>
+        <td class='mainaction' colspan='2'>Spliter verticalement en définissant la taille (colonne) du nouveau hublot</td>
         <td colspan="2" class="shortcut">&lt;nombre colonnes>vsp</td>
         
       </tr>
@@ -689,81 +715,97 @@
         <tr class="notes">
           <td colspan="2"></td>
           <td class="titre">Note</td>
-          <td colspan="2">La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (<code>:vert split</code>) puis taper <code>:set scrollbind</code> pour chacune des layouts.</td>
+          <td colspan="2">La procédure exacte est la suivante : il faut ouvrir deux fichiers en splitant verticalement la fenêtre (<code>:vert split</code>) puis taper <code>:set scrollbind</code> pour chacune des hublots.</td>
         </tr>
+      <tr class="mainaction main">
+        <td><span class='tag'>hublot</span><span class='tag'>split</span></td>
+        <td class='mainaction' colspan='2'>Aggrandir le hublot courant quand on focusse dedans</td>
+        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :set winheight=36</td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemple</em></td>
+        <td colspan="2"><div class="exemple"><code>set winheight=40</code> est placé dans le .vimrc. La fenêtre est splittée en deux hublots horizontaux. Dès qu’on focusse dans l’un d’eux, il prend la taille de 40 lignes.</div></td>
+      </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>size</span></td>
-        <td class='mainaction' colspan='2'>Redimensionner précisément le layout courant</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :resize [+|-]&lt;nombre></td>
+        <td><span class='tag'>hublot</span><span class='tag'>size</span></td>
+        <td class='mainaction' colspan='2'>Redimensionner précisément le hublot courant</td>
+        <td colspan="2" class="shortcut"><codecourt>:res</codecourt><mode>[NORMAL]</mode> <complet>[":resize [+|-]&lt;nombre>", "z &lt;nombre><img src="./img/clavier/K_E.png" class="kb" title="E"/>ntree"]</complet></td>
         
       </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
-        <td colspan="2"><div class="exemple"><code>:resize 10</code> => mets le layout à 10 lignes</div><div class="exemple"><code>:resize +10</code> => augmente le layout de 10 lignes</div><div class="exemple"><code>:resize -10</code> => diminue le layout de 10 lignes</div></td>
+        <td colspan="2"><div class="exemple"><code>:resize 10</code> => mets le hublot à 10 lignes</div><div class="exemple"><code>:res +10</code> => augmente le hublot de 10 lignes</div><div class="exemple"><code>:res -10</code> => diminue le hublot de 10 lignes</div></td>
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Redimensionner verticalement précisément le layout courant</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :vert :resize [+|-]&lt;nombre></td>
+        <td class='mainaction' colspan='2'>Redimensionner verticalement précisément le hublot courant</td>
+        <td colspan="2" class="shortcut"><codecourt>:vert res</codecourt><mode>[NORMAL]</mode> <complet>[":vert :resize [+|-]&lt;nombre>"]</complet></td>
         
       </tr>
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
-        <td colspan="2"><div class="exemple"><code>:vert :resize 100</code> => mets le layout à 100 colonnes</div><div class="exemple"><code>:vert :resize +100</code> => augmente le layout de 100 colonnes</div><div class="exemple"><code>:vert :resize -100</code> => diminer le layout de 100 colonnes</div></td>
+        <td colspan="2"><div class="exemple"><code>:vert :resize 100</code> => mets le hublot à 100 colonnes</div><div class="exemple"><code>:vert :res +100</code> => augmente le hublot de 100 colonnes</div><div class="exemple"><code>:vert :res -100</code> => diminer le hublot de 100 colonnes</div></td>
       </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>size</span></td>
-        <td class='mainaction' colspan='2'>Redimensionner le layout en l'aggrandissant</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, [x] <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>+</td>
+        <td><span class='tag'>hublot</span><span class='tag'>size</span></td>
+        <td class='mainaction' colspan='2'>Redimensionner le hublot en l’aggrandissant</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, &lt;nombre> <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Plus.png" class="kb" title="Plus"/>|<img src="./img/clavier/K_Moins.png" class="kb" title="Moins"/></td>
+        
+      </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, 10 <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Plus.png" class="kb" title="Plus"/></code> augmente la taille du hublot courant de 10 lignes</div><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, 20 <img src="./img/clavier/K_Moins.png" class="kb" title="Moins"/></code> diminue la taille du hublot courant de 20 lignes</div></td>
+      </tr>
+      <tr class="mainaction">
+        <td><span class='tag'>hublot</span><span class='tag'>size</span></td>
+        <td class='mainaction' colspan='2'>Redimensionner en maximisant le hublot courant</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Moins.png" class="kb" title="Moins"/>(underscore)<br><mode>[NORMAL]</mode> :resize (sans arg)</td>
         
       </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>size</span></td>
-        <td class='mainaction' colspan='2'>Redimensionner en maximisant le layout courant</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>_ (<img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/>-)<br><mode>[NORMAL]</mode> :resize (sans arg)</td>
+        <td><span class='tag'>hublot</span><span class='tag'>size</span></td>
+        <td class='mainaction' colspan='2'>Redimensionner le hublot en le diminuant</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, [x] <img src="./img/clavier/K_Moins.png" class="kb" title="Moins"/></td>
         
       </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>size</span></td>
-        <td class='mainaction' colspan='2'>Redimensionner le layout en le diminuant</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>, [x] -</td>
+        <td><span class='tag'>hublot</span><span class='tag'>size</span></td>
+        <td class='mainaction' colspan='2'>Redimensionner tous les hublots à la même taille</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_Egal.png" class="kb" title="Egal"/></td>
         
       </tr>
       <tr class="mainaction">
-        <td><span class='tag'>layout</span><span class='tag'>size</span></td>
-        <td class='mainaction' colspan='2'>Redimensionner tous les layouts à la même taille</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/>=</td>
-        
-      </tr>
-      <tr class="mainaction">
-        <td><span class='tag'>layout</span></td>
-        <td class='mainaction' colspan='2'>Activer un layout à l'autre</td>
-        <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_W.png" class="kb" title="W"/></td>
+        <td><span class='tag'>hublot</span></td>
+        <td class='mainaction' colspan='2'>Activer le hublot suivant</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_W.png" class="kb" title="W"/></td>
         <td><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><memo>w</memo>indow (fenêtre)</td>
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Activer le layout en dessous</td>
-        <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_J.png" class="kb" title="J"/></td>
+        <td class='mainaction' colspan='2'>Activer le hublot en dessous du courant</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_J.png" class="kb" title="J"/></td>
         <td><img src="./img/clavier/K_J.png" class="kb" title="J"/>comme pour descendre dans Vim</td>
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Activer le layout à droite</td>
-        <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_L.png" class="kb" title="L"/></td>
+        <td class='mainaction' colspan='2'>Activer le hublot à droite</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_L.png" class="kb" title="L"/></td>
         <td><img src="./img/clavier/K_L.png" class="kb" title="L"/>comme pour aller à droite dans Vim</td>
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Activer le layout au-dessus</td>
-        <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_K.png" class="kb" title="K"/></td>
+        <td class='mainaction' colspan='2'>Activer le hublot au-dessus</td>
+        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_K.png" class="kb" title="K"/></td>
         <td><img src="./img/clavier/K_K.png" class="kb" title="K"/>comme pour monter dans Vim</td>
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Activer le layout à gauche</td>
+        <td class='mainaction' colspan='2'>Activer le hublot à gauche</td>
         <td colspan="1" class="shortcut"><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_H.png" class="kb" title="H"/></td>
         <td><img src="./img/clavier/K_H.png" class="kb" title="H"/>comme pour aller à gauche dans Vim</td>
       </tr>
@@ -862,6 +904,12 @@
         <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :tabs</td>
         
       </tr>
+      <tr class="mainaction main">
+        <td></td>
+        <td class='mainaction' colspan='2'>Ouvrir le fichier sous le curseur</td>
+        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_F.png" class="kb" title="F"/></td>
+        
+      </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Ouvrir un fichier dans une nouvel tab</td>
@@ -900,37 +948,37 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Fermer toutes les tabs sauf la courante</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :tabo[nly]</td>
+        <td colspan="1" class="shortcut"><codecourt>:tabo</codecourt><mode>[NORMAL]</mode> <complet>:tabonly</complet></td>
         <td><memo>only</memo> = seulement</td>
       </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Activer la tab suivante (première si dernière)</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :tabn[ext]</td>
-        <td><memo>next</memo> = prochaine</td>
+        <td colspan="2" class="shortcut"><codecourt>:tabn</codecourt><mode>[NORMAL]</mode> <complet>:tabnext</complet></td>
+        
       </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Activer la tab précédente (dernière si première)</td>
-        <td colspan="1" class="shortcut"><mode>[NORMAL]</mode> :tabp[revious]<br><mode>[NORMAL]</mode> :tabN[ext]</td>
-        <td><memo>previous</memo> = précédente</td>
+        <td colspan="2" class="shortcut"><codecourt>:tabp<br>:tabN</codecourt><mode>[NORMAL]</mode> <complet>:tabprevious<br><mode>[NORMAL]</mode> :tabNext</complet></td>
+        
       </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Activer la première tab</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :tabfirst<br><mode>[NORMAL]</mode> :tabrewind<br><mode>[NORMAL]</mode> :tabr</td>
+        <td colspan="2" class="shortcut"><codecourt>:tabfir<br>tabr</codecourt><mode>[NORMAL]</mode> <complet>:tabfirst<br><mode>[NORMAL]</mode> :tabrewind</complet></td>
         
       </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Activer la dernière tab</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :tabl[ast]</td>
+        <td colspan="2" class="shortcut"><codecourt>:tabl</codecourt><mode>[NORMAL]</mode> <complet>:tablast</complet></td>
         
       </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Activer une tab pour son index (1-start)</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> :tabn[ext] &lt;index></td>
+        <td colspan="2" class="shortcut"><codecourt>:tabn</codecourt><mode>[NORMAL]</mode> <complet>:tabnext &lt;index></complet></td>
         
       </tr>
       <tr class="mainaction">
@@ -947,7 +995,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Placer une tab après une autre</td>
-        <td colspan="2" class="shortcut"><mode>[COMMAND]</mode> :tabm[ove]</td>
+        <td colspan="2" class="shortcut"><codecourt>:tabm</codecourt><mode>[COMMAND]</mode> <complet>:tabmove</complet></td>
         
       </tr>
       <tr class="mainaction">
@@ -969,6 +1017,17 @@
     <th width="490">Shortcut</th>
     <th width="280">Mnémo</th>
   </tr>
+      <tr class="mainaction">
+        <td></td>
+        <td class='mainaction' colspan='2'>Browser les fichiers</td>
+        <td colspan="2" class="shortcut"><codecourt>:bro</codecourt><mode>[NORMAL]</mode> <complet>:browse</complet></td>
+        
+      </tr>
+        <tr class="notes">
+          <td colspan="2"></td>
+          <td class="titre">Note</td>
+          <td colspan="2">TODO Voir ce qu’on fait avec</td>
+        </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Définir le type du fichier (non détecté)</td>
@@ -1007,12 +1066,6 @@
         <td></td>
         <td class='mainaction' colspan='2'>Définir les fichiers à ne pas backuper</td>
         <td colspan="2" class="shortcut">:set backupskip=...</td>
-        
-      </tr>
-      <tr class="mainaction main">
-        <td></td>
-        <td class='mainaction' colspan='2'>Ouvrir le fichier sous le curseur</td>
-        <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_G.png" class="kb" title="G"/><img src="./img/clavier/K_F.png" class="kb" title="F"/></td>
         
       </tr>
       <tr class="mainaction">
@@ -1087,7 +1140,7 @@
       </tr>
       <tr class="mainaction">
         <td></td>
-        <td class='mainaction' colspan='2'>Nouveau layout en splitant la fenêtre courante</td>
+        <td class='mainaction' colspan='2'>Nouveau hublot en splitant la fenêtre courante</td>
         <td colspan="2" class="shortcut"><mode>[NORMAL]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_W.png" class="kb" title="W"/><img src="./img/clavier/K_N.png" class="kb" title="N"/></td>
         
       </tr>
@@ -2292,7 +2345,7 @@
           <td class="titre">Note</td>
           <td colspan="2">Passe en mode INSERT après la touche <img src="./img/clavier/K_I.png" class="kb" title="I"/></td>
         </tr>
-      <tr class="mainaction">
+      <tr class="mainaction main">
         <td><span class='tag'>digraph</span></td>
         <td class='mainaction' colspan='2'>Insérer un caractère spécial (digraphs)</td>
         <td colspan="1" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/>&lt;2 lettres du digraph></td>
@@ -2305,8 +2358,8 @@
         </tr>
       <tr class="exemples">
         <td colspan="2"></td>
-        <td class="titre"><em>Exemple</em></td>
-        <td colspan="2"><div class="exemple">Taper <code>:digraphs</code> pour voir la liste.</div></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/>a></code> affichera â (a circonflexe)</div><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_K.png" class="kb" title="K"/>i:</code> affichera ï (i tréma)</div><div class="exemple">Taper <code>:digraphs</code> pour voir la liste.</div></td>
       </tr>
       <tr class="mainaction">
         <td></td>
@@ -2327,7 +2380,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Insérer n’importe quel caractère tel quel.</td>
-        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>&lt;signe></td>
+        <td colspan="2" class="shortcut"><mode>[INSERT]</mode> <img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>&lt;signe>|&lt;numéro unicode></td>
         
       </tr>
         <tr class="notes">
@@ -2335,6 +2388,11 @@
           <td class="titre">Note</td>
           <td colspan="2">Ça concerne aussi bien les retours chariot que les tabulations.</td>
         </tr>
+      <tr class="exemples">
+        <td colspan="2"></td>
+        <td class="titre"><em>Exemples</em></td>
+        <td colspan="2"><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>â</code> va écrire "â" à l’écran</div><div class="exemple"><code><img src="./img/clavier/K_Control.png" class="kb" title="Control"/><img src="./img/clavier/K_V.png" class="kb" title="V"/>226</code> va écrire aussi "â" à l’écran</div></td>
+      </tr>
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Insérer le texte du presse-papier après le caractère courant</td>
@@ -2362,7 +2420,7 @@
       <tr class="exemples">
         <td colspan="2"></td>
         <td class="titre"><em>Exemples</em></td>
-        <td colspan="2"><div class="exemple"><code>"=12*12<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> insert « 144 » au curseur</div><div class="exemple"><code>"=$HOME<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> colle au curseur le chemin vers home</div><div class="exemple"><code>"=$PWD<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> colle au curseur le chemin vers le dossier racine courant.</div></td>
+        <td colspan="2"><div class="exemple"><code>"=12*12<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> insert « 144 » au curseur</div><div class="exemple"><code>"= %:p<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> insert le path (<code>:p</code>) du fichier courant (<code>%</code>) au curseur</div><div class="exemple"><code>"=$HOME<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> colle au curseur le chemin vers home</div><div class="exemple"><code>"=$PWD<img src="./img/clavier/K_Entree.png" class="kb" title="Entree"/> <img src="./img/clavier/K_P.png" class="kb" title="P"/></code> colle au curseur le chemin vers le dossier racine courant.</div></td>
       </tr>
       <tr class="mainaction">
         <td></td>
@@ -4051,7 +4109,7 @@
       <tr class="mainaction">
         <td></td>
         <td class='mainaction' colspan='2'>Référence au registre global</td>
-        <td colspan="2" class="shortcut">" <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_P.png" class="kb" title="P"/>lus</td>
+        <td colspan="2" class="shortcut">" <img src="./img/clavier/K_Maj.png" class="kb" title="Maj"/><img src="./img/clavier/K_Plus.png" class="kb" title="Plus"/></td>
         
       </tr>
       <tr class="mainaction">
